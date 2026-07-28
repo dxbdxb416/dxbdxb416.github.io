@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D3 — Mahmoud Albakir</title>
+<style>
+  :root {
+    --bg: #0d0f0c;
+    --bg-cell: #14170f;
+    --ink: #eef0e4;
+    --ink-dim: #9aa08c;
+    --honey: #e0a83e;
+    --line: #2a2e22;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(224,168,62,0.05), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(224,168,62,0.04), transparent 40%);
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    padding: 110px 0 70px;
+    position: relative;
+  }
+  .eyebrow {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--honey);
+    font-size: 0.78rem;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: clamp(2.6rem, 7vw, 4.4rem);
+    line-height: 1.05;
+    margin: 0 0 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  h1 span { color: var(--honey); }
+  .lede {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.1rem;
+    color: var(--ink-dim);
+    max-width: 52ch;
+    line-height: 1.6;
+  }
+
+  .comb {
+    position: absolute;
+    top: 40px;
+    right: 24px;
+    width: 140px;
+    height: 140px;
+    opacity: 0.55;
+  }
+
+  section {
+    padding: 50px 0;
+    border-top: 1px solid var(--line);
+  }
+  .label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 22px;
+  }
+
+  .cells {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .cell {
+    background: var(--bg-cell);
+    border: 1px solid var(--line);
+    padding: 20px 22px;
+    clip-path: polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
+  }
+  .cell h3 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .cell p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink-dim);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .chip {
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 2px;
+  }
+
+  .quote {
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 56ch;
+    border-left: 2px solid var(--honey);
+    padding-left: 20px;
+  }
+
+  footer {
+    padding: 50px 0 90px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink-dim);
+  }
+  footer a {
+    color: var(--honey);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(224,168,62,0.3);
+  }
+  footer a:hover { border-bottom-color: var(--honey); }
+
+  @media (max-width: 600px) {
+    .comb { display: none; }
+    header.hero { padding: 70px 0 50px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <svg class="comb" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#e0a83e" stroke-width="1">
+        <polygon points="50,3 90,25 90,75 50,97 10,75 10,25"/>
+        <polygon points="50,20 75,33 75,67 50,80 25,67 25,33"/>
+        <polygon points="50,38 62,45 62,60 50,67 38,60 38,45"/>
+      </g>
+    </svg>
+    <div class="eyebrow">d3 · dubai</div>
+    <h1>Mahmoud Albakir,<br>known as <span>D3</span>.</h1>
+    <p class="lede">B2B sales professional and self-taught technical builder, working across CRM, ERP, and IT solutions in Dubai — with a parallel life spent building pipelines, automations, and an original philosophy of layered existence.</p>
+  </header>
+
+  <section>
+    <div class="label">Work</div>
+    <div class="cells">
+      <div class="cell">
+        <h3>Customer Success &amp; Sales</h3>
+        <p>~8 years across ERP, CRM, and IT solutions — SID Technology, Focus Softnet, Beyond Eris IT Solutions. Currently targeting Customer Success and Account Management roles in the UAE.</p>
+      </div>
+      <div class="cell">
+        <h3>Technical Builder</h3>
+        <p>Built a product scraping, Arabic translation, and noon.com upload pipeline as a freelance engagement. Maintains a career-ops automation stack for the job search itself.</p>
+      </div>
+      <div class="cell">
+        <h3>Certifications</h3>
+        <p>Cisco Networking Academy — Cybersecurity &amp; Data Analytics Essentials. AI Prompt Engineering, Dubai Future Foundation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Stack</div>
+    <div class="stack">
+      <span class="chip">CRM / ERP</span>
+      <span class="chip">Python</span>
+      <span class="chip">SQL</span>
+      <span class="chip">Docker</span>
+      <span class="chip">MQL5</span>
+      <span class="chip">Linux / Ubuntu</span>
+      <span class="chip">Prompt Engineering</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Otherwise</div>
+    <p class="quote">Sudoku at expert level. A Sufi–Buddhist meditation practice. A Wednesday philosophy meetup called Spiritual Tea. An honest ledger, kept privately, of what a life is built from.</p>
+  </section>
+
+  <footer>
+    <p>GitHub — <a href="https://github.com/dxbdxb416">github.com/dxbdxb416</a><br>
+    Contact — <a href="mailto:dxbdxb416@gmail.com">dxbdxb416@gmail.com</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
