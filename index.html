@@ -4,207 +4,396 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>D3 — Mahmoud Albakir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0d0f0c;
-    --bg-cell: #14170f;
-    --ink: #eef0e4;
-    --ink-dim: #9aa08c;
-    --honey: #e0a83e;
-    --line: #2a2e22;
-  }
-  * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Georgia', 'Iowan Old Style', serif;
-    scroll-behavior: smooth;
-  }
-  body {
-    background-image:
-      radial-gradient(circle at 20% 20%, rgba(224,168,62,0.05), transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(224,168,62,0.04), transparent 40%);
+  :root{
+    --black: #0a0a0a;
+    --near-black: #141414;
+    --charcoal: #2a2a2a;
+    --gray: #6b6b6b;
+    --light-gray: #b8b8b4;
+    --off-white: #f2f0eb;
+    --white: #ffffff;
+    --line: rgba(255,255,255,0.12);
   }
 
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
 
-  header.hero {
-    padding: 110px 0 70px;
+  body{
+    background: var(--black);
+    color: var(--off-white);
+    font-family: 'EB Garamond', serif;
+    font-size: 19px;
+    line-height: 1.75;
+  }
+
+  img{ filter: grayscale(1) contrast(1.05); display:block; width:100%; height:100%; object-fit:cover; }
+
+  .wrap{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
   }
-  .eyebrow {
-    font-family: 'Courier New', monospace;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--honey);
-    font-size: 0.78rem;
-    margin-bottom: 18px;
-  }
-  h1 {
-    font-size: clamp(2.6rem, 7vw, 4.4rem);
-    line-height: 1.05;
-    margin: 0 0 20px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-  }
-  h1 span { color: var(--honey); }
-  .lede {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.1rem;
-    color: var(--ink-dim);
-    max-width: 52ch;
-    line-height: 1.6;
-  }
-
-  .comb {
+  .hero-bg{
     position: absolute;
-    top: 40px;
-    right: 24px;
-    width: 140px;
-    height: 140px;
-    opacity: 0.55;
+    inset: 0;
+    z-index: 0;
   }
+  .hero-bg::after{
+    content:'';
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 45%, var(--black) 100%);
+  }
+  .hero-content{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 0 0 90px;
+  }
+  .kicker{
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.35em;
+    font-size: 12px;
+    color: var(--light-gray);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(44px, 8vw, 76px);
+    line-height: 1.08;
+    color: var(--white);
+    max-width: 13ch;
+  }
+  h1 em{ font-style: italic; color: var(--light-gray); }
+  .tagline{
+    margin-top: 26px;
+    max-width: 46ch;
+    color: var(--light-gray);
+    font-size: 19px;
+    font-style: italic;
+  }
+  .scroll-cue{
+    position: absolute;
+    bottom: 36px; left: 50%; transform: translateX(-50%);
+    font-family: 'Cinzel', serif;
+    font-size: 10px; letter-spacing: 0.3em; color: var(--gray);
+    text-transform: uppercase; z-index:2;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+  }
+  .scroll-cue .stem{ width:1px; height:30px; background: linear-gradient(var(--gray), transparent); }
 
-  section {
-    padding: 50px 0;
+  /* ---------- Section shell ---------- */
+  section{ border-top: 1px solid var(--line); }
+  .pad{ padding: 100px 0; }
+  .sec-label{
+    font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--light-gray); margin-bottom: 18px;
+  }
+  h2{
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: clamp(30px, 4vw, 42px); color: var(--white); margin-bottom: 28px;
+  }
+  p{ color: var(--gray); }
+  p + p{ margin-top: 16px; }
+  .lede{ font-size: 20px; color: var(--light-gray); max-width: 58ch; line-height: 1.8; }
+
+  /* ---------- Alternating about-style rows ---------- */
+  .split{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 80px 0;
     border-top: 1px solid var(--line);
   }
-  .label {
-    font-family: 'Courier New', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-dim);
-    margin-bottom: 22px;
+  @media(min-width: 720px){
+    .split{ grid-template-columns: 1fr 1fr; gap: 56px; }
+    .split.rev .split-media{ order: 2; }
+    .split.rev .split-text{ order: 1; }
   }
+  .split-media{
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--near-black);
+  }
+  .split-text h3{
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 26px; color: var(--white); margin-bottom: 16px;
+  }
+  .split-text p{ font-size: 17px; }
 
-  .cells {
+  /* ---------- Skills-style grid ---------- */
+  .grid4{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 14px;
-  }
-  .cell {
-    background: var(--bg-cell);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
     border: 1px solid var(--line);
-    padding: 20px 22px;
-    clip-path: polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
+    margin-top: 48px;
   }
-  .cell h3 {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin: 0 0 8px;
-    color: var(--ink);
+  @media(min-width: 640px){ .grid4{ grid-template-columns: repeat(4, 1fr); } }
+  .cell{
+    background: var(--near-black);
+    padding: 32px 22px;
   }
-  .cell p {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.88rem;
-    color: var(--ink-dim);
-    line-height: 1.5;
-    margin: 0;
+  .cell .num{
+    font-family: 'Cinzel', serif; font-size: 11px; color: var(--gray);
+    letter-spacing: 0.2em; margin-bottom: 14px;
+  }
+  .cell h4{
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 19px; color: var(--off-white); margin-bottom: 8px;
+  }
+  .cell p{ font-size: 14.5px; line-height: 1.55; }
+
+  /* ---------- Full bleed image break ---------- */
+  .bleed{
+    position: relative;
+    height: 46vh;
+    min-height: 320px;
+    overflow: hidden;
+  }
+  .bleed::after{
+    content:'';
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.0) 0%, var(--black) 100%);
   }
 
-  .stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  /* ---------- Philosophy list, event-row style ---------- */
+  .events{ margin-top: 44px; }
+  .event-row{
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 24px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+    align-items: start;
   }
-  .chip {
-    font-family: 'Courier New', monospace;
-    font-size: 0.78rem;
-    color: var(--ink);
-    border: 1px solid var(--line);
-    padding: 6px 12px;
-    border-radius: 2px;
+  .event-row:last-child{ border-bottom: 1px solid var(--line); }
+  .event-mark{
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: var(--gray);
+    letter-spacing: 0.15em;
+  }
+  .event-row h4{
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 22px; color: var(--white); margin-bottom: 8px;
+    direction: rtl;
+  }
+  .event-row p{ font-size: 16px; }
+
+  blockquote{
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(24px, 3.2vw, 30px); color: var(--white);
+    max-width: 30ch; line-height: 1.6; text-align:center; margin: 0 auto;
+  }
+  .quote-attr{
+    margin-top: 18px; text-align:center;
+    font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.25em;
+    color: var(--gray); text-transform: uppercase;
   }
 
-  .quote {
-    font-style: italic;
-    color: var(--ink-dim);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    max-width: 56ch;
-    border-left: 2px solid var(--honey);
-    padding-left: 20px;
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    position: relative;
+    padding: 110px 0;
+    text-align: center;
+    overflow: hidden;
   }
+  .cta-band-bg{ position:absolute; inset:0; z-index:0; opacity: 0.5; }
+  .cta-band-bg::after{
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(180deg, var(--black) 0%, rgba(10,10,10,0.75) 40%, var(--black) 100%);
+  }
+  .cta-content{ position:relative; z-index:1; }
+  .cta-content h2{ margin-bottom: 14px; }
+  .cta-content .lede{ margin: 0 auto 36px; text-align:center; }
+  .contact-links{ display:flex; flex-wrap:wrap; justify-content:center; gap:16px; }
+  .contact-links a{
+    font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--off-white); text-decoration:none;
+    border: 1px solid var(--line); padding: 14px 28px; transition: all .25s ease;
+  }
+  .contact-links a:hover{ border-color: var(--white); background: rgba(255,255,255,0.06); }
 
-  footer {
-    padding: 50px 0 90px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.9rem;
-    color: var(--ink-dim);
+  /* ---------- Footer ---------- */
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 50px 0;
   }
-  footer a {
-    color: var(--honey);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(224,168,62,0.3);
+  .footer-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
-  footer a:hover { border-bottom-color: var(--honey); }
-
-  @media (max-width: 600px) {
-    .comb { display: none; }
-    header.hero { padding: 70px 0 50px; }
+  @media(min-width: 640px){ .footer-grid{ grid-template-columns: 1.4fr 1fr 1fr; } }
+  .footer-grid h5{
+    font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.2em;
+    color: var(--light-gray); text-transform: uppercase; margin-bottom: 14px;
+  }
+  .footer-grid p, .footer-grid a{
+    font-size: 14px; color: var(--gray); display:block; text-decoration:none; line-height: 2;
+  }
+  .footer-grid a:hover{ color: var(--off-white); }
+  .footer-bottom{
+    margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line);
+    font-size: 12px; color: var(--gray); text-align:center;
+    font-family: 'Cinzel', serif; letter-spacing: 0.15em;
   }
 </style>
 </head>
 <body>
+
+<div class="hero">
+  <div class="hero-bg"><img src="img/panther-fog.webp" alt=""></div>
+  <div class="wrap hero-content">
+    <p class="kicker">D3 · Dubai</p>
+    <h1>Mahmoud Albakir,<br>known as <em>D3</em></h1>
+    <p class="tagline">B2B sales professional and self-taught technical builder — with a parallel life spent tracing the layered architecture of existence.</p>
+  </div>
+  <div class="scroll-cue"><span>Descend</span><span class="stem"></span></div>
+</div>
+
 <div class="wrap">
 
-  <header class="hero">
-    <svg class="comb" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#e0a83e" stroke-width="1">
-        <polygon points="50,3 90,25 90,75 50,97 10,75 10,25"/>
-        <polygon points="50,20 75,33 75,67 50,80 25,67 25,33"/>
-        <polygon points="50,38 62,45 62,60 50,67 38,60 38,45"/>
-      </g>
-    </svg>
-    <div class="eyebrow">d3 · dubai</div>
-    <h1>Mahmoud Albakir,<br>known as <span>D3</span>.</h1>
-    <p class="lede">B2B sales professional and self-taught technical builder, working across CRM, ERP, and IT solutions in Dubai — with a parallel life spent building pipelines, automations, and an original philosophy of layered existence.</p>
-  </header>
-
   <section>
-    <div class="label">Work</div>
-    <div class="cells">
-      <div class="cell">
-        <h3>Customer Success &amp; Sales</h3>
-        <p>~8 years across ERP, CRM, and IT solutions — SID Technology, Focus Softnet, Beyond Eris IT Solutions. Currently targeting Customer Success and Account Management roles in the UAE.</p>
+    <div class="split">
+      <div class="split-media"><img src="img/eagle-cliff.webp" alt=""></div>
+      <div class="split-text">
+        <p class="sec-label">Work</p>
+        <h3>Customer success &amp; sales</h3>
+        <p>Nearly eight years across ERP, CRM, and IT solutions — SID Technology, Focus Softnet, Beyond Eris IT Solutions. Currently targeting Customer Success and Account Management roles across the UAE.</p>
       </div>
-      <div class="cell">
-        <h3>Technical Builder</h3>
-        <p>Built a product scraping, Arabic translation, and noon.com upload pipeline as a freelance engagement. Maintains a career-ops automation stack for the job search itself.</p>
-      </div>
-      <div class="cell">
-        <h3>Certifications</h3>
-        <p>Cisco Networking Academy — Cybersecurity &amp; Data Analytics Essentials. AI Prompt Engineering, Dubai Future Foundation.</p>
+    </div>
+
+    <div class="split rev">
+      <div class="split-media"><img src="img/sun-figure.webp" alt=""></div>
+      <div class="split-text">
+        <p class="sec-label">Technical builder</p>
+        <h3>Pipelines, quietly assembled</h3>
+        <p>Built a product scraping, Arabic translation, and noon.com upload pipeline as a freelance engagement. Maintains an open-source career-ops automation stack for the job search itself.</p>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="label">Stack</div>
-    <div class="stack">
-      <span class="chip">CRM / ERP</span>
-      <span class="chip">Python</span>
-      <span class="chip">SQL</span>
-      <span class="chip">Docker</span>
-      <span class="chip">MQL5</span>
-      <span class="chip">Linux / Ubuntu</span>
-      <span class="chip">Prompt Engineering</span>
+  <section class="pad">
+    <p class="sec-label">Certifications</p>
+    <h2>What has been formally proven.</h2>
+    <div class="grid4">
+      <div class="cell">
+        <p class="num">I</p>
+        <h4>Cybersecurity</h4>
+        <p>Cisco Networking Academy</p>
+      </div>
+      <div class="cell">
+        <p class="num">II</p>
+        <h4>Data analytics</h4>
+        <p>Cisco Networking Academy — SQL, Python, Tableau, ETL</p>
+      </div>
+      <div class="cell">
+        <p class="num">III</p>
+        <h4>AI prompt engineering</h4>
+        <p>Dubai Future Foundation</p>
+      </div>
+      <div class="cell">
+        <p class="num">IV</p>
+        <h4>Career-ops</h4>
+        <p>Open-source automation, self-maintained</p>
+      </div>
     </div>
   </section>
-
-  <section>
-    <div class="label">Otherwise</div>
-    <p class="quote">Sudoku at expert level. A Sufi–Buddhist meditation practice. A Wednesday philosophy meetup called Spiritual Tea. An honest ledger, kept privately, of what a life is built from.</p>
-  </section>
-
-  <footer>
-    <p>GitHub — <a href="https://github.com/dxbdxb416">github.com/dxbdxb416</a><br>
-    Contact — <a href="mailto:dxbdxb416@gmail.com">dxbdxb416@gmail.com</a></p>
-  </footer>
 
 </div>
+
+<div class="bleed"><img src="img/panther-fog.webp" alt=""></div>
+
+<div class="wrap">
+  <section class="pad" id="philosophy">
+    <p class="sec-label">Philosophy</p>
+    <h2>What I trace, beneath the visible.</h2>
+    <p class="lede">An inductive framework built from lived experience rather than inherited doctrine — a firm belief in an unnamed Creator, and a honeycomb model of layered existence.</p>
+
+    <div style="margin: 56px 0;">
+      <blockquote>"خلها تمشي" — not surrender, but timing chosen deliberately.</blockquote>
+      <p class="quote-attr">A working philosophy</p>
+    </div>
+
+    <div class="events">
+      <div class="event-row">
+        <p class="event-mark">I.</p>
+        <div>
+          <h4>الفراغ الحامل</h4>
+          <p>The bearing void — the ground of existence conceived not as absence, but as that which carries and permits form.</p>
+        </div>
+      </div>
+      <div class="event-row">
+        <p class="event-mark">II.</p>
+        <div>
+          <h4>المستفيد الأول</h4>
+          <p>The first beneficiary — locating the origin point of benefit within the generative order of things.</p>
+        </div>
+      </div>
+      <div class="event-row">
+        <p class="event-mark">III.</p>
+        <div>
+          <h4>الرباعية الخالقة</h4>
+          <p>The generative quartet — four interacting principles proposed as the structural core of creation itself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="cta-band">
+  <div class="cta-band-bg"><img src="img/sun-figure.webp" alt=""></div>
+  <div class="wrap cta-content">
+    <p class="sec-label">Correspondence</p>
+    <h2>Reach across.</h2>
+    <p class="lede">For work, dialogue, or Wednesday's Spiritual Tea.</p>
+    <div class="contact-links">
+      <a href="mailto:hello@d3moo.is-a.dev">Email</a>
+      <a href="https://github.com/dxbdxb416" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>D3 · Dubai</h5>
+        <p style="max-width: 32ch;">B2B sales professional and self-taught technical builder, tracing a parallel philosophy of layered existence.</p>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#">Work</a>
+        <a href="#">Writings — soon</a>
+      </div>
+      <div>
+        <h5>Correspondence</h5>
+        <a href="mailto:hello@d3moo.is-a.dev">Email</a>
+        <a href="https://github.com/dxbdxb416" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">d3moo.is-a.dev</div>
+  </div>
+</footer>
+
 </body>
 </html>
