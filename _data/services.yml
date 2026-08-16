@@ -28,6 +28,7 @@ noon-amazon:
         body: "تحسين صفحات المنتجات، إدارة العروض والإعلانات، وتحليل المنافسين والأداء لزيادة مبيعاتك باستمرار."
       - h2: "شروط البيع والمستندات المطلوبة"
         body: "نوضح لك المستندات والشروط التي تطلبها كل منصة لفتح حساب بائع (سجل تجاري، حساب بنكي، معلومات ضريبية)، ونجهزها معك قبل التقديم لتفادي أي تأخير."
+    quote_link_text: "اطلب عرض سعر"
   en:
     primary_keyword: "noon and Amazon store management"
     secondary_keywords:
@@ -52,6 +53,7 @@ noon-amazon:
         body: "Optimizing product pages, managing promotions and ads, and analyzing competitors and performance to keep growing your sales."
       - h2: "Seller Requirements and Documents"
         body: "We explain the documents and requirements each platform asks for when opening a seller account (trade license, bank account, tax information), and help you prepare them before applying to avoid delays."
+    quote_link_text: "Request a quote"
 
 accounting-erp:
   order: 2
