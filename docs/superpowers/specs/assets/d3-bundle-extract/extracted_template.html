@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="da177a71-2fce-4d57-aac0-f0a994d120b1"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("28592396-06da-4f9d-9b0a-02bda905d74d") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("e637ac49-cdb4-4816-9578-fefcedca7168") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("272d482f-5d68-49f9-8ef0-7a0d0a21d26d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("6e6b6b8e-9749-448c-aca2-0ff9db625f41") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* latin */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("ac7213ed-7e55-403b-b46f-cf3478980085") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("91606a78-8d37-4dff-ba01-71cf7d1e5010") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* latin */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("17e0a217-6ded-4412-8224-a9113a815bdd") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("9fa2b05a-118c-44a3-b616-4b33b3fa1373") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* latin */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("929ec0a4-4f62-495d-8ee9-aff5c80cc8c1") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("0325e88e-6015-4e69-8c7d-0116f35dbf1f") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* latin */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("5b97afd8-bff8-4bc0-b0e5-3ce15fc2388d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  body { margin: 0; background: #F6F7F9; }
+  a { color: #0F1B3D; }
+  a:hover { color: #2952E3; }
+  ::selection { background: #D8E1FB; }
+</style>
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "30min", {origin:"https://app.cal.com"});
+Cal.config = Cal.config || {};
+Cal.config.forwardQueryParams = true;
+  Cal.ns["30min"]("floatingButton", {"calLink":"d3moo/30min","buttonText":"Book my Cal","buttonColor":"#2952E3","buttonTextColor":"#FFFFFF","buttonPosition":"bottom-left","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}});
+  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+</helmet>
+<div style="font-family: Tajawal, system-ui, sans-serif; background: #F6F7F9; color: #0F1B3D; -webkit-font-smoothing: antialiased">
+
+<div dir="rtl" style="display: {{ arDisplay }}; position: relative">
+  <nav style="position: sticky; top: 0; z-index: 40; background: #0F1B3D; color: #F3F5F8">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 0 28px; height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px">
+      <div style="display: flex; align-items: baseline; gap: 10px">
+        <img src="fe925289-ccef-42ee-9a11-0bfd75aa09dd" alt="D3" style="height: 26px; width: auto; display: block">
+        <span style="font-size: 11px; letter-spacing: 0.16em; color: #2952E3; text-transform: uppercase">Digital Business Solutions</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px; font-size: 15px">
+        <a href="#services-b" style="text-decoration: none; color: #C7CFDD" style-hover="color: #FFFFFF">الخدمات</a>
+        <a href="#pricing-b" style="text-decoration: none; color: #C7CFDD" style-hover="color: #FFFFFF">المنتجات</a>
+        <a href="#contact-b" style="text-decoration: none; color: #C7CFDD" style-hover="color: #FFFFFF">تواصل</a>
+        <button type="button" sc-camel-on-click="{{ toggle }}" style="font-family: Tajawal, sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: rgba(255,255,255,0.06); border: 1px solid #2A3A63; color: #FFFFFF; border-radius: 999px; padding: 0 16px; height: 38px; min-height: 38px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; cursor: pointer; transition: background 240ms ease, border-color 240ms ease" style-hover="background: #2952E3; border-color: #2952E3; color: #FFFFFF"><svg sc-camel-view-box="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg><span>English</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section style="background: #FFFFFF; border-bottom: 1px solid #E3E7EE">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 72px 28px 76px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 44px 60px; align-items: center">
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; background: #E5EAFB; color: #2143C9; font-size: 13px; font-weight: 500; padding: 7px 13px; border-radius: 999px">خبرة ٨ سنوات · الإمارات والسعودية</span>
+        <h1 style="margin: 0; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.5; font-weight: 700; letter-spacing: -0.01em; text-wrap: pretty">نساعد الشركات الصغيرة والمتوسطة تبيع أونلاين، وتنظّم مبيعاتها، وتربط أنظمتها ببعض.</h1>
+        <p style="margin: 0; font-size: 16px; line-height: 1.95; color: #5A6478; max-width: 520px; text-wrap: pretty">خبرة ٨ سنوات في بيع حلول ERP وCRM في الإمارات، مع خبرة تقنية عملية في التجارة الإلكترونية، أتمتة الكتالوجات، ونقل البيانات بين الأنظمة.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a href="https://wa.me/971509733299" style="display: inline-flex; align-items: center; background: #0F1B3D; color: #FFFFFF; text-decoration: none; padding: 15px 26px; font-size: 15px; font-weight: 700; border-radius: 3px; min-height: 44px; box-sizing: border-box" style-hover="background: #1C2C55">تواصل عبر WhatsApp</a>
+          <a href="#pricing-b" style="display: inline-flex; align-items: center; padding: 15px 22px; font-size: 15px; color: #0F1B3D; text-decoration: none; border: 1px solid #CBD3E0; border-radius: 3px; background: #FFFFFF; min-height: 44px; box-sizing: border-box" style-hover="border-color: #2952E3; color: #2143C9">شوف المنتجات</a>
+        </div>
+      </div>
+      <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center">
+        <span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">صورة الهيدر / لقطة لوحة</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services-b" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px">
+      <h2 style="margin: 0; font-size: 26px; font-weight: 800">الخدمات</h2>
+      <div style="width: 44px; height: 3px; background: #2952E3"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: 18px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <button type="button" sc-camel-on-click="{{ setSvc0 }}" style="font-family: Tajawal, sans-serif; text-align: inherit; display: flex; align-items: center; gap: 14px; background: {{ svc0Bg }}; color: {{ svc0Color }}; border: 1px solid #E3E7EE; border-radius: 5px; padding: 18px 20px; cursor: pointer; min-height: 44px">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #E5EAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><span style="width: 11px; height: 11px; border-radius: 50%; background: #2952E3"></span></span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 17px; font-weight: 700">نون وأمازون</span>
+            <span style="font-size: 11px; letter-spacing: 0.12em; color: {{ svc0Sub }}; text-transform: uppercase">01 · Marketplace</span>
+          </span>
+        </button>
+        <button type="button" sc-camel-on-click="{{ setSvc1 }}" style="font-family: Tajawal, sans-serif; text-align: inherit; display: flex; align-items: center; gap: 14px; background: {{ svc1Bg }}; color: {{ svc1Color }}; border: 1px solid #E3E7EE; border-radius: 5px; padding: 18px 20px; cursor: pointer; min-height: 44px">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #E5EAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><span style="width: 11px; height: 11px; background: #2952E3"></span></span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 17px; font-weight: 700">إعداد وربط</span>
+            <span style="font-size: 11px; letter-spacing: 0.12em; color: {{ svc1Sub }}; text-transform: uppercase">02 · CRM</span>
+          </span>
+        </button>
+        <button type="button" sc-camel-on-click="{{ setSvc2 }}" style="font-family: Tajawal, sans-serif; text-align: inherit; display: flex; align-items: center; gap: 14px; background: {{ svc2Bg }}; color: {{ svc2Color }}; border: 1px solid #E3E7EE; border-radius: 5px; padding: 18px 20px; cursor: pointer; min-height: 44px">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #E5EAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><span style="width: 11px; height: 11px; background: #2952E3; transform: rotate(45deg)"></span></span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 17px; font-weight: 700">أتمتة العمليات</span>
+            <span style="font-size: 11px; letter-spacing: 0.12em; color: {{ svc2Sub }}; text-transform: uppercase">03 · Automation</span>
+          </span>
+        </button>
+        <button type="button" sc-camel-on-click="{{ setSvc3 }}" style="font-family: Tajawal, sans-serif; text-align: inherit; display: flex; align-items: center; gap: 14px; background: {{ svc3Bg }}; color: {{ svc3Color }}; border: 1px solid #E3E7EE; border-radius: 5px; padding: 18px 20px; cursor: pointer; min-height: 44px">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #E5EAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><span style="width: 11px; height: 11px; border: 2px solid #2952E3; box-sizing: border-box"></span></span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 17px; font-weight: 700">مواقع</span>
+            <span style="font-size: 11px; letter-spacing: 0.12em; color: {{ svc3Sub }}; text-transform: uppercase">04 · Websites</span>
+          </span>
+        </button>
+      </div>
+      <div style="display: {{ svc0Display }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 34px 30px; box-shadow: 0 1px 2px rgba(15,27,61,0.04); display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+            <h3 style="margin: 0; font-size: 24px; font-weight: 800">نون وأمازون</h3>
+            <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">Marketplace</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 16px"><div style="display: flex; flex-direction: column; gap: 5px"><h4 style="margin: 0; font-size: 15px; font-weight: 700">إطلاق</h4><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">من فتح حساب البائع والتحقق، إلى إعداد المتجر ورفع الكتالوج وتجهيز المنتجات للبيع — عربي وإنجليزي، صور بمواصفات المنصة، SKU وفاريانتس.</p></div><div style="display: flex; flex-direction: column; gap: 5px"><h4 style="margin: 0; font-size: 15px; font-weight: 700">إدارة شهرية</h4><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">تحديث الأسعار والمخزون، متابعة الطلبات والمرتجعات، ومراقبة أداء المنتجات بتقرير شهري.</p></div><div style="display: flex; flex-direction: column; gap: 5px"><h4 style="margin: 0; font-size: 15px; font-weight: 700">نمو</h4><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">تحسين صفحات المنتجات، العروض والإعلانات، وتحليل المنافسين والأداء.</p></div></div>
+            <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center"><span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">لقطة متجر نون / أمازون</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: {{ svc1Display }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 34px 30px; box-shadow: 0 1px 2px rgba(15,27,61,0.04); display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+            <h3 style="margin: 0; font-size: 24px; font-weight: 800">إعداد وربط</h3>
+            <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">CRM</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 16px"><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">إعداد Zoho أو HubSpot وتنظيم العملاء والـLeads وقمع المبيعات.</p><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">أتمتة المتابعة وإنشاء لوحات تقارير تساعدك تعرف أين تذهب مبيعاتك.</p><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">ربط الـCRM مع أدوات وقنوات العمل التي تستخدمها الشركة.</p></div>
+            <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center"><span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">لقطة لوحة CRM</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: {{ svc2Display }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 34px 30px; box-shadow: 0 1px 2px rgba(15,27,61,0.04); display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+            <h3 style="margin: 0; font-size: 24px; font-weight: 800">أتمتة العمليات</h3>
+            <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">Business Automation</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 16px"><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">ربط المتجر والـCRM والأنظمة مع بعضها.</p><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">نقل البيانات تلقائيًا بين الأنظمة وتقليل العمل اليدوي.</p><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">أتمتة الـWorkflows والإشعارات والتقارير عبر WhatsApp والبريد الإلكتروني وغيرها.</p></div>
+            <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center"><span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">مخطط أتمتة</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: {{ svc3Display }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 34px 30px; box-shadow: 0 1px 2px rgba(15,27,61,0.04); display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+            <h3 style="margin: 0; font-size: 24px; font-weight: 800">مواقع</h3>
+            <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">Websites</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 16px"><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">متاجر إلكترونية على Shopify.</p><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">مواقع شركات وLanding Pages باستخدام Next.js.</p><p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">ربط الدفع والشحن وWhatsApp والتحليلات حسب احتياج المشروع.</p></div>
+            <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center"><span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">لقطة موقع</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing-b" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px">
+      <h2 style="margin: 0; font-size: 26px; font-weight: 800">المنتجات</h2>
+      <div style="width: 44px; height: 3px; background: #2952E3"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px">
+      <article style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 30px 26px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 1px 2px rgba(15,27,61,0.04)">
+        <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">ERP</span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">برامج حسابية وإدارة الشركة</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">برنامج واحد يجمع الحسابات والفواتير والمخزون والمشتريات، بدل ملفات الإكسل المتفرقة. نساعدك تختار البرنامج المناسب لحجم شركتك ونشرف على التركيب والتدريب. (يُعرف تقنيًا بـ ERP)</p>
+        <div style="display: flex; flex-direction: column"><span style="font-size: 11px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid #E3E7EE">الشركات المتوفرة</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Odoo</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Zoho</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>SAP Business One</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Oracle NetSuite</span></div>
+        <a href="https://wa.me/971509733299" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; color: #2952E3; text-decoration: none; font-size: 15px; font-weight: 700; min-height: 44px" style-hover="color: #0F1B3D">اطلب عرض سعر ←</a>
+      </article>
+      <article style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 30px 26px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 1px 2px rgba(15,27,61,0.04)">
+        <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">CRM</span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">برامج إدارة العملاء والمبيعات</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">برنامج يحفظ كل عميل ومكالمة وعرض سعر في مكان واحد، ويذكّر فريقك بالمتابعة ويعطيك تقرير عن المبيعات. (يُعرف تقنيًا بـ CRM)</p>
+        <div style="display: flex; flex-direction: column"><span style="font-size: 11px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid #E3E7EE">الشركات المتوفرة</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Zoho CRM</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>HubSpot</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Salesforce</span></div>
+        <a href="https://wa.me/971509733299" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; color: #2952E3; text-decoration: none; font-size: 15px; font-weight: 700; min-height: 44px" style-hover="color: #0F1B3D">اطلب عرض سعر ←</a>
+      </article>
+      <article style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 30px 26px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 1px 2px rgba(15,27,61,0.04)">
+        <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">HR</span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">برامج إدارة الموظفين والرواتب</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">برنامج ينظّم ملفات الموظفين والرواتب والإجازات والحضور والانصراف، ويصدر الكشوفات تلقائيًا. (يُعرف تقنيًا بـ HR)</p>
+        <div style="display: flex; flex-direction: column"><span style="font-size: 11px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid #E3E7EE">الشركات المتوفرة</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Zoho People</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Bayzat</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>ZenHR</span></div>
+        <a href="https://wa.me/971509733299" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; color: #2952E3; text-decoration: none; font-size: 15px; font-weight: 700; min-height: 44px" style-hover="color: #0F1B3D">اطلب عرض سعر ←</a>
+      </article>
+    </div>
+    <p style="margin: 24px 0 0; font-size: 14px; line-height: 1.9; color: #7B869B; max-width: 720px; text-wrap: pretty">لكل برنامج أكثر من شركة مزوّدة، والسعر يعتمد على البرنامج وعدد المستخدمين وحجم العمل المطلوب. تواصل معنا ونرشّح لك الأنسب بدون التزام.</p>
+  </section>
+
+  <section id="stack-b" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center; margin-bottom: 26px">
+      <span style="font-size: 12px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase">الأدوات</span>
+      <h2 style="margin: 0; font-size: clamp(24px, 3vw, 34px); font-weight: 800; line-height: 1.35; max-width: 760px; text-wrap: pretty">المنصات والأنظمة التي نشتغل عليها</h2>
+      <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; max-width: 640px; text-wrap: pretty">نختار لك الأداة المناسبة من بين أدوات مجرّبة، ونتولى الإعداد والربط والتدريب.</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 26px">
+        <button type="button" sc-camel-on-click="{{ setStack0 }}" style="font-family: Tajawal, sans-serif; background: {{ stack0Bg }}; color: {{ stack0Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">المتاجر والمنصات</button>
+        <button type="button" sc-camel-on-click="{{ setStack1 }}" style="font-family: Tajawal, sans-serif; background: {{ stack1Bg }}; color: {{ stack1Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">برامج حسابية</button>
+        <button type="button" sc-camel-on-click="{{ setStack2 }}" style="font-family: Tajawal, sans-serif; background: {{ stack2Bg }}; color: {{ stack2Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">إدارة العملاء</button>
+        <button type="button" sc-camel-on-click="{{ setStack3 }}" style="font-family: Tajawal, sans-serif; background: {{ stack3Bg }}; color: {{ stack3Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">الموظفين والرواتب</button>
+        <button type="button" sc-camel-on-click="{{ setStack4 }}" style="font-family: Tajawal, sans-serif; background: {{ stack4Bg }}; color: {{ stack4Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">الأتمتة والربط</button>
+    </div>
+      <div style="display: {{ stack0Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Amazon</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Noon</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Shopify</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Salla</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">WooCommerce</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zid</span>
+        </div>
+        </div>
+      </div>
+      <div style="display: {{ stack1Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Odoo</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zoho Books</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">SAP Business One</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Oracle NetSuite</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">QuickBooks</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Xero</span>
+        </div>
+        </div>
+      </div>
+      <div style="display: {{ stack2Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zoho CRM</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">HubSpot</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Salesforce</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Pipedrive</span>
+        </div>
+        </div>
+      </div>
+      <div style="display: {{ stack3Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zoho People</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Bayzat</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">ZenHR</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Odoo HR</span>
+        </div>
+        </div>
+      </div>
+      <div style="display: {{ stack4Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zapier</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Make</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">n8n</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">WhatsApp API</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Google Sheets</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">شعار</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">REST APIs</span>
+        </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="process-b" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center; margin-bottom: 32px">
+      <span style="font-size: 12px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase">كيف نشتغل</span>
+      <h2 style="margin: 0; font-size: clamp(24px, 3vw, 34px); font-weight: 800; line-height: 1.35; max-width: 720px; text-wrap: pretty">أربع مراحل واضحة من أول اجتماع إلى تشغيل النظام</h2>
+      <div style="width: 44px; height: 3px; background: #2952E3"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: stretch">
+      <article style="position: relative; overflow: hidden; background: #FFFFFF; color: #0F1B3D; border: 1px solid #E3E7EE; border-radius: 6px; padding: 30px 26px 32px; display: flex; flex-direction: column; gap: 16px; transition: transform 380ms cubic-bezier(0.2,0.8,0.2,1), background 380ms ease, color 380ms ease, border-color 380ms ease, box-shadow 380ms ease" style-hover="transform: translateY(-8px); background: #0F1B3D; color: #FFFFFF; border-color: #0F1B3D; box-shadow: 0 24px 48px rgba(15,27,61,0.22)">
+        <span style="position: absolute; top: -18px; inset-inline-end: 6px; font-size: 92px; font-weight: 800; line-height: 1; color: currentColor; opacity: 0.07; pointer-events: none">01</span>
+        <span style="width: 40px; height: 3px; background: #2952E3"></span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: inherit">الدراسة</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>فهم احتياج الشركة</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>مراجعة الوضع الحالي</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>ترشيح الحل المناسب</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>تقدير التكلفة والمدة</span></li></ul>
+      </article>
+      <article style="position: relative; overflow: hidden; background: #FFFFFF; color: #0F1B3D; border: 1px solid #E3E7EE; border-radius: 6px; padding: 30px 26px 32px; display: flex; flex-direction: column; gap: 16px; transition: transform 380ms cubic-bezier(0.2,0.8,0.2,1), background 380ms ease, color 380ms ease, border-color 380ms ease, box-shadow 380ms ease" style-hover="transform: translateY(-8px); background: #0F1B3D; color: #FFFFFF; border-color: #0F1B3D; box-shadow: 0 24px 48px rgba(15,27,61,0.22)">
+        <span style="position: absolute; top: -18px; inset-inline-end: 6px; font-size: 92px; font-weight: 800; line-height: 1; color: currentColor; opacity: 0.07; pointer-events: none">02</span>
+        <span style="width: 40px; height: 3px; background: #2952E3"></span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: inherit">الإعداد</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>تجهيز الحسابات والبيانات</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>تصميم سير العمل</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>ضبط الصلاحيات</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>ربط القنوات</span></li></ul>
+      </article>
+      <article style="position: relative; overflow: hidden; background: #FFFFFF; color: #0F1B3D; border: 1px solid #E3E7EE; border-radius: 6px; padding: 30px 26px 32px; display: flex; flex-direction: column; gap: 16px; transition: transform 380ms cubic-bezier(0.2,0.8,0.2,1), background 380ms ease, color 380ms ease, border-color 380ms ease, box-shadow 380ms ease" style-hover="transform: translateY(-8px); background: #0F1B3D; color: #FFFFFF; border-color: #0F1B3D; box-shadow: 0 24px 48px rgba(15,27,61,0.22)">
+        <span style="position: absolute; top: -18px; inset-inline-end: 6px; font-size: 92px; font-weight: 800; line-height: 1; color: currentColor; opacity: 0.07; pointer-events: none">03</span>
+        <span style="width: 40px; height: 3px; background: #2952E3"></span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: inherit">التنفيذ</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>التركيب والربط</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>نقل البيانات</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>اختبار كامل</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>تعديل حسب الملاحظات</span></li></ul>
+      </article>
+      <article style="position: relative; overflow: hidden; background: #FFFFFF; color: #0F1B3D; border: 1px solid #E3E7EE; border-radius: 6px; padding: 30px 26px 32px; display: flex; flex-direction: column; gap: 16px; transition: transform 380ms cubic-bezier(0.2,0.8,0.2,1), background 380ms ease, color 380ms ease, border-color 380ms ease, box-shadow 380ms ease" style-hover="transform: translateY(-8px); background: #0F1B3D; color: #FFFFFF; border-color: #0F1B3D; box-shadow: 0 24px 48px rgba(15,27,61,0.22)">
+        <span style="position: absolute; top: -18px; inset-inline-end: 6px; font-size: 92px; font-weight: 800; line-height: 1; color: currentColor; opacity: 0.07; pointer-events: none">04</span>
+        <span style="width: 40px; height: 3px; background: #2952E3"></span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: inherit">التشغيل</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>تدريب الفريق</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>متابعة أول شهر</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>تقارير دورية</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>دعم وصيانة</span></li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; background: #0F1B3D; color: #FFFFFF; border-radius: 8px; padding: 30px 32px; position: relative">
+      <span style="width: 96px; height: 96px; border-radius: 50%; flex-shrink: 0; border: 3px solid #2952E3; background: repeating-linear-gradient(135deg, #1B2A52 0 8px, #16233F 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 10px; letter-spacing: 0.08em; color: #93A0B5; text-transform: uppercase; text-align: center; padding: 0 8px">صورة</span></span>
+      <span style="display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 200px">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; color: #6E9BFF; text-transform: uppercase">تحتاج مساعدة؟</span>
+        <span style="font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; line-height: 1.3">استشارة مجانية — نحدد احتياجك ونرشّح الحل</span>
+      </span>
+      <a href="https://cal.com/d3moo/30min" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; background: #2952E3; color: #FFFFFF; text-decoration: none; padding: 14px 26px; border-radius: 999px; font-size: 15px; font-weight: 700; min-height: 44px; box-sizing: border-box; transition: background 320ms ease, transform 320ms ease" style-hover="background: #4A6EF0; color: #FFFFFF; transform: translateY(-2px)">ابدأ الآن</a>
+    </div>
+  </section>
+
+  <section id="contact-b" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 84px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px 56px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px">
+          <h2 style="margin: 0; font-size: 26px; font-weight: 800">تواصل</h2>
+          <div style="width: 44px; height: 3px; background: #2952E3"></div>
+        </div>
+        <a href="https://wa.me/971509733299" style="display: flex; align-items: center; gap: 16px; text-decoration: none; color: #0F1B3D; background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 20px; min-height: 44px; transition: border-color 260ms ease, transform 260ms ease, box-shadow 260ms ease" style-hover="border-color: #2952E3; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(41,82,227,0.12); color: #0F1B3D">
+          <span style="width: 40px; height: 40px; border-radius: 50%; background: #E5EAFB; color: #2952E3; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><svg sc-camel-view-box="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.257.59 4.463 1.712 6.408L3.2 28.8l6.56-1.712a12.74 12.74 0 0 0 6.244 1.6h.005c7.06 0 12.8-5.74 12.8-12.8s-5.74-12.688-12.805-12.688Zm0 23.36h-.004a10.6 10.6 0 0 1-5.4-1.48l-.388-.23-4.03 1.052 1.075-3.93-.252-.404a10.56 10.56 0 0 1-1.62-5.64c0-5.86 4.77-10.63 10.63-10.63 2.84 0 5.51 1.108 7.518 3.117a10.56 10.56 0 0 1 3.112 7.52c0 5.86-4.77 10.625-10.64 10.625Zm5.83-7.96c-.32-.16-1.89-.932-2.183-1.04-.293-.107-.507-.16-.72.16-.213.32-.826 1.04-1.013 1.253-.187.213-.373.24-.693.08-.32-.16-1.35-.497-2.57-1.586-.95-.847-1.592-1.894-1.779-2.214-.186-.32-.02-.493.14-.652.144-.143.32-.373.48-.56.16-.187.213-.32.32-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.735-.986-2.375-.26-.624-.524-.54-.72-.55l-.613-.01c-.213 0-.56.08-.853.4-.293.32-1.12 1.093-1.12 2.667s1.147 3.093 1.307 3.307c.16.213 2.257 3.445 5.47 4.83.765.33 1.362.527 1.827.674.767.244 1.465.21 2.017.127.615-.092 1.89-.773 2.157-1.52.267-.746.267-1.386.187-1.52-.08-.133-.293-.213-.613-.373Z"></path></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase">واتساب</span>
+            <span dir="ltr" style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">+971 509733299</span>
+          </span>
+        </a>
+        <a href="mailto:d3@d3moo.is-a.dev" style="display: flex; align-items: center; gap: 16px; text-decoration: none; color: #0F1B3D; background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 20px; min-height: 44px; transition: border-color 260ms ease, transform 260ms ease, box-shadow 260ms ease" style-hover="border-color: #2952E3; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(41,82,227,0.12); color: #0F1B3D">
+          <span style="width: 40px; height: 40px; border-radius: 50%; background: #E5EAFB; color: #2952E3; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><svg sc-camel-view-box="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect><path d="m3 6 9 6 9-6"></path></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase">البريد</span>
+            <span dir="ltr" style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em; overflow-wrap: anywhere">d3@d3moo.is-a.dev</span>
+          </span>
+        </a>
+        <span style="font-size: 13px; color: #8A93A6; padding-top: 2px">متاحون من الأحد إلى الخميس · نرد خلال يوم عمل.</span>
+      </div>
+      <form sc-camel-on-submit="{{ onSubmit }}" style="display: flex; flex-direction: column; gap: 13px; background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 28px 26px; box-shadow: 0 1px 2px rgba(22,35,63,0.04); position: relative">
+        <input type="text" placeholder="الاسم" style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; min-height: 44px; box-sizing: border-box">
+        <input type="text" placeholder="اسم الشركة" style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; min-height: 44px; box-sizing: border-box">
+        <input type="text" placeholder="رقم WhatsApp" style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; min-height: 44px; box-sizing: border-box">
+        <sc-raw-select style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; min-height: 44px; box-sizing: border-box"><option value="">إيش تحتاج؟</option><option>نون وأمازون — إطلاق وإدارة</option><option>برامج حسابية وإدارة الشركة</option><option>برامج إدارة العملاء والمبيعات</option><option>برامج إدارة الموظفين والرواتب</option><option>أتمتة العمليات والربط</option><option>موقع أو متجر إلكتروني</option><option>غير ذلك / مو متأكد</option></sc-raw-select>
+        <textarea rows="3" placeholder="ملاحظة (اختياري)" style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; resize: vertical; box-sizing: border-box"></textarea>
+        <button type="submit" style="font-family: Tajawal, sans-serif; background: #0F1B3D; color: #FFFFFF; border: none; padding: 15px 20px; font-size: 15px; font-weight: 700; border-radius: 4px; cursor: pointer; min-height: 44px" style-hover="background: #2952E3; color: #FFFFFF">أرسل الطلب</button>
+        <span style="font-size: 13px; color: #8A93A6">نرد خلال يوم عمل.</span>
+      </form>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #E3E7EE; background: #F6F7F9">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 26px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+      <img src="55bede7a-afcc-4dc0-ba46-33b09a3e3ed3" alt="D3" style="height: 20px; width: auto; display: block">
+      <span style="font-size: 13px; color: #8A93A6">© 2026 D3 · جميع الحقوق محفوظة</span>
+    </div>
+  </footer>
+</div>
+
+<div dir="ltr" style="display: {{ enDisplay }}">
+  <nav style="position: sticky; top: 0; z-index: 40; background: #0F1B3D; color: #F3F5F8">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 0 28px; height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px">
+      <div style="display: flex; align-items: baseline; gap: 10px">
+        <img src="fe925289-ccef-42ee-9a11-0bfd75aa09dd" alt="D3" style="height: 26px; width: auto; display: block">
+        <span style="font-size: 11px; letter-spacing: 0.16em; color: #2952E3; text-transform: uppercase">Digital Business Solutions</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px; font-size: 15px">
+        <a href="#services-en" style="text-decoration: none; color: #C7CFDD" style-hover="color: #FFFFFF">Services</a>
+        <a href="#pricing-en" style="text-decoration: none; color: #C7CFDD" style-hover="color: #FFFFFF">Products</a>
+        <a href="#contact-en" style="text-decoration: none; color: #C7CFDD" style-hover="color: #FFFFFF">Contact</a>
+        <button type="button" sc-camel-on-click="{{ toggle }}" style="font-family: Tajawal, sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: rgba(255,255,255,0.06); border: 1px solid #2A3A63; color: #FFFFFF; border-radius: 999px; padding: 0 16px; height: 38px; min-height: 38px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; cursor: pointer; transition: background 240ms ease, border-color 240ms ease" style-hover="background: #2952E3; border-color: #2952E3; color: #FFFFFF"><svg sc-camel-view-box="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg><span>العربية</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section style="background: #FFFFFF; border-bottom: 1px solid #E3E7EE">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 72px 28px 76px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 44px 60px; align-items: center">
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; background: #E5EAFB; color: #2143C9; font-size: 13px; font-weight: 500; padding: 7px 13px; border-radius: 999px">8 years of experience · UAE &amp; KSA</span>
+        <h1 style="margin: 0; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.35; font-weight: 700; letter-spacing: -0.01em; text-wrap: pretty">We help small and mid-sized businesses sell online, organize their sales, and connect their systems together.</h1>
+        <p style="margin: 0; font-size: 16px; line-height: 1.85; color: #5A6478; max-width: 520px; text-wrap: pretty">8 years selling ERP and CRM solutions in the UAE, with hands-on technical experience in e-commerce, catalog automation, and data migration between systems.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a href="https://wa.me/971509733299" style="display: inline-flex; align-items: center; background: #0F1B3D; color: #FFFFFF; text-decoration: none; padding: 15px 26px; font-size: 15px; font-weight: 700; border-radius: 3px; min-height: 44px; box-sizing: border-box" style-hover="background: #1C2C55">Talk on WhatsApp</a>
+          <a href="#pricing-en" style="display: inline-flex; align-items: center; padding: 15px 22px; font-size: 15px; color: #0F1B3D; text-decoration: none; border: 1px solid #CBD3E0; border-radius: 3px; background: #FFFFFF; min-height: 44px; box-sizing: border-box" style-hover="border-color: #2952E3; color: #2143C9">See products</a>
+        </div>
+      </div>
+      <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center">
+        <span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">Hero image / dashboard shot</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services-en" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px">
+      <h2 style="margin: 0; font-size: 26px; font-weight: 800">Services</h2>
+      <div style="width: 44px; height: 3px; background: #2952E3"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: 18px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <button type="button" sc-camel-on-click="{{ setSvc0 }}" style="font-family: Tajawal, sans-serif; text-align: inherit; display: flex; align-items: center; gap: 14px; background: {{ svc0Bg }}; color: {{ svc0Color }}; border: 1px solid #E3E7EE; border-radius: 5px; padding: 18px 20px; cursor: pointer; min-height: 44px">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #E5EAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><span style="width: 11px; height: 11px; border-radius: 50%; background: #2952E3"></span></span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 17px; font-weight: 700">Noon &amp; Amazon</span>
+            <span style="font-size: 11px; letter-spacing: 0.12em; color: {{ svc0Sub }}; text-transform: uppercase">01 · Marketplace</span>
+          </span>
+        </button>
+        <button type="button" sc-camel-on-click="{{ setSvc1 }}" style="font-family: Tajawal, sans-serif; text-align: inherit; display: flex; align-items: center; gap: 14px; background: {{ svc1Bg }}; color: {{ svc1Color }}; border: 1px solid #E3E7EE; border-radius: 5px; padding: 18px 20px; cursor: pointer; min-height: 44px">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #E5EAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><span style="width: 11px; height: 11px; background: #2952E3"></span></span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 17px; font-weight: 700">Setup &amp; integration</span>
+            <span style="font-size: 11px; letter-spacing: 0.12em; color: {{ svc1Sub }}; text-transform: uppercase">02 · CRM</span>
+          </span>
+        </button>
+        <button type="button" sc-camel-on-click="{{ setSvc2 }}" style="font-family: Tajawal, sans-serif; text-align: inherit; display: flex; align-items: center; gap: 14px; background: {{ svc2Bg }}; color: {{ svc2Color }}; border: 1px solid #E3E7EE; border-radius: 5px; padding: 18px 20px; cursor: pointer; min-height: 44px">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #E5EAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><span style="width: 11px; height: 11px; background: #2952E3; transform: rotate(45deg)"></span></span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 17px; font-weight: 700">Operations automation</span>
+            <span style="font-size: 11px; letter-spacing: 0.12em; color: {{ svc2Sub }}; text-transform: uppercase">03 · Automation</span>
+          </span>
+        </button>
+        <button type="button" sc-camel-on-click="{{ setSvc3 }}" style="font-family: Tajawal, sans-serif; text-align: inherit; display: flex; align-items: center; gap: 14px; background: {{ svc3Bg }}; color: {{ svc3Color }}; border: 1px solid #E3E7EE; border-radius: 5px; padding: 18px 20px; cursor: pointer; min-height: 44px">
+          <span style="width: 34px; height: 34px; border-radius: 50%; background: #E5EAFB; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><span style="width: 11px; height: 11px; border: 2px solid #2952E3; box-sizing: border-box"></span></span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 17px; font-weight: 700">Websites</span>
+            <span style="font-size: 11px; letter-spacing: 0.12em; color: {{ svc3Sub }}; text-transform: uppercase">04 · Websites</span>
+          </span>
+        </button>
+      </div>
+      <div style="display: {{ svc0Display }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 34px 30px; box-shadow: 0 1px 2px rgba(15,27,61,0.04); display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+            <h3 style="margin: 0; font-size: 24px; font-weight: 800">Noon &amp; Amazon</h3>
+            <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">Marketplace</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 16px"><div style="display: flex; flex-direction: column; gap: 5px"><h4 style="margin: 0; font-size: 15px; font-weight: 700">Launch</h4><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">From seller account opening and verification to store setup, catalog upload, and getting products ready to sell — Arabic and English, platform-spec images, SKUs and variants.</p></div><div style="display: flex; flex-direction: column; gap: 5px"><h4 style="margin: 0; font-size: 15px; font-weight: 700">Monthly management</h4><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Price and inventory updates, order and return handling, and product performance monitoring with a monthly report.</p></div><div style="display: flex; flex-direction: column; gap: 5px"><h4 style="margin: 0; font-size: 15px; font-weight: 700">Growth</h4><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Product page optimization, promotions and ads, plus competitor and performance analysis.</p></div></div>
+            <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center"><span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">Noon / Amazon store shot</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: {{ svc1Display }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 34px 30px; box-shadow: 0 1px 2px rgba(15,27,61,0.04); display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+            <h3 style="margin: 0; font-size: 24px; font-weight: 800">Setup &amp; integration</h3>
+            <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">CRM</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 16px"><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Zoho or HubSpot setup, organizing customers, Leads, and the sales funnel.</p><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Follow-up automation and reporting dashboards so you know where your sales are going.</p><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Connecting the CRM with the tools and channels your business already uses.</p></div>
+            <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center"><span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">CRM dashboard shot</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: {{ svc2Display }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 34px 30px; box-shadow: 0 1px 2px rgba(15,27,61,0.04); display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+            <h3 style="margin: 0; font-size: 24px; font-weight: 800">Operations automation</h3>
+            <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">Business Automation</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 16px"><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Connecting the store, the CRM, and your systems to each other.</p><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Moving data automatically between systems and cutting manual work.</p><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Automating Workflows, notifications, and reports over WhatsApp, email, and more.</p></div>
+            <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center"><span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">Automation diagram</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: {{ svc3Display }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 34px 30px; box-shadow: 0 1px 2px rgba(15,27,61,0.04); display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+            <h3 style="margin: 0; font-size: 24px; font-weight: 800">Websites</h3>
+            <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">Websites</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 16px"><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">E-commerce stores on Shopify.</p><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Company websites and Landing Pages built with Next.js.</p><p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; text-wrap: pretty">Payment, shipping, WhatsApp, and analytics integrations as the project needs.</p></div>
+            <div style="aspect-ratio: 4 / 3; border-radius: 4px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 10px, #EEF2F8 10px 20px); display: flex; align-items: center; justify-content: center"><span style="font-size: 12px; letter-spacing: 0.1em; color: #93A0B5; text-transform: uppercase">Website shot</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing-en" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px">
+      <h2 style="margin: 0; font-size: 26px; font-weight: 800">Products</h2>
+      <div style="width: 44px; height: 3px; background: #2952E3"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px">
+      <article style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 30px 26px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 1px 2px rgba(15,27,61,0.04)">
+        <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">ERP</span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">Accounting &amp; business management software</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">One program that holds your accounts, invoices, inventory, and purchasing instead of scattered spreadsheets. We help you pick the right one for your company size and oversee setup and training. (known technically as ERP)</p>
+        <div style="display: flex; flex-direction: column"><span style="font-size: 11px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid #E3E7EE">Available providers</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Odoo</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Zoho</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>SAP Business One</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Oracle NetSuite</span></div>
+        <a href="https://wa.me/971509733299" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; color: #2952E3; text-decoration: none; font-size: 15px; font-weight: 700; min-height: 44px" style-hover="color: #0F1B3D">Request a quote →</a>
+      </article>
+      <article style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 30px 26px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 1px 2px rgba(15,27,61,0.04)">
+        <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">CRM</span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">Customer &amp; sales management software</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">A program that keeps every customer, call, and quote in one place, reminds your team to follow up, and gives you a sales report. (known technically as CRM)</p>
+        <div style="display: flex; flex-direction: column"><span style="font-size: 11px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid #E3E7EE">Available providers</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Zoho CRM</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>HubSpot</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Salesforce</span></div>
+        <a href="https://wa.me/971509733299" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; color: #2952E3; text-decoration: none; font-size: 15px; font-weight: 700; min-height: 44px" style-hover="color: #0F1B3D">Request a quote →</a>
+      </article>
+      <article style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 5px; padding: 30px 26px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 1px 2px rgba(15,27,61,0.04)">
+        <span style="font-size: 12px; letter-spacing: 0.12em; color: #8A93A6; text-transform: uppercase">HR</span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">Staff &amp; payroll software</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.9; color: #5A6478; text-wrap: pretty">A program that organizes staff files, payroll, leave, and attendance, and issues payslips automatically. (known technically as HR)</p>
+        <div style="display: flex; flex-direction: column"><span style="font-size: 11px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid #E3E7EE">Available providers</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Zoho People</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>Bayzat</span><span style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #EEF2F8; font-size: 14px; color: #16233F"><span style="width: 5px; height: 5px; border-radius: 50%; background: #2952E3; flex-shrink: 0"></span>ZenHR</span></div>
+        <a href="https://wa.me/971509733299" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; color: #2952E3; text-decoration: none; font-size: 15px; font-weight: 700; min-height: 44px" style-hover="color: #0F1B3D">Request a quote →</a>
+      </article>
+    </div>
+    <p style="margin: 24px 0 0; font-size: 14px; line-height: 1.8; color: #7B869B; max-width: 720px; text-wrap: pretty">Each program comes from several providers, and pricing depends on the program, user count, and scope of work. Talk to us and we'll recommend the best fit — no obligation.</p>
+  </section>
+
+  <section id="stack-en" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center; margin-bottom: 26px">
+      <span style="font-size: 12px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase">Our tools</span>
+      <h2 style="margin: 0; font-size: clamp(24px, 3vw, 34px); font-weight: 800; line-height: 1.35; max-width: 760px; text-wrap: pretty">The platforms and systems we work with</h2>
+      <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #5A6478; max-width: 640px; text-wrap: pretty">We pick the right tool for you from a proven set, and handle setup, integration, and training.</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 26px">
+        <button type="button" sc-camel-on-click="{{ setStack0 }}" style="font-family: Tajawal, sans-serif; background: {{ stack0Bg }}; color: {{ stack0Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">Marketplaces &amp; stores</button>
+        <button type="button" sc-camel-on-click="{{ setStack1 }}" style="font-family: Tajawal, sans-serif; background: {{ stack1Bg }}; color: {{ stack1Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">Accounting &amp; ERP</button>
+        <button type="button" sc-camel-on-click="{{ setStack2 }}" style="font-family: Tajawal, sans-serif; background: {{ stack2Bg }}; color: {{ stack2Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">CRM</button>
+        <button type="button" sc-camel-on-click="{{ setStack3 }}" style="font-family: Tajawal, sans-serif; background: {{ stack3Bg }}; color: {{ stack3Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">HR &amp; payroll</button>
+        <button type="button" sc-camel-on-click="{{ setStack4 }}" style="font-family: Tajawal, sans-serif; background: {{ stack4Bg }}; color: {{ stack4Color }}; border: 1px solid #E3E7EE; border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px">Automation &amp; integrations</button>
+    </div>
+      <div style="display: {{ stack0Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Amazon</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Noon</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Shopify</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Salla</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">WooCommerce</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zid</span>
+        </div>
+        </div>
+      </div>
+      <div style="display: {{ stack1Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Odoo</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zoho Books</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">SAP Business One</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Oracle NetSuite</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">QuickBooks</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Xero</span>
+        </div>
+        </div>
+      </div>
+      <div style="display: {{ stack2Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zoho CRM</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">HubSpot</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Salesforce</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Pipedrive</span>
+        </div>
+        </div>
+      </div>
+      <div style="display: {{ stack3Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zoho People</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Bayzat</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">ZenHR</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Odoo HR</span>
+        </div>
+        </div>
+      </div>
+      <div style="display: {{ stack4Display }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Zapier</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Make</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">n8n</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">WhatsApp API</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">Google Sheets</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="width: 64px; height: 64px; border-radius: 6px; border: 1px solid #E3E7EE; background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 9px; letter-spacing: 0.06em; color: #93A0B5; text-transform: uppercase">Logo</span></div>
+          <span style="font-size: 14px; font-weight: 700; text-align: center">REST APIs</span>
+        </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="process-en" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center; margin-bottom: 32px">
+      <span style="font-size: 12px; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase">How we work</span>
+      <h2 style="margin: 0; font-size: clamp(24px, 3vw, 34px); font-weight: 800; line-height: 1.35; max-width: 720px; text-wrap: pretty">Four clear stages from the first meeting to a running system</h2>
+      <div style="width: 44px; height: 3px; background: #2952E3"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: stretch">
+      <article style="position: relative; overflow: hidden; background: #FFFFFF; color: #0F1B3D; border: 1px solid #E3E7EE; border-radius: 6px; padding: 30px 26px 32px; display: flex; flex-direction: column; gap: 16px; transition: transform 380ms cubic-bezier(0.2,0.8,0.2,1), background 380ms ease, color 380ms ease, border-color 380ms ease, box-shadow 380ms ease" style-hover="transform: translateY(-8px); background: #0F1B3D; color: #FFFFFF; border-color: #0F1B3D; box-shadow: 0 24px 48px rgba(15,27,61,0.22)">
+        <span style="position: absolute; top: -18px; inset-inline-end: 6px; font-size: 92px; font-weight: 800; line-height: 1; color: currentColor; opacity: 0.07; pointer-events: none">01</span>
+        <span style="width: 40px; height: 3px; background: #2952E3"></span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: inherit">Discovery</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Understanding your needs</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Reviewing the current setup</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Recommending the right fit</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Cost and timeline estimate</span></li></ul>
+      </article>
+      <article style="position: relative; overflow: hidden; background: #FFFFFF; color: #0F1B3D; border: 1px solid #E3E7EE; border-radius: 6px; padding: 30px 26px 32px; display: flex; flex-direction: column; gap: 16px; transition: transform 380ms cubic-bezier(0.2,0.8,0.2,1), background 380ms ease, color 380ms ease, border-color 380ms ease, box-shadow 380ms ease" style-hover="transform: translateY(-8px); background: #0F1B3D; color: #FFFFFF; border-color: #0F1B3D; box-shadow: 0 24px 48px rgba(15,27,61,0.22)">
+        <span style="position: absolute; top: -18px; inset-inline-end: 6px; font-size: 92px; font-weight: 800; line-height: 1; color: currentColor; opacity: 0.07; pointer-events: none">02</span>
+        <span style="width: 40px; height: 3px; background: #2952E3"></span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: inherit">Setup</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Accounts and data prep</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Workflow design</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Permissions setup</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Channel integrations</span></li></ul>
+      </article>
+      <article style="position: relative; overflow: hidden; background: #FFFFFF; color: #0F1B3D; border: 1px solid #E3E7EE; border-radius: 6px; padding: 30px 26px 32px; display: flex; flex-direction: column; gap: 16px; transition: transform 380ms cubic-bezier(0.2,0.8,0.2,1), background 380ms ease, color 380ms ease, border-color 380ms ease, box-shadow 380ms ease" style-hover="transform: translateY(-8px); background: #0F1B3D; color: #FFFFFF; border-color: #0F1B3D; box-shadow: 0 24px 48px rgba(15,27,61,0.22)">
+        <span style="position: absolute; top: -18px; inset-inline-end: 6px; font-size: 92px; font-weight: 800; line-height: 1; color: currentColor; opacity: 0.07; pointer-events: none">03</span>
+        <span style="width: 40px; height: 3px; background: #2952E3"></span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: inherit">Delivery</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Installation and integration</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Data migration</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Full testing</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Adjustments from feedback</span></li></ul>
+      </article>
+      <article style="position: relative; overflow: hidden; background: #FFFFFF; color: #0F1B3D; border: 1px solid #E3E7EE; border-radius: 6px; padding: 30px 26px 32px; display: flex; flex-direction: column; gap: 16px; transition: transform 380ms cubic-bezier(0.2,0.8,0.2,1), background 380ms ease, color 380ms ease, border-color 380ms ease, box-shadow 380ms ease" style-hover="transform: translateY(-8px); background: #0F1B3D; color: #FFFFFF; border-color: #0F1B3D; box-shadow: 0 24px 48px rgba(15,27,61,0.22)">
+        <span style="position: absolute; top: -18px; inset-inline-end: 6px; font-size: 92px; font-weight: 800; line-height: 1; color: currentColor; opacity: 0.07; pointer-events: none">04</span>
+        <span style="width: 40px; height: 3px; background: #2952E3"></span>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800; color: inherit">Operation</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px"><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Team training</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>First-month follow-up</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Regular reporting</span></li><li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.65; color: inherit; opacity: 0.85"><span style="width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.5; flex-shrink: 0; margin-top: 4px"></span><span>Support and maintenance</span></li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 0">
+    <div style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; background: #0F1B3D; color: #FFFFFF; border-radius: 8px; padding: 30px 32px; position: relative">
+      <span style="width: 96px; height: 96px; border-radius: 50%; flex-shrink: 0; border: 3px solid #2952E3; background: repeating-linear-gradient(135deg, #1B2A52 0 8px, #16233F 8px 16px); display: flex; align-items: center; justify-content: center"><span style="font-size: 10px; letter-spacing: 0.08em; color: #93A0B5; text-transform: uppercase; text-align: center; padding: 0 8px">Photo</span></span>
+      <span style="display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 200px">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; color: #6E9BFF; text-transform: uppercase">Need help?</span>
+        <span style="font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; line-height: 1.3">Free consultation — we scope your need and recommend a fit</span>
+      </span>
+      <a href="https://cal.com/d3moo/30min" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; background: #2952E3; color: #FFFFFF; text-decoration: none; padding: 14px 26px; border-radius: 999px; font-size: 15px; font-weight: 700; min-height: 44px; box-sizing: border-box; transition: background 320ms ease, transform 320ms ease" style-hover="background: #4A6EF0; color: #FFFFFF; transform: translateY(-2px)">Start now</a>
+    </div>
+  </section>
+
+  <section id="contact-en" style="max-width: 1140px; margin: 0 auto; padding: 76px 28px 84px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px 56px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px">
+          <h2 style="margin: 0; font-size: 26px; font-weight: 800">Contact</h2>
+          <div style="width: 44px; height: 3px; background: #2952E3"></div>
+        </div>
+        <a href="https://wa.me/971509733299" style="display: flex; align-items: center; gap: 16px; text-decoration: none; color: #0F1B3D; background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 20px; min-height: 44px; transition: border-color 260ms ease, transform 260ms ease, box-shadow 260ms ease" style-hover="border-color: #2952E3; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(41,82,227,0.12); color: #0F1B3D">
+          <span style="width: 40px; height: 40px; border-radius: 50%; background: #E5EAFB; color: #2952E3; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><svg sc-camel-view-box="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.257.59 4.463 1.712 6.408L3.2 28.8l6.56-1.712a12.74 12.74 0 0 0 6.244 1.6h.005c7.06 0 12.8-5.74 12.8-12.8s-5.74-12.688-12.805-12.688Zm0 23.36h-.004a10.6 10.6 0 0 1-5.4-1.48l-.388-.23-4.03 1.052 1.075-3.93-.252-.404a10.56 10.56 0 0 1-1.62-5.64c0-5.86 4.77-10.63 10.63-10.63 2.84 0 5.51 1.108 7.518 3.117a10.56 10.56 0 0 1 3.112 7.52c0 5.86-4.77 10.625-10.64 10.625Zm5.83-7.96c-.32-.16-1.89-.932-2.183-1.04-.293-.107-.507-.16-.72.16-.213.32-.826 1.04-1.013 1.253-.187.213-.373.24-.693.08-.32-.16-1.35-.497-2.57-1.586-.95-.847-1.592-1.894-1.779-2.214-.186-.32-.02-.493.14-.652.144-.143.32-.373.48-.56.16-.187.213-.32.32-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.735-.986-2.375-.26-.624-.524-.54-.72-.55l-.613-.01c-.213 0-.56.08-.853.4-.293.32-1.12 1.093-1.12 2.667s1.147 3.093 1.307 3.307c.16.213 2.257 3.445 5.47 4.83.765.33 1.362.527 1.827.674.767.244 1.465.21 2.017.127.615-.092 1.89-.773 2.157-1.52.267-.746.267-1.386.187-1.52-.08-.133-.293-.213-.613-.373Z"></path></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase">WhatsApp</span>
+            <span dir="ltr" style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em">+971 509733299</span>
+          </span>
+        </a>
+        <a href="mailto:d3@d3moo.is-a.dev" style="display: flex; align-items: center; gap: 16px; text-decoration: none; color: #0F1B3D; background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 18px 20px; min-height: 44px; transition: border-color 260ms ease, transform 260ms ease, box-shadow 260ms ease" style-hover="border-color: #2952E3; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(41,82,227,0.12); color: #0F1B3D">
+          <span style="width: 40px; height: 40px; border-radius: 50%; background: #E5EAFB; color: #2952E3; flex-shrink: 0; display: flex; align-items: center; justify-content: center"><svg sc-camel-view-box="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect><path d="m3 6 9 6 9-6"></path></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+            <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: #8A93A6; text-transform: uppercase">Email</span>
+            <span dir="ltr" style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em; overflow-wrap: anywhere">d3@d3moo.is-a.dev</span>
+          </span>
+        </a>
+        <span style="font-size: 13px; color: #8A93A6; padding-top: 2px">Sunday to Thursday · we reply within one business day.</span>
+      </div>
+      <form sc-camel-on-submit="{{ onSubmit }}" style="display: flex; flex-direction: column; gap: 13px; background: #FFFFFF; border: 1px solid #E3E7EE; border-radius: 6px; padding: 28px 26px; box-shadow: 0 1px 2px rgba(22,35,63,0.04)">
+        <input type="text" placeholder="Name" style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; min-height: 44px; box-sizing: border-box">
+        <input type="text" placeholder="Company" style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; min-height: 44px; box-sizing: border-box">
+        <input type="text" placeholder="WhatsApp number" style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; min-height: 44px; box-sizing: border-box">
+        <sc-raw-select style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; min-height: 44px; box-sizing: border-box"><option value="">What do you need?</option><option>Noon &amp; Amazon — launch and management</option><option>Accounting &amp; business management software</option><option>Customer &amp; sales management software</option><option>Staff &amp; payroll software</option><option>Automation &amp; integrations</option><option>Website or online store</option><option>Something else / not sure</option></sc-raw-select>
+        <textarea rows="3" placeholder="Note (optional)" style="font-family: Tajawal, sans-serif; font-size: 15px; padding: 13px 14px; border: 1px solid #D7DDE8; border-radius: 4px; background: #FBFCFE; color: #0F1B3D; resize: vertical; box-sizing: border-box"></textarea>
+        <button type="submit" style="font-family: Tajawal, sans-serif; background: #0F1B3D; color: #FFFFFF; border: none; padding: 15px 20px; font-size: 15px; font-weight: 700; border-radius: 4px; cursor: pointer; min-height: 44px" style-hover="background: #2952E3; color: #FFFFFF">Send request</button>
+        <span style="font-size: 13px; color: #8A93A6">We reply within one business day.</span>
+      </form>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #E3E7EE; background: #F6F7F9">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 26px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+      <img src="55bede7a-afcc-4dc0-ba46-33b09a3e3ed3" alt="D3" style="height: 20px; width: auto; display: block">
+      <span style="font-size: 13px; color: #8A93A6">© 2026 D3 · All rights reserved</span>
+    </div>
+  </footer>
+</div>
+
+  
+
+  <a href="https://wa.me/971509733299" target="_blank" rel="noopener" aria-label="WhatsApp" style="position: fixed; bottom: 100px; left: 40px; z-index: 50; display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #2952E3; color: #FFFFFF; text-decoration: none; padding: 0 26px; height: 42px; border-radius: 999px; font-size: 16px; font-weight: 700; min-height: 44px; box-sizing: border-box; box-shadow: 0 6px 20px rgba(41,82,227,0.35); transition: transform 240ms ease, box-shadow 240ms ease; width: 170px" style-hover="transform: translateY(-2px); box-shadow: 0 12px 28px rgba(41,82,227,0.45); color: #FFFFFF">
+    <svg sc-camel-view-box="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.257.59 4.463 1.712 6.408L3.2 28.8l6.56-1.712a12.74 12.74 0 0 0 6.244 1.6h.005c7.06 0 12.8-5.74 12.8-12.8s-5.74-12.688-12.805-12.688Zm0 23.36h-.004a10.6 10.6 0 0 1-5.4-1.48l-.388-.23-4.03 1.052 1.075-3.93-.252-.404a10.56 10.56 0 0 1-1.62-5.64c0-5.86 4.77-10.63 10.63-10.63 2.84 0 5.51 1.108 7.518 3.117a10.56 10.56 0 0 1 3.112 7.52c0 5.86-4.77 10.625-10.64 10.625Zm5.83-7.96c-.32-.16-1.89-.932-2.183-1.04-.293-.107-.507-.16-.72.16-.213.32-.826 1.04-1.013 1.253-.187.213-.373.24-.693.08-.32-.16-1.35-.497-2.57-1.586-.95-.847-1.592-1.894-1.779-2.214-.186-.32-.02-.493.14-.652.144-.143.32-.373.48-.56.16-.187.213-.32.32-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.735-.986-2.375-.26-.624-.524-.54-.72-.55l-.613-.01c-.213 0-.56.08-.853.4-.293.32-1.12 1.093-1.12 2.667s1.147 3.093 1.307 3.307c.16.213 2.257 3.445 5.47 4.83.765.33 1.362.527 1.827.674.767.244 1.465.21 2.017.127.615-.092 1.89-.773 2.157-1.52.267-.746.267-1.386.187-1.52-.08-.133-.293-.213-.613-.373Z"></path></svg>
+    <span>WhatsApp</span>
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ar&quot;,&quot;en&quot;],&quot;default&quot;:&quot;ar&quot;,&quot;tsType&quot;:&quot;'ar' | 'en'&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null };
+  get lang() { return this.state.lang ?? (this.props.defaultLang ?? "ar"); }
+  renderVals() {
+    const ar = this.lang === "ar";
+    const svc = this.state.svc ?? 0;
+    const vals = {};
+    for (let i = 0; i < 4; i++) {
+      const on = i === svc;
+      vals["svc" + i + "Display"] = on ? "block" : "none";
+      vals["svc" + i + "Bg"] = on ? "#0F1B3D" : "#FFFFFF";
+      vals["svc" + i + "Color"] = on ? "#FFFFFF" : "#0F1B3D";
+      vals["svc" + i + "Sub"] = on ? "#9DB3F8" : "#8A93A6";
+      vals["setSvc" + i] = () => this.setState({ svc: i });
+    }
+    const stack = this.state.stack ?? 0;
+    for (let i = 0; i < 5; i++) {
+      const on = i === stack;
+      vals["stack" + i + "Display"] = on ? "block" : "none";
+      vals["stack" + i + "Bg"] = on ? "#0F1B3D" : "#FFFFFF";
+      vals["stack" + i + "Color"] = on ? "#FFFFFF" : "#0F1B3D";
+      vals["setStack" + i] = () => this.setState({ stack: i });
+    }
+    return {
+      ...vals,
+      arDisplay: ar ? "block" : "none",
+      enDisplay: ar ? "none" : "block",
+      waLeft: ar ? "20px" : "auto",
+      waRight: ar ? "auto" : "20px",
+      toggle: () => this.setState({ lang: ar ? "en" : "ar" }),
+      onSubmit: (e) => { e.preventDefault(); window.open("https://wa.me/971509733299", "_blank"); }
+    };
+  }
+}
+</script>
+
+
+</body></html>
