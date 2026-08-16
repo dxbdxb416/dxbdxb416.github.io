@@ -1,0 +1,25 @@
+---
+permalink: /sitemap.xml
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% assign routes = "/,/noon-amazon/,/accounting-erp/,/crm/,/automation/,/websites/" | split: "," %}
+{% for route in routes %}
+  <url>
+    <loc>{{ site.data.site.url }}/ar{{ route }}</loc>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="{{ site.data.site.url }}/ar{{ route }}"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="{{ site.data.site.url }}/ar{{ route }}"/>
+    <xhtml:link rel="alternate" hreflang="en-AE" href="{{ site.data.site.url }}/en{{ route }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.data.site.url }}/ar{{ route }}"/>
+  </url>
+  <url>
+    <loc>{{ site.data.site.url }}/en{{ route }}</loc>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="{{ site.data.site.url }}/ar{{ route }}"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="{{ site.data.site.url }}/ar{{ route }}"/>
+    <xhtml:link rel="alternate" hreflang="en-AE" href="{{ site.data.site.url }}/en{{ route }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.data.site.url }}/ar{{ route }}"/>
+  </url>
+{% endfor %}
+</urlset>

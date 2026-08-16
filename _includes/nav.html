@@ -1,0 +1,19 @@
+{% assign t = site.data.i18n[page.lang] %}
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/{{ page.lang }}/" class="nav-brand">
+      <img src="/assets/img/logo-white.png" alt="{{ t.logo_nav_alt }}" class="nav-logo" width="120" height="26">
+      <span class="nav-tagline">Digital Business Solutions</span>
+    </a>
+    <div class="nav-links">
+      <a href="/{{ page.lang }}/#services">{{ t.nav_services }}</a>
+      <a href="/{{ page.lang }}/#pricing">{{ t.nav_pricing }}</a>
+      <a href="/{{ page.lang }}/#contact">{{ t.nav_contact }}</a>
+      {% if page.lang == 'ar' %}
+        <a href="{{ page.en_permalink }}" class="nav-lang" hreflang="en" lang="en">{{ t.nav_lang_switch }}</a>
+      {% else %}
+        <a href="{{ page.ar_permalink }}" class="nav-lang" hreflang="ar" lang="ar">{{ t.nav_lang_switch }}</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
