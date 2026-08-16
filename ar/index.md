@@ -6,7 +6,7 @@ permalink: /ar/
 ar_permalink: /ar/
 en_permalink: /en/
 is_home: true
-seo_title: "STUB — replaced in Task 7"
-seo_description: "STUB — replaced in Task 7"
+seo_title: "حلول رقمية للشركات الصغيرة | نون وأمازون، محاسبة، CRM | D3"
+seo_description: "نساعد الشركات الصغيرة بالإمارات والسعودية على البيع عبر نون وأمازون، وإعداد برامج المحاسبة والفوترة الإلكترونية، وربط الأنظمة ببعضها. استشارة مجانية."
 ---
-<h1>stub</h1>
+{% include home-body.html %}

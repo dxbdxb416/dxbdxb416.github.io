@@ -37,7 +37,8 @@
     <div class="rule"></div>
   </div>
   <div class="product-grid">
-    {% for key in "erp,crm" | split: "," %}
+    {% assign product_keys = "erp,crm" | split: "," %}
+    {% for key in product_keys %}
       {% assign card = t.products[key] %}
       {% assign linked_svc = site.data.services[card.link_service_id] %}
       {% assign linked_t = linked_svc[page.lang] %}
