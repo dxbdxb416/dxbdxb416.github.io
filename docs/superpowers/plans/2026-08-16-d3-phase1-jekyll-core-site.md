@@ -129,7 +129,9 @@ git commit -m "Ignore Jekyll build output"
 
 **Interfaces:**
 - Consumes: nothing yet.
-- Produces: `site.data.i18n[page.lang].*` — every shared-chrome string (nav labels, footer copyright, CTA banner, vendor disclaimer, WhatsApp button text) that Tasks 2's own includes read, and the front-matter contract every content page (Task 7) follows: `layout: page`, `lang: ar|en`, `dir: rtl|ltr`, `permalink`, `ar_permalink`, `en_permalink`, `seo_title`, `seo_description`, `is_home: true` (homepage only), `service_id` (service pages only — the key into `_data/services.yml`), `breadcrumb_label` (non-home pages only).
+- Produces: `site.data.i18n[page.lang].*` — every shared-chrome string (nav labels, footer copyright, CTA banner, vendor disclaimer, WhatsApp button text) that Tasks 2's own includes read, and the front-matter contract every content page (Task 7) follows: `layout: page`, `lang: ar|en`, `text_text_dir: rtl|ltr`, `permalink`, `ar_permalink`, `en_permalink`, `seo_title`, `seo_description`, `is_home: true` (homepage only), `service_id` (service pages only — the key into `_data/services.yml`), `breadcrumb_label` (non-home pages only).
+
+**Naming note:** the front-matter key is `text_dir`, not `dir` — Jekyll's `Page` object has its own computed, reserved `dir` attribute (the page's URL directory), which silently shadows a front-matter key of the same name in Liquid (`{{ page.dir }}` would render e.g. `/ar/`, not `rtl`). `text_dir` avoids the collision.
 
 - [ ] **Step 1: `_data/site.yml`**
 
@@ -366,7 +368,7 @@ en:
 
 ```html
 <!doctype html>
-<html lang="{{ page.lang }}" dir="{{ page.dir }}">
+<html lang="{{ page.lang }}" dir="{{ page.text_dir }}">
 <head>
 {% include head-seo.html %}
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/tajawal-400-arabic.woff2" crossorigin>
@@ -458,7 +460,7 @@ Create `ar/index.md`:
 ---
 layout: page
 lang: ar
-dir: rtl
+text_dir: rtl
 permalink: /ar/
 ar_permalink: /ar/
 en_permalink: /en/
@@ -475,7 +477,7 @@ Run: `bundle exec jekyll build`
 Expected: no Liquid errors; `_site/ar/index.html` exists and contains `<link rel="canonical"`, all 4 `hreflang` links, the `ProfessionalService` JSON-LD, the nav (with Arabic labels pulled from `i18n.yml`), footer, CTA banner, and WhatsApp float. `_site/index.html` exists with the meta-refresh. `_site/404.html` exists with both languages. `_site/robots.txt` exists.
 
 Run: `grep -c '<h1' _site/ar/index.html` → expect `1`.
-Run: `grep -o 'hreflang="[^"]*"' _site/ar/index.html | sort -u` → expect exactly `ar-AE`, `ar-SA`, `en-AE`, `x-default`.
+Run: `grep -o '<link rel="alternate" hreflang="[^"]*"' _site/ar/index.html | grep -o 'hreflang="[^"]*"' | sort -u` → expect exactly `ar-AE`, `ar-SA`, `en-AE`, `x-default`. (Scoped to `<link rel="alternate"` in `<head>` — the nav's language-switch link also carries a legitimate `hreflang` attribute for accessibility, e.g. `hreflang="en"`, which is unrelated to these SEO tags and would otherwise show up as a spurious 5th value.)
 Run: `grep -c 'الخدمات' _site/ar/index.html` → expect ≥1 (confirms `i18n.yml` is actually being read, not silently falling back to blank).
 
 - [ ] **Step 18: Commit**
@@ -825,6 +827,7 @@ noon-amazon:
         body: "تحسين صفحات المنتجات، إدارة العروض والإعلانات، وتحليل المنافسين والأداء لزيادة مبيعاتك باستمرار."
       - h2: "شروط البيع والمستندات المطلوبة"
         body: "نوضح لك المستندات والشروط التي تطلبها كل منصة لفتح حساب بائع (سجل تجاري، حساب بنكي، معلومات ضريبية)، ونجهزها معك قبل التقديم لتفادي أي تأخير."
+    quote_link_text: "اطلب عرض سعر"
   en:
     primary_keyword: "noon and Amazon store management"
     secondary_keywords:
@@ -849,6 +852,7 @@ noon-amazon:
         body: "Optimizing product pages, managing promotions and ads, and analyzing competitors and performance to keep growing your sales."
       - h2: "Seller Requirements and Documents"
         body: "We explain the documents and requirements each platform asks for when opening a seller account (trade license, bank account, tax information), and help you prepare them before applying to avoid delays."
+    quote_link_text: "Request a quote"
 
 accounting-erp:
   order: 2
@@ -930,7 +934,7 @@ crm:
     seo_title: "برنامج إدارة العملاء والمبيعات مع ربط واتساب | D3"
     seo_description: "إعداد Zoho أو HubSpot، تنظيم العملاء وقمع المبيعات، وربط الـCRM مع واتساب والبريد وقنوات عملك، مع تدريب الفريق."
     breadcrumb_label: "CRM"
-    h1: "برنامج إدارة العملاء والمبيعات وربطه مع واتساب"
+    h1: "برنامج CRM لإدارة العملاء والمبيعات وربطه مع واتساب"
     intro: "برنامج يحفظ كل عميل ومكالمة وعرض سعر في مكان واحد، ويذكّر فريقك بالمتابعة ويعطيك تقرير عن المبيعات. (يُعرف تقنيًا بـ CRM)"
     provider_list_label: "الشركات المتوفرة"
     sections:
@@ -1117,7 +1121,7 @@ ar:
   seo_description: "نساعد الشركات الصغيرة بالإمارات والسعودية على البيع عبر نون وأمازون، وإعداد برامج المحاسبة والفوترة الإلكترونية، وربط الأنظمة ببعضها. استشارة مجانية."
   hero:
     badge: "خبرة ٨ سنوات · الإمارات والسعودية"
-    h1: "نساعد الشركات الصغيرة والمتوسطة تبيع أونلاين، وتنظّم مبيعاتها، وتربط أنظمتها ببعض."
+    h1: "نقدّم حلول رقمية تساعد الشركات الصغيرة والمتوسطة تبيع أونلاين، وتنظّم مبيعاتها، وتربط أنظمتها ببعض."
     p: "خبرة ٨ سنوات في بيع حلول ERP وCRM في الإمارات، مع خبرة تقنية عملية في التجارة الإلكترونية، أتمتة الكتالوجات، ونقل البيانات بين الأنظمة."
     cta_primary: "تواصل عبر WhatsApp"
     cta_secondary: "شوف المنتجات"
@@ -1175,7 +1179,7 @@ en:
   seo_description: "We help small businesses in the UAE and Saudi Arabia sell on noon and Amazon, set up accounting and CRM systems, and connect them together. Free consultation."
   hero:
     badge: "8 years of experience · UAE & KSA"
-    h1: "We help small and mid-sized businesses sell online, organize their sales, and connect their systems together."
+    h1: "Digital solutions for small businesses in the UAE and Saudi Arabia — we help you sell online, organize your sales, and connect your systems together."
     p: "8 years selling ERP and CRM solutions in the UAE, with hands-on technical experience in e-commerce, catalog automation, and data migration between systems."
     cta_primary: "Talk on WhatsApp"
     cta_secondary: "See products"
@@ -1292,7 +1296,8 @@ git commit -m "Add bilingual content data for homepage and 5 service pages"
     <div class="rule"></div>
   </div>
   <div class="product-grid">
-    {% for key in "erp,crm" | split: "," %}
+    {% assign product_keys = "erp,crm" | split: "," %}
+    {% for key in product_keys %}
       {% assign card = t.products[key] %}
       {% assign linked_svc = site.data.services[card.link_service_id] %}
       {% assign linked_t = linked_svc[page.lang] %}
@@ -1484,7 +1489,7 @@ Every file in this task follows one of two fixed shapes — front matter that id
 ---
 layout: page
 lang: ar
-dir: rtl
+text_dir: rtl
 permalink: /ar/
 ar_permalink: /ar/
 en_permalink: /en/
@@ -1501,7 +1506,7 @@ seo_description: "نساعد الشركات الصغيرة بالإمارات و
 ---
 layout: page
 lang: en
-dir: ltr
+text_dir: ltr
 permalink: /en/
 ar_permalink: /ar/
 en_permalink: /en/
@@ -1519,7 +1524,7 @@ seo_description: "We help small businesses in the UAE and Saudi Arabia sell on n
 ---
 layout: page
 lang: ar
-dir: rtl
+text_dir: rtl
 permalink: /ar/noon-amazon/
 ar_permalink: /ar/noon-amazon/
 en_permalink: /en/noon-amazon/
@@ -1541,7 +1546,7 @@ seo_description: "نفتح حساب البائع، نرفع الكتالوج ب�
 
 Every one of these 5 files ends with the identical single line: `{% include service-body.html %}`.
 
-- [ ] **Step 4: The 5 service pages, English** — same pattern, `lang: en`, `dir: ltr`, `/en/...` permalinks, `ar_permalink` pointing at the sibling Arabic route:
+- [ ] **Step 4: The 5 service pages, English** — same pattern, `lang: en`, `text_dir: ltr`, `/en/...` permalinks, `ar_permalink` pointing at the sibling Arabic route:
 
 `en/noon-amazon/index.md`: `permalink: /en/noon-amazon/`, `service_id: "noon-amazon"`, `breadcrumb_label: "noon & Amazon"`, `seo_title: "noon & Amazon Seller Setup and Store Management | D3"`, `seo_description: "Seller account setup, bilingual catalogue upload, pricing and inventory management for noon and Amazon sellers across the UAE and Saudi Arabia."`.
 
@@ -1559,7 +1564,7 @@ Every one of these 5 files ends with the identical single line: `{% include serv
 
 Run: `bundle exec jekyll build`
 Run: `grep -c '<h1' _site/ar/index.html _site/en/index.html _site/ar/crm/index.html _site/en/websites/index.html` → expect `1` for each.
-Run: `grep -c '<h2' _site/ar/crm/index.html` → expect `5`.
+Run: `grep -c '<h2' _site/ar/crm/index.html` → expect `6` (5 content sections + 1 shared CTA banner heading from `_includes/cta-banner.html`, which every page carries).
 Run: `grep -o 'href="/ar/[a-z-]*/">[^<]*<' _site/ar/noon-amazon/index.html` → expect the 3 sibling links, each with the sibling's actual `primary_keyword` text (compare against `_data/services.yml`, not a hand-typed label — there is none anymore).
 
 - [ ] **Step 6: Commit**
@@ -1584,12 +1589,13 @@ git commit -m "Add the 12 thin page files rendering from shared body templates"
 
 ```bash
 bundle exec jekyll build
-for f in ar/index.md en/index.md ar/noon-amazon/index.md en/noon-amazon/index.md ar/accounting-erp/index.md en/accounting-erp/index.md ar/crm/index.md en/crm/index.md ar/automation/index.md en/automation/index.md ar/websites/index.md en/websites/index.md; do
+for f in ar/index en/index ar/noon-amazon/index en/noon-amazon/index ar/accounting-erp/index en/accounting-erp/index ar/crm/index en/crm/index ar/automation/index en/automation/index ar/websites/index en/websites/index; do
   echo "== $f =="
-  grep "seo_title:" "$f"
+  grep -o '<title>[^<]*</title>' "_site/$f.html"
+  grep -o '<h1>[^<]*</h1>' "_site/$f.html"
 done
 ```
-Expected: manually cross-reference each `seo_title` against that page's `primary_keyword` in `_data/home.yml`/`_data/services.yml` — the keyword should be a recognizable substring/near-match of the title (titles wrap it in brand/pipe text, so this is a manual read, not a grep pattern).
+Expected: manually cross-reference each page's rendered `<title>` **and** `<h1>` against that page's `primary_keyword` in `_data/home.yml`/`_data/services.yml` — the keyword should be a recognizable substring/near-match of both. Check the rendered `<h1>`, not just the `seo_title:` front-matter line — a title can carry the keyword while the h1 (authored separately) omits it, which is a real gate failure, not a false positive.
 
 - [ ] **Step 2: No `primary_keyword` is reused across two pages, in the same language**
 
@@ -1635,7 +1641,7 @@ for f in ar/crm en/crm ar/noon-amazon en/websites; do
   echo "$f: $(grep -c '<h2' _site/$f/index.html) h2s"
 done
 ```
-Expected: `5` for each (matches Task 5's data — all Phase 1 pages carry exactly 5 secondaries).
+Expected: `6` for each — 5 content secondaries (matches Task 5's data) + 1 shared CTA banner `<h2 class="cta-heading">` that `_layouts/page.html` includes on every page via `_includes/cta-banner.html`. This extra heading isn't a secondary keyword and doesn't need its own row in the keyword audit — it's identical boilerplate across all 12 pages, not page-specific content.
 
 - [ ] **Step 5: Internal anchor text matches the target's primary keyword — verified structurally, not just visually**
 
@@ -1715,11 +1721,11 @@ for lang in ar en; do
     echo "== $f =="
     test -f "$f" && echo "exists" || echo "MISSING"
     grep -c '<h1' "$f"
-    grep -o 'hreflang="[^"]*"' "$f" | sort -u | wc -l
+    grep -o '<link rel="alternate" hreflang="[^"]*"' "$f" | grep -o 'hreflang="[^"]*"' | sort -u | wc -l
   done
 done
 ```
-Expected: every file exists, every file has exactly 1 `<h1>`, every file has 4 unique hreflang values.
+Expected: every file exists, every file has exactly 1 `<h1>`, every file has 4 unique hreflang values. (The hreflang check is scoped to `<link rel="alternate"` — the nav's language-switch anchor also carries a legitimate, unrelated `hreflang` attribute that would otherwise inflate this count to 5.)
 
 - [ ] **Step 4: Verify sitemap**
 
