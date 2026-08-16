@@ -1,0 +1,16 @@
+{% if page.service_id %}
+{% assign svc = site.data.services[page.service_id] %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ svc.service_name }}",
+  "provider": { "@id": "{{ site.data.site.url }}/#business" },
+  "areaServed": [
+    { "@type": "Country", "name": "United Arab Emirates" },
+    { "@type": "Country", "name": "Saudi Arabia" }
+  ],
+  "url": "{{ site.data.site.url }}{{ page.permalink }}"
+}
+</script>
+{% endif %}

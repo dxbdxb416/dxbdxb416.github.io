@@ -1,0 +1,22 @@
+{% unless page.is_home %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{% if page.lang == 'ar' %}الرئيسية{% else %}Home{% endif %}",
+      "item": "{{ site.data.site.url }}{% if page.lang == 'ar' %}/ar/{% else %}/en/{% endif %}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.breadcrumb_label }}",
+      "item": "{{ site.data.site.url }}{{ page.permalink }}"
+    }
+  ]
+}
+</script>
+{% endunless %}
