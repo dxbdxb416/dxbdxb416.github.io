@@ -129,7 +129,7 @@ git commit -m "Ignore Jekyll build output"
 
 **Interfaces:**
 - Consumes: nothing yet.
-- Produces: `site.data.i18n[page.lang].*` — every shared-chrome string (nav labels, footer copyright, CTA banner, vendor disclaimer, WhatsApp button text) that Tasks 2's own includes read, and the front-matter contract every content page (Task 7) follows: `layout: page`, `lang: ar|en`, `text_text_dir: rtl|ltr`, `permalink`, `ar_permalink`, `en_permalink`, `seo_title`, `seo_description`, `is_home: true` (homepage only), `service_id` (service pages only — the key into `_data/services.yml`), `breadcrumb_label` (non-home pages only).
+- Produces: `site.data.i18n[page.lang].*` — every shared-chrome string (nav labels, footer copyright, CTA banner, vendor disclaimer, WhatsApp button text) that Tasks 2's own includes read, and the front-matter contract every content page (Task 7) follows: `layout: page`, `lang: ar|en`, `text_dir: rtl|ltr`, `permalink`, `ar_permalink`, `en_permalink`, `seo_title`, `seo_description`, `is_home: true` (homepage only), `service_id` (service pages only — the key into `_data/services.yml`), `breadcrumb_label` (non-home pages only).
 
 **Naming note:** the front-matter key is `text_dir`, not `dir` — Jekyll's `Page` object has its own computed, reserved `dir` attribute (the page's URL directory), which silently shadows a front-matter key of the same name in Liquid (`{{ page.dir }}` would render e.g. `/ar/`, not `rtl`). `text_dir` avoids the collision.
 

@@ -1,21 +1,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ page.seo_title }}</title>
-<meta name="description" content="{{ page.seo_description }}">
+<title>{{ page.seo_title | escape_once }}</title>
+<meta name="description" content="{{ page.seo_description | escape_once }}">
 <link rel="canonical" href="{{ site.data.site.url }}{{ page.permalink }}">
 <link rel="alternate" hreflang="ar-AE" href="{{ site.data.site.url }}{{ page.ar_permalink }}">
 <link rel="alternate" hreflang="ar-SA" href="{{ site.data.site.url }}{{ page.ar_permalink }}">
 <link rel="alternate" hreflang="en-AE" href="{{ site.data.site.url }}{{ page.en_permalink }}">
 <link rel="alternate" hreflang="x-default" href="{{ site.data.site.url }}{{ page.ar_permalink }}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{ page.seo_title }}">
-<meta property="og:description" content="{{ page.seo_description }}">
+<meta property="og:title" content="{{ page.seo_title | escape_once }}">
+<meta property="og:description" content="{{ page.seo_description | escape_once }}">
 <meta property="og:url" content="{{ site.data.site.url }}{{ page.permalink }}">
 <meta property="og:image" content="{{ site.data.site.url }}{{ site.data.site.og_image }}">
 <meta property="og:locale" content="{% if page.lang == 'ar' %}ar_AE{% else %}en_AE{% endif %}">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{{ page.seo_title }}">
-<meta name="twitter:description" content="{{ page.seo_description }}">
+<meta name="twitter:title" content="{{ page.seo_title | escape_once }}">
+<meta name="twitter:description" content="{{ page.seo_description | escape_once }}">
 <meta name="twitter:image" content="{{ site.data.site.url }}{{ site.data.site.og_image }}">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon-180.png">

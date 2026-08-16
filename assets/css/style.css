@@ -151,6 +151,7 @@ img { max-width: 100%; }
 .tab-button { font-family: 'Tajawal', sans-serif; background: var(--white); color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 12px 22px; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px; }
 .tab-button.is-active { background: var(--navy); color: #FFFFFF; }
 .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; }
+[data-tab-panel][hidden] { display: none; }
 .tool-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .tool-card .tool-mark { width: 64px; height: 64px; border-radius: 6px; border: 1px solid var(--border); background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); }
 .tool-card span.tool-name { font-size: 14px; font-weight: 700; text-align: center; }

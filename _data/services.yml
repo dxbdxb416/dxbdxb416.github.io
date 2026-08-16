@@ -1,5 +1,4 @@
 noon-amazon:
-  order: 1
   eyebrow_number: "01"
   category_label: "Marketplace"
   service_name: "noon & Amazon store management"
@@ -12,9 +11,6 @@ noon-amazon:
       - "تحديث الأسعار والمخزون في نون"
       - "تحسين صفحات المنتجات وزيادة المبيعات"
       - "شروط البيع على نون في السعودية"
-    seo_title: "إدارة متجر نون وأمازون: إطلاق ورفع منتجات وإدارة شهرية"
-    seo_description: "نفتح حساب البائع، نرفع الكتالوج بالعربي والإنجليزي، وندير الأسعار والمخزون والطلبات شهرياً على نون وأمازون في الإمارات والسعودية."
-    breadcrumb_label: "نون وأمازون"
     h1: "إدارة متجر نون وأمازون: إطلاق، رفع منتجات، وإدارة شهرية"
     intro: "نساعد الشركات الصغيرة في الإمارات والسعودية تبيع على نون وأمازون من الصفر — فتح حساب البائع، رفع الكتالوج بالعربي والإنجليزي، وإدارة الأسعار والمخزون والطلبات شهريًا."
     sections:
@@ -37,9 +33,6 @@ noon-amazon:
       - "pricing and inventory management for online sellers"
       - "product page optimization for marketplaces"
       - "amazon.ae seller services"
-    seo_title: "noon & Amazon Seller Setup and Store Management | D3"
-    seo_description: "Seller account setup, bilingual catalogue upload, pricing and inventory management for noon and Amazon sellers across the UAE and Saudi Arabia."
-    breadcrumb_label: "noon & Amazon"
     h1: "noon and Amazon Store Management: Launch, Catalogue Upload, and Monthly Management"
     intro: "We help small businesses in the UAE and Saudi Arabia start selling on noon and Amazon from scratch — seller account setup, bilingual catalogue upload, and monthly price, inventory, and order management."
     sections:
@@ -51,13 +44,12 @@ noon-amazon:
         body: "Keeping prices and stock levels current, handling orders and returns, and tracking product performance with a clear monthly report."
       - h2: "Growth and Performance Optimization"
         body: "Optimizing product pages, managing promotions and ads, and analyzing competitors and performance to keep growing your sales."
-      - h2: "Seller Requirements and Documents"
-        body: "We explain the documents and requirements each platform asks for when opening a seller account (trade license, bank account, tax information), and help you prepare them before applying to avoid delays."
+      - h2: "Amazon.ae Seller Support"
+        body: "Alongside noon, we also support sellers on Amazon.ae — account setup, catalogue management, and ongoing store support tailored to Amazon's specific seller requirements and marketplace policies."
     quote_link_text: "Request a quote"
 
 accounting-erp:
-  order: 2
-  eyebrow_number: "ERP"
+  eyebrow_number: "05"
   category_label: "ERP"
   service_name: "Accounting & ERP implementation"
   providers: ["Odoo", "Zoho", "SAP Business One", "Oracle NetSuite", "QuickBooks", "Xero"]
@@ -70,9 +62,6 @@ accounting-erp:
       - "نظام ERP للشركات الصغيرة والمتوسطة"
       - "برنامج محاسبة معتمد من هيئة الزكاة"
       - "تدريب الفريق على البرنامج المحاسبي"
-    seo_title: "برنامج محاسبة وإدارة شركة للمنشآت الصغيرة بالإمارات والسعودية"
-    seo_description: "نساعدك تختار برنامج الحسابات والفواتير والمخزون المناسب لحجم شركتك، ونشرف على التركيب ونقل البيانات وتدريب فريقك."
-    breadcrumb_label: "برامج حسابية وERP"
     h1: "برنامج محاسبة وإدارة شركة للمنشآت الصغيرة والمتوسطة"
     intro: "برنامج واحد يجمع الحسابات والفواتير والمخزون والمشتريات، بدل ملفات الإكسل المتفرقة. نساعدك تختار البرنامج المناسب لحجم شركتك ونشرف على التركيب والتدريب. (يُعرف تقنيًا بـ ERP)"
     provider_list_label: "الشركات المتوفرة"
@@ -97,9 +86,6 @@ accounting-erp:
       - "small business ERP system UAE"
       - "accounting software data migration"
       - "e-invoicing ready accounting software"
-    seo_title: "Accounting & ERP Software Setup for SMBs in UAE & Saudi | D3"
-    seo_description: "We help you choose the right accounting, invoicing, and inventory software for your company size, and oversee installation, data migration, and training."
-    breadcrumb_label: "Accounting & ERP"
     h1: "Accounting Software for Small Business: Choosing and Setting Up the Right ERP"
     intro: "One system that brings together your accounts, invoices, inventory, and purchasing instead of scattered spreadsheets. We help you pick the right software for your company size and oversee installation and training. (known technically as ERP)"
     provider_list_label: "Available providers"
@@ -110,15 +96,14 @@ accounting-erp:
         body: "We help you prepare your accounting system to meet e-invoicing requirements, and connect it to the right platforms based on your business type and country of registration."
       - h2: "Choosing the Right ERP System"
         body: "Not every company needs the same software — we compare Odoo, Zoho, SAP Business One, and Oracle NetSuite for your company size and budget, and recommend the best fit."
-      - h2: "Staying Compliant with ZATCA Requirements"
-        body: "For companies in Saudi Arabia, we help you choose and set up accounting software that meets Zakat, Tax and Customs Authority (ZATCA) requirements, coordinated with your accountant or tax advisor."
+      - h2: "ERP for Growing Companies"
+        body: "As your business grows beyond simple bookkeeping, a full ERP system brings accounting, inventory, purchasing, and reporting together — we help small businesses in the UAE choose and set up an ERP system sized to where they are now, not where a bigger company would be."
       - h2: "Setup, Data Migration, and Training"
         body: "We oversee installation, migrate your data from spreadsheets or your previous system, and train your team step by step until they're comfortable using it day to day."
     footnote: "Each program comes from several providers, and pricing depends on the program, user count, and scope of work. Talk to us and we'll recommend the best fit — no obligation."
     quote_link_text: "Request a quote"
 
 crm:
-  order: 3
   eyebrow_number: "02"
   category_label: "CRM"
   service_name: "CRM setup and integration"
@@ -132,9 +117,6 @@ crm:
       - "أتمتة متابعة العملاء"
       - "تقارير ولوحات مبيعات"
       - "CRM للشركات الصغيرة في السعودية"
-    seo_title: "برنامج إدارة العملاء والمبيعات مع ربط واتساب | D3"
-    seo_description: "إعداد Zoho أو HubSpot، تنظيم العملاء وقمع المبيعات، وربط الـCRM مع واتساب والبريد وقنوات عملك، مع تدريب الفريق."
-    breadcrumb_label: "CRM"
     h1: "برنامج CRM لإدارة العملاء والمبيعات وربطه مع واتساب"
     intro: "برنامج يحفظ كل عميل ومكالمة وعرض سعر في مكان واحد، ويذكّر فريقك بالمتابعة ويعطيك تقرير عن المبيعات. (يُعرف تقنيًا بـ CRM)"
     provider_list_label: "الشركات المتوفرة"
@@ -158,9 +140,6 @@ crm:
       - "follow-up automation for sales teams"
       - "sales reporting dashboards"
       - "HubSpot setup Saudi Arabia"
-    seo_title: "CRM Setup with WhatsApp Integration for SMBs | D3"
-    seo_description: "Zoho or HubSpot setup, organizing customers and the sales funnel, and connecting your CRM to WhatsApp, email, and your business channels — with team training."
-    breadcrumb_label: "CRM"
     h1: "CRM Setup with WhatsApp Integration for Customer and Sales Management"
     intro: "A system that keeps every customer, call, and quote in one place, reminds your team to follow up, and gives you a sales report. (known technically as CRM)"
     provider_list_label: "Available providers"
@@ -178,7 +157,6 @@ crm:
     quote_link_text: "Request a quote"
 
 automation:
-  order: 4
   eyebrow_number: "03"
   category_label: "Automation"
   service_name: "Business process automation"
@@ -192,9 +170,6 @@ automation:
       - "أتمتة الإشعارات والتقارير الدورية"
       - "تقليل الأخطاء اليدوية في العمليات"
       - "أدوات الأتمتة Zapier وMake"
-    seo_title: "أتمتة العمليات وربط الأنظمة للشركات الصغيرة"
-    seo_description: "نربط متجرك ونظامك المحاسبي والـCRM ببعضهم، وننقل البيانات تلقائياً، ونؤتمت الإشعارات والتقارير عبر واتساب والبريد."
-    breadcrumb_label: "أتمتة العمليات"
     h1: "أتمتة العمليات وربط الأنظمة ببعضها"
     intro: "نربط متجرك الإلكتروني، نظامك المحاسبي، والـCRM ببعضهم، وننقل البيانات تلقائيًا بدل النسخ اليدوي بين الأنظمة."
     provider_list_label: "الأدوات المستخدمة"
@@ -218,9 +193,6 @@ automation:
       - "WhatsApp Business API setup UAE"
       - "reduce manual work with workflow automation"
       - "Zapier and Make consultant Dubai"
-    seo_title: "Business Process Automation & System Integration | D3"
-    seo_description: "We connect your store, accounting system, and CRM to each other, move data automatically, and automate notifications and reports over WhatsApp and email."
-    breadcrumb_label: "Automation"
     h1: "Business Process Automation and System Integration"
     intro: "We connect your online store, accounting system, and CRM to each other, and move data automatically instead of copying it by hand between systems."
     provider_list_label: "Tools we use"
@@ -238,7 +210,6 @@ automation:
     quote_link_text: "Request a quote"
 
 websites:
-  order: 5
   eyebrow_number: "04"
   category_label: "Websites"
   service_name: "Websites and online stores"
@@ -252,9 +223,6 @@ websites:
       - "تصميم موقع شركة احترافي"
       - "ربط بوابات الدفع والشحن"
       - "تهيئة المتجر الإلكتروني لمحركات البحث"
-    seo_title: "تصميم المواقع والمتاجر الإلكترونية: Shopify وسلة وNext.js"
-    seo_description: "متاجر إلكترونية ومواقع شركات وصفحات هبوط، مع ربط الدفع والشحن وواتساب والتحليلات حسب احتياج مشروعك."
-    breadcrumb_label: "مواقع ومتاجر إلكترونية"
     h1: "تصميم المواقع والمتاجر الإلكترونية"
     intro: "متاجر إلكترونية ومواقع شركات وصفحات هبوط، مع ربط الدفع والشحن وواتساب والتحليلات حسب احتياج مشروعك."
     provider_list_label: "المنصات المستخدمة"
@@ -278,9 +246,6 @@ websites:
       - "company website design"
       - "payment and shipping integration for online stores"
       - "SEO for online stores"
-    seo_title: "Website & Online Store Design: Shopify, Salla, Next.js | D3"
-    seo_description: "Online stores, company websites, and landing pages, with payment, shipping, WhatsApp, and analytics integrations tailored to your project."
-    breadcrumb_label: "Websites"
     h1: "Website and Online Store Design"
     intro: "Online stores, company websites, and landing pages, with payment, shipping, WhatsApp, and analytics integrations tailored to your project's needs."
     provider_list_label: "Platforms we use"

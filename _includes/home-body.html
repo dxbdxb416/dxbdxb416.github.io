@@ -64,6 +64,7 @@
       <a href="{{ site.data.site.whatsapp_link }}" class="quote-link">{{ t.products.hr.quote_link_text }}{{ site.data.i18n[page.lang].quote_link_suffix }}</a>
     </article>
   </div>
+  {% include vendor-disclaimer.html %}
   <p class="footnote">{{ t.footnote }}</p>
 </section>
 
@@ -125,11 +126,11 @@
       </a>
       <p class="contact-hours">{{ t.contact.hours }}</p>
     </div>
-    <form class="contact-form" onsubmit="event.preventDefault(); window.open('{{ site.data.site.whatsapp_link }}', '_blank');">
-      <input type="text" placeholder="{{ t.contact.form_name }}">
-      <input type="text" placeholder="{{ t.contact.form_company }}">
-      <input type="text" placeholder="{{ t.contact.form_whatsapp }}">
-      <select>
+    <form class="contact-form" onsubmit="event.preventDefault(); window.open('{{ site.data.site.whatsapp_link }}', '_blank', 'noopener');">
+      <input type="text" placeholder="{{ t.contact.form_name }}" aria-label="{{ t.contact.form_name }}">
+      <input type="text" placeholder="{{ t.contact.form_company }}" aria-label="{{ t.contact.form_company }}">
+      <input type="text" placeholder="{{ t.contact.form_whatsapp }}" aria-label="{{ t.contact.form_whatsapp }}">
+      <select aria-label="{{ t.contact.form_select_placeholder }}">
         <option value="">{{ t.contact.form_select_placeholder }}</option>
         {% for opt in t.contact.form_select_options %}<option>{{ opt }}</option>{% endfor %}
       </select>
