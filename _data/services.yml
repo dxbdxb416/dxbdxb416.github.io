@@ -2,6 +2,8 @@ noon-amazon:
   eyebrow_number: "01"
   category_label: "Marketplace"
   service_name: "noon & Amazon store management"
+  icon: "store"
+  section_icons: ["shield-check", "upload-cloud", "package", "trending-up", "life-buoy"]
   siblings: ["crm", "automation", "websites"]
   ar:
     primary_keyword: "إدارة متجر نون وأمازون"
@@ -53,6 +55,8 @@ accounting-erp:
   category_label: "ERP"
   service_name: "Accounting & ERP implementation"
   providers: ["Odoo", "Zoho", "SAP Business One", "Oracle NetSuite", "QuickBooks", "Xero"]
+  icon: "calculator"
+  section_icons: ["package", "file-text", "git-compare", "trending-up", "database"]
   siblings: ["crm", "automation", "noon-amazon"]
   ar:
     primary_keyword: "برنامج محاسبة للشركات الصغيرة"
@@ -108,6 +112,8 @@ crm:
   category_label: "CRM"
   service_name: "CRM setup and integration"
   providers: ["Zoho CRM", "HubSpot", "Salesforce", "Pipedrive"]
+  icon: "users"
+  section_icons: ["users", "filter", "bell", "bar-chart-2", "map-pin"]
   siblings: ["automation", "accounting-erp", "noon-amazon"]
   ar:
     primary_keyword: "ربط CRM مع واتساب"
@@ -161,6 +167,8 @@ automation:
   category_label: "Automation"
   service_name: "Business process automation"
   providers: ["Zapier", "Make", "n8n", "WhatsApp API", "Google Sheets", "REST APIs"]
+  icon: "workflow"
+  section_icons: ["share-2", "refresh-cw", "bell", "zap", "wrench"]
   siblings: ["crm", "accounting-erp", "websites"]
   ar:
     primary_keyword: "أتمتة العمليات وربط الأنظمة"
@@ -214,6 +222,8 @@ websites:
   category_label: "Websites"
   service_name: "Websites and online stores"
   providers: ["Shopify", "Salla", "Zid", "WooCommerce", "Next.js"]
+  icon: "globe"
+  section_icons: ["git-compare", "store", "monitor", "credit-card", "search"]
   siblings: ["noon-amazon", "automation", "crm"]
   ar:
     primary_keyword: "تصميم المواقع والمتاجر الإلكترونية"

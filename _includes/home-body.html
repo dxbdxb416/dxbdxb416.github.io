@@ -82,7 +82,14 @@
     {% for tab in t.stack_tabs %}
       <div data-tab-panel="{{ tab.key }}" class="tool-grid"{% unless forloop.first %} hidden{% endunless %}>
         {% for tool in site.data.home.stack_tools[tab.key] %}
-          <div class="tool-card"><div class="tool-mark"></div><span class="tool-name">{{ tool }}</span></div>
+          <div class="tool-card">
+            {% if tool.logo %}
+              <div class="tool-mark" aria-hidden="true">{% include tool-logos/{{ tool.logo }}.svg %}</div>
+            {% else %}
+              <div class="tool-mark tool-mark-mono" aria-hidden="true"><span>{{ tool.mono }}</span></div>
+            {% endif %}
+            <span class="tool-name">{{ tool.name }}</span>
+          </div>
         {% endfor %}
       </div>
     {% endfor %}
