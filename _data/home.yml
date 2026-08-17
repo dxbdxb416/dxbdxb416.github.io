@@ -1,11 +1,37 @@
 services_row: ["noon-amazon", "crm", "automation", "websites"]
 
 stack_tools:
-  stores: ["Amazon", "Noon", "Shopify", "Salla", "WooCommerce", "Zid"]
-  accounting: ["Odoo", "Zoho Books", "SAP Business One", "Oracle NetSuite", "QuickBooks", "Xero"]
-  crm: ["Zoho CRM", "HubSpot", "Salesforce", "Pipedrive"]
-  hr: ["Zoho People", "Bayzat", "ZenHR", "Odoo HR"]
-  automation: ["Zapier", "Make", "n8n", "WhatsApp API", "Google Sheets", "REST APIs"]
+  stores:
+    - { name: "Amazon", logo: null, mono: "AM" }
+    - { name: "Noon", logo: null, mono: "NO" }
+    - { name: "Shopify", logo: "shopify", mono: "" }
+    - { name: "Salla", logo: "salla", mono: "" }
+    - { name: "WooCommerce", logo: "woocommerce", mono: "" }
+    - { name: "Zid", logo: null, mono: "ZD" }
+  accounting:
+    - { name: "Odoo", logo: "odoo", mono: "" }
+    - { name: "Zoho Books", logo: "zoho", mono: "" }
+    - { name: "SAP Business One", logo: "sap", mono: "" }
+    - { name: "Oracle NetSuite", logo: null, mono: "NS" }
+    - { name: "QuickBooks", logo: "quickbooks", mono: "" }
+    - { name: "Xero", logo: "xero", mono: "" }
+  crm:
+    - { name: "Zoho CRM", logo: "zoho", mono: "" }
+    - { name: "HubSpot", logo: "hubspot", mono: "" }
+    - { name: "Salesforce", logo: null, mono: "SF" }
+    - { name: "Pipedrive", logo: null, mono: "PD" }
+  hr:
+    - { name: "Zoho People", logo: "zoho", mono: "" }
+    - { name: "Bayzat", logo: null, mono: "BZ" }
+    - { name: "ZenHR", logo: null, mono: "ZH" }
+    - { name: "Odoo HR", logo: "odoo", mono: "" }
+  automation:
+    - { name: "Zapier", logo: "zapier", mono: "" }
+    - { name: "Make", logo: "make", mono: "" }
+    - { name: "n8n", logo: "n8n", mono: "" }
+    - { name: "WhatsApp API", logo: "whatsapp", mono: "" }
+    - { name: "Google Sheets", logo: "googlesheets", mono: "" }
+    - { name: "REST APIs", logo: null, mono: "API" }
 
 ar:
   primary_keyword: "حلول رقمية للشركات الصغيرة"

@@ -109,6 +109,10 @@ img { max-width: 100%; }
 .section { max-width: 1140px; margin: 0 auto; padding: 76px 28px 0; }
 .section:first-of-type { padding-top: 0; }
 .section-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+.service-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--blue-bg); color: var(--blue); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
+.service-icon svg { width: 24px; height: 24px; }
+.h2-icon { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 7px; background: var(--blue-bg); color: var(--blue); vertical-align: -7px; margin-inline-end: 10px; }
+.h2-icon svg { width: 15px; height: 15px; }
 .section-title { margin: 0; font-size: 26px; font-weight: 800; }
 .rule { width: 44px; height: 3px; background: var(--blue); }
 
@@ -153,7 +157,10 @@ img { max-width: 100%; }
 .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; }
 [data-tab-panel][hidden] { display: none; }
 .tool-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.tool-card .tool-mark { width: 64px; height: 64px; border-radius: 6px; border: 1px solid var(--border); background: repeating-linear-gradient(135deg, #F7F9FC 0 8px, #EEF2F8 8px 16px); }
+.tool-card .tool-mark { width: 64px; height: 64px; border-radius: 6px; border: 1px solid var(--border); background: var(--white); color: var(--navy); display: flex; align-items: center; justify-content: center; }
+.tool-card .tool-mark svg { width: 32px; height: 32px; }
+.tool-card .tool-mark.tool-mark-mono { background: var(--navy); border-color: var(--navy); }
+.tool-card .tool-mark.tool-mark-mono span { color: #FFFFFF; font-weight: 800; font-size: 14px; letter-spacing: 0.02em; }
 .tool-card span.tool-name { font-size: 14px; font-weight: 700; text-align: center; }
 
 .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: stretch; }
