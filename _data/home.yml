@@ -1,0 +1,146 @@
+services_row: ["noon-amazon", "crm", "automation", "websites"]
+
+stack_tools:
+  stores:
+    - { name: "Amazon", logo: null, mono: "AM" }
+    - { name: "Noon", logo: null, mono: "NO" }
+    - { name: "Shopify", logo: "shopify", mono: "" }
+    - { name: "Salla", logo: "salla", mono: "" }
+    - { name: "WooCommerce", logo: "woocommerce", mono: "" }
+    - { name: "Zid", logo: null, mono: "ZD" }
+  accounting:
+    - { name: "Odoo", logo: "odoo", mono: "" }
+    - { name: "Zoho Books", logo: "zoho", mono: "" }
+    - { name: "SAP Business One", logo: "sap", mono: "" }
+    - { name: "Oracle NetSuite", logo: null, mono: "NS" }
+    - { name: "QuickBooks", logo: "quickbooks", mono: "" }
+    - { name: "Xero", logo: "xero", mono: "" }
+  crm:
+    - { name: "Zoho CRM", logo: "zoho", mono: "" }
+    - { name: "HubSpot", logo: "hubspot", mono: "" }
+    - { name: "Salesforce", logo: null, mono: "SF" }
+    - { name: "Pipedrive", logo: null, mono: "PD" }
+  hr:
+    - { name: "Zoho People", logo: "zoho", mono: "" }
+    - { name: "Bayzat", logo: null, mono: "BZ" }
+    - { name: "ZenHR", logo: null, mono: "ZH" }
+    - { name: "Odoo HR", logo: "odoo", mono: "" }
+  automation:
+    - { name: "Zapier", logo: "zapier", mono: "" }
+    - { name: "Make", logo: "make", mono: "" }
+    - { name: "n8n", logo: "n8n", mono: "" }
+    - { name: "WhatsApp API", logo: "whatsapp", mono: "" }
+    - { name: "Google Sheets", logo: "googlesheets", mono: "" }
+    - { name: "REST APIs", logo: null, mono: "API" }
+
+ar:
+  primary_keyword: "حلول رقمية للشركات الصغيرة"
+  secondary_keywords:
+    - "خدمات رقمية للشركات الصغيرة بالإمارات والسعودية"
+    - "برامج إدارة الأعمال للشركات الصغيرة"
+    - "أنظمة وأدوات إدارة الأعمال في الإمارات"
+    - "خطوات تنفيذ مشروع رقمي للشركة"
+    - "استشارة مجانية لأتمتة الأعمال"
+  hero:
+    badge: "خبرة ٨ سنوات · الإمارات والسعودية"
+    h1: "نقدّم حلول رقمية تساعد الشركات الصغيرة والمتوسطة تبيع أونلاين، وتنظّم مبيعاتها، وتربط أنظمتها ببعض."
+    p: "خبرة ٨ سنوات في بيع حلول ERP وCRM في الإمارات، مع خبرة تقنية عملية في التجارة الإلكترونية، أتمتة الكتالوجات، ونقل البيانات بين الأنظمة."
+    cta_primary: "تواصل عبر WhatsApp"
+    cta_secondary: "شوف المنتجات"
+  services_h2: "خدمات رقمية للشركات الصغيرة بالإمارات والسعودية"
+  pricing_h2: "برامج إدارة الأعمال للشركات الصغيرة"
+  products:
+    erp: { eyebrow: "ERP", h3: "برامج حسابية وإدارة الشركة", p: "برنامج واحد يجمع الحسابات والفواتير والمخزون والمشتريات، بدل ملفات الإكسل المتفرقة. نساعدك تختار البرنامج المناسب لحجم شركتك ونشرف على التركيب والتدريب. (يُعرف تقنيًا بـ ERP)", link_service_id: "accounting-erp" }
+    crm: { eyebrow: "CRM", h3: "برامج إدارة العملاء والمبيعات", p: "برنامج يحفظ كل عميل ومكالمة وعرض سعر في مكان واحد، ويذكّر فريقك بالمتابعة ويعطيك تقرير عن المبيعات. (يُعرف تقنيًا بـ CRM)", link_service_id: "crm" }
+    hr: { eyebrow: "HR", h3: "برامج إدارة الموظفين والرواتب", p: "برنامج ينظّم ملفات الموظفين والرواتب والإجازات والحضور والانصراف، ويصدر الكشوفات تلقائيًا. (يُعرف تقنيًا بـ HR)", providers: ["Zoho People", "Bayzat", "ZenHR"], provider_list_label: "الشركات المتوفرة", quote_link_text: "اطلب عرض سعر" }
+  footnote: "لكل برنامج أكثر من شركة مزوّدة، والسعر يعتمد على البرنامج وعدد المستخدمين وحجم العمل المطلوب. تواصل معنا ونرشّح لك الأنسب بدون التزام."
+  stack_h2: "أنظمة وأدوات إدارة الأعمال في الإمارات"
+  stack_intro: "نختار لك الأداة المناسبة من بين أدوات مجرّبة، ونتولى الإعداد والربط والتدريب."
+  stack_tabs:
+    - { key: "stores", label: "المتاجر والمنصات" }
+    - { key: "accounting", label: "برامج حسابية" }
+    - { key: "crm", label: "إدارة العملاء" }
+    - { key: "hr", label: "الموظفين والرواتب" }
+    - { key: "automation", label: "الأتمتة والربط" }
+  process_h2: "خطوات تنفيذ مشروع رقمي للشركة"
+  process_stages:
+    - { number: "01", title: "الدراسة", items: ["فهم احتياج الشركة", "مراجعة الوضع الحالي", "ترشيح الحل المناسب", "تقدير التكلفة والمدة"] }
+    - { number: "02", title: "الإعداد", items: ["تجهيز الحسابات والبيانات", "تصميم سير العمل", "ضبط الصلاحيات", "ربط القنوات"] }
+    - { number: "03", title: "التنفيذ", items: ["التركيب والربط", "نقل البيانات", "اختبار كامل", "تعديل حسب الملاحظات"] }
+    - { number: "04", title: "التشغيل", items: ["تدريب الفريق", "متابعة أول شهر", "تقارير دورية", "دعم وصيانة"] }
+  contact_h2: "استشارة مجانية لأتمتة الأعمال"
+  contact:
+    whatsapp_label: "واتساب"
+    email_label: "البريد"
+    hours: "متاحون من الأحد إلى الخميس · نرد خلال يوم عمل."
+    form_name: "الاسم"
+    form_company: "اسم الشركة"
+    form_whatsapp: "رقم WhatsApp"
+    form_select_placeholder: "إيش تحتاج؟"
+    form_select_options:
+      - "نون وأمازون — إطلاق وإدارة"
+      - "برامج حسابية وإدارة الشركة"
+      - "برامج إدارة العملاء والمبيعات"
+      - "برامج إدارة الموظفين والرواتب"
+      - "أتمتة العمليات والربط"
+      - "موقع أو متجر إلكتروني"
+      - "غير ذلك / مو متأكد"
+    form_note: "ملاحظة (اختياري)"
+    form_submit: "أرسل الطلب"
+    form_hint: "نرد خلال يوم عمل. سيفتح هذا واتساب لإرسال طلبك مباشرة."
+
+en:
+  primary_keyword: "digital solutions for small businesses UAE"
+  secondary_keywords:
+    - "digital services for SMBs in the UAE and Saudi Arabia"
+    - "business management software for small companies"
+    - "business tools and systems used in the UAE"
+    - "steps to implement a digital project"
+    - "free consultation for business automation"
+  hero:
+    badge: "8 years of experience · UAE & KSA"
+    h1: "Digital solutions for small businesses in the UAE and Saudi Arabia — we help you sell online, organize your sales, and connect your systems together."
+    p: "8 years selling ERP and CRM solutions in the UAE, with hands-on technical experience in e-commerce, catalog automation, and data migration between systems."
+    cta_primary: "Talk on WhatsApp"
+    cta_secondary: "See products"
+  services_h2: "Digital services for SMBs in the UAE and Saudi Arabia"
+  pricing_h2: "Business management software for small companies"
+  products:
+    erp: { eyebrow: "ERP", h3: "Accounting & business management software", p: "One program that holds your accounts, invoices, inventory, and purchasing instead of scattered spreadsheets. We help you pick the right one for your company size and oversee setup and training. (known technically as ERP)", link_service_id: "accounting-erp" }
+    crm: { eyebrow: "CRM", h3: "Customer & sales management software", p: "A program that keeps every customer, call, and quote in one place, reminds your team to follow up, and gives you a sales report. (known technically as CRM)", link_service_id: "crm" }
+    hr: { eyebrow: "HR", h3: "Staff & payroll software", p: "A program that organizes staff files, payroll, leave, and attendance, and issues payslips automatically. (known technically as HR)", providers: ["Zoho People", "Bayzat", "ZenHR"], provider_list_label: "Available providers", quote_link_text: "Request a quote" }
+  footnote: "Each program comes from several providers, and pricing depends on the program, user count, and scope of work. Talk to us and we'll recommend the best fit — no obligation."
+  stack_h2: "Business tools and systems used in the UAE"
+  stack_intro: "We choose the right tool for you from proven options, and handle setup, integration, and training."
+  stack_tabs:
+    - { key: "stores", label: "Stores & platforms" }
+    - { key: "accounting", label: "Accounting software" }
+    - { key: "crm", label: "Customer management" }
+    - { key: "hr", label: "Staff & payroll" }
+    - { key: "automation", label: "Automation & integration" }
+  process_h2: "Steps to implement a digital project"
+  process_stages:
+    - { number: "01", title: "Discovery", items: ["Understanding your needs", "Reviewing the current setup", "Recommending the right fit", "Cost and timeline estimate"] }
+    - { number: "02", title: "Setup", items: ["Accounts and data prep", "Workflow design", "Permissions setup", "Channel integrations"] }
+    - { number: "03", title: "Delivery", items: ["Installation and integration", "Data migration", "Full testing", "Adjustments from feedback"] }
+    - { number: "04", title: "Operation", items: ["Team training", "First-month follow-up", "Regular reporting", "Support and maintenance"] }
+  contact_h2: "Free consultation for business automation"
+  contact:
+    whatsapp_label: "WhatsApp"
+    email_label: "Email"
+    hours: "Sunday to Thursday · we reply within one business day."
+    form_name: "Name"
+    form_company: "Company"
+    form_whatsapp: "WhatsApp number"
+    form_select_placeholder: "What do you need?"
+    form_select_options:
+      - "Noon & Amazon — launch and management"
+      - "Accounting & business management software"
+      - "Customer & sales management software"
+      - "Staff & payroll software"
+      - "Automation & integrations"
+      - "Website or online store"
+      - "Something else / not sure"
+    form_note: "Note (optional)"
+    form_submit: "Send request"
+    form_hint: "We reply within one business day. This opens WhatsApp to send your request directly."

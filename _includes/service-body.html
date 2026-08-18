@@ -1,0 +1,31 @@
+{% assign svc = site.data.services[page.service_id] %}
+{% assign t = svc[page.lang] %}
+<section class="section" style="padding-top:56px">
+  <div class="section-head">
+    <div class="service-icon" aria-hidden="true">{% include icons/{{ svc.icon }}.svg %}</div>
+    <span class="eyebrow">{{ svc.eyebrow_number }} · {{ svc.category_label }}</span>
+    <h1>{{ t.h1 }}</h1>
+    <div class="rule"></div>
+  </div>
+  <p style="font-size:16px;line-height:1.9;color:var(--text-muted);max-width:640px">{{ t.intro }}</p>
+
+  {% for section in t.sections %}
+    {% assign section_icon = svc.section_icons[forloop.index0] %}
+    <h2><span class="h2-icon" aria-hidden="true">{% include icons/{{ section_icon }}.svg %}</span>{{ section.h2 }}</h2>
+    <p style="font-size:15px;line-height:1.9;color:var(--text-muted);max-width:640px">{{ section.body }}</p>
+  {% endfor %}
+
+  {% if svc.providers %}
+    <div class="provider-list" style="max-width:420px;margin-top:24px">
+      <span class="provider-list-label">{{ t.provider_list_label }}</span>
+      {% for provider in svc.providers %}<span class="provider"><span class="dot"></span>{{ provider }}</span>{% endfor %}
+    </div>
+    {% include vendor-disclaimer.html %}
+  {% endif %}
+
+  {% if t.footnote %}<p style="font-size:14px;line-height:1.9;color:#7B869B;max-width:720px;margin-top:24px">{{ t.footnote }}</p>{% endif %}
+
+  <a href="{{ site.data.site.whatsapp_link }}" class="btn btn-primary" style="margin-top:24px">{{ t.quote_link_text }}</a>
+
+  {% include sibling-links.html %}
+</section>

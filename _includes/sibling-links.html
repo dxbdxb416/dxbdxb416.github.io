@@ -1,0 +1,10 @@
+{% assign svc = site.data.services[page.service_id] %}
+{% if svc.siblings %}
+<nav class="sibling-links" aria-label="{{ site.data.i18n[page.lang].sibling_links_label }}">
+  <span class="sibling-links-label">{{ site.data.i18n[page.lang].sibling_links_label }}</span>
+  {% for sib_id in svc.siblings %}
+    {% assign sib_t = site.data.services[sib_id][page.lang] %}
+    <a href="/{{ page.lang }}/{{ sib_id }}/">{{ sib_t.primary_keyword }}</a>
+  {% endfor %}
+</nav>
+{% endif %}
