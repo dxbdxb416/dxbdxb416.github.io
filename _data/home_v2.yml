@@ -1,0 +1,341 @@
+# _data/home_v2.yml
+# Content for the redesigned home page (home-body.html).
+# home.yml is untouched: SEO headings (services_h2, pricing_h2, stack_h2,
+# process_h2, contact_h2), products, process_stages, stack_tools and the
+# contact form strings are still read from there.
+
+hero_logos: ["shopify", "salla", "woocommerce", "odoo", "zoho", "sap", "quickbooks", "xero", "hubspot", "zapier", "n8n"]
+hero_logo_images: ["/assets/img/logos/sage.webp"]
+
+# Tool grid (replaces site.data.home.stack_tools when a matching key exists).
+stack_tools:
+  stores:
+    - { name: "Amazon", img: "/assets/img/logos/amazon.png" }
+    - { name: "noon", img: "/assets/img/logos/noon.png" }
+    - { name: "Shopify", logo: "shopify" }
+    - { name: "Salla", logo: "salla" }
+    - { name: "WooCommerce", logo: "woocommerce" }
+  accounting:
+    - { name: "Odoo", logo: "odoo" }
+    - { name: "Zoho Books", logo: "zoho" }
+    - { name: "SAP Business One", logo: "sap" }
+    - { name: "QuickBooks", logo: "quickbooks" }
+    - { name: "Xero", logo: "xero" }
+  crm:
+    - { name: "Zoho CRM", logo: "zoho" }
+    - { name: "HubSpot", logo: "hubspot" }
+    - { name: "Salesforce", img: "/assets/img/logos/salesforce.webp" }
+    - { name: "Pipedrive", img: "/assets/img/logos/pipedrive.avif" }
+  hr:
+    - { name: "Zoho People", logo: "zoho" }
+    - { name: "Odoo HR", logo: "odoo" }
+    - { name: "Sage", img: "/assets/img/logos/sage.webp" }
+  automation:
+    - { name: "Zapier", logo: "zapier" }
+    - { name: "Make", logo: "make" }
+    - { name: "n8n", logo: "n8n" }
+    - { name: "WhatsApp API", logo: "whatsapp" }
+    - { name: "Google Sheets", logo: "googlesheets" }
+    - { name: "REST APIs", img: "/assets/img/logos/rest-api.jpg" }
+
+en:
+  hero:
+    eyebrow: "Dubai · Sharjah · Riyadh — 8 years hands-on"
+    h1: "One system to run your whole business"
+    sub_before: "Marketplaces, accounting, customers, payroll, automation — it's all one system. We help small businesses in the UAE and Saudi Arabia"
+    sub_link_stores: "sell on noon &amp; Amazon"
+    sub_middle: ", run"
+    sub_link_erp: "accounting"
+    sub_link_crm: "CRM"
+    sub_and: "and"
+    sub_link_hr: "payroll"
+    sub_after: ", then wire it together."
+    cta_primary: "Talk on WhatsApp"
+    cta_secondary: "What fits my business?"
+    toolrow_label: "We work with the tools your business already runs on"
+    toolrow_link: "View all →"
+  app:
+    company: "Ace Trading LLC"
+    search: "Search orders, customers, invoices…"
+    hello: "Hey there, Omar"
+    hello_sub: "Here's what's happening across your systems today."
+    rail: ["Home", "Sales", "Stock", "Books", "Staff", "Sync"]
+    kpis:
+      - { value: "134", label: "Orders", icon: "package", delta: "+18 today", tone: "good" }
+      - { value: "25", label: "Leads", icon: "users", delta: "+6 today", tone: "good" }
+      - { value: "87", label: "Invoices", icon: "file-text", delta: "4 unpaid", tone: "warn" }
+      - { value: "22", label: "Tickets", icon: "life-buoy", delta: "avg 2h reply", tone: "mute" }
+    activity_label: "Activity"
+    activity_live: "Live sync on"
+    activity:
+      - { text: "noon order #48221 synced to accounting", time: "3:30PM", icon: "store", tone: "blue" }
+      - { text: "Quote sent to Al Nahda Trading via CRM", time: "3:22PM", icon: "users", tone: "violet" }
+      - { text: "Amazon stock levels updated from Odoo", time: "3:18PM", icon: "package", tone: "green" }
+      - { text: "Payroll run approved for 14 employees", time: "3:04PM", icon: "credit-card", tone: "teal" }
+      - { text: "WhatsApp enquiry routed to sales owner", time: "2:51PM", icon: "workflow", tone: "amber" }
+    revenue_label: "Revenue · Aug"
+    revenue_range: "Month"
+    revenue_total: "AED 137,445"
+    revenue_delta: "+12.4%"
+    weeks: ["W1", "W2", "W3", "W4"]
+    channels:
+      - { name: "noon", amount: "AED 61,200", width: "72%", tone: "strong" }
+      - { name: "Amazon", amount: "AED 48,900", width: "58%", tone: "mid" }
+      - { name: "Direct / retail", amount: "AED 27,345", width: "33%", tone: "soft" }
+  flow:
+    lede: "You sell, we make the systems keep up. Follow the line: the order comes in, the numbers land in the books, the customer stays in your CRM, and everything talks to everything."
+    link: "Ask which one you need →"
+    steps:
+      - { icon: "store", tag: "Marketplaces", title: "You start selling", body: "We open and run your noon &amp; Amazon stores — listings, catalogue automation, stock and daily management.", result: "Orders start arriving →" }
+      - { icon: "calculator", tag: "Accounting", title: "The books keep up", body: "Every order, invoice and payment lands in one accounting system instead of five spreadsheets.", result: "Numbers you can trust →" }
+      - { icon: "users", tag: "CRM", title: "Customers stay yours", body: "Leads, calls and quotes live in one place, with follow-up reminders and a real sales report.", result: "Nothing gets forgotten →" }
+      - { icon: "workflow", tag: "Automation", title: "Everything connects", body: "Store, books, CRM and WhatsApp pass data to each other — no one re-typing anything.", result: "It runs without you →" }
+      - { icon: "monitor", tag: "Web &amp; apps", title: "Your own storefront", body: "A fast bilingual website or online store, and an iOS &amp; Android app when your customers need one.", result: "Customers find you →" }
+  products:
+    lede: "Pick the part of your business that hurts. We tell you what the software actually does, and which real vendors we set it up on."
+    note: "Every program comes from several vendors. Price depends on users and scope — we quote after a short call."
+    vendors_label: "Vendors we set up"
+    items:
+      - key: "erp"
+        tag: "ERP"
+        icon: "layers"
+        name: "Accounting &amp; business management"
+        plain: "One program holding your <strong>accounts, invoices, stock and purchasing</strong> — instead of five spreadsheets that never agree."
+        points:
+          - "Invoice a customer and the <strong>books, stock and VAT update at once</strong>"
+          - "See what you own, what you owe, and <strong>real profit per month</strong>"
+          - "We <strong>migrate your existing data</strong> and train the team"
+        vendors:
+          - { name: "Odoo", logo: "odoo" }
+          - { name: "Zoho Books", logo: "zoho" }
+          - { name: "SAP B1", logo: "sap" }
+          - { name: "QuickBooks", logo: "quickbooks" }
+          - { name: "Xero", logo: "xero" }
+        cta: "Get an ERP quote"
+        mock: "invoice"
+        mock_label: "invoice · what you'll see"
+      - key: "crm"
+        tag: "CRM"
+        icon: "funnel"
+        name: "Customers &amp; sales management"
+        plain: "Every customer, call and quote in one place, so <strong>no enquiry is lost</strong> and you can see <strong>where sales really stand</strong>."
+        points:
+          - "WhatsApp and web enquiries land as <strong>leads with an owner</strong>"
+          - "<strong>Quotes, follow-ups and reminders</strong> tracked per deal"
+          - "One <strong>honest sales report</strong> instead of guesswork"
+        vendors:
+          - { name: "Zoho CRM", logo: "zoho" }
+          - { name: "HubSpot", logo: "hubspot" }
+          - { name: "Odoo CRM", logo: "odoo" }
+        cta: "Get a CRM quote"
+        mock: "pipeline"
+        mock_label: "pipeline · what you'll see"
+      - key: "hr"
+        tag: "HR"
+        icon: "badge"
+        name: "Staff &amp; payroll"
+        plain: "<strong>Staff files, salaries, leave and attendance</strong> in one system that issues <strong>payslips</strong> for you each month."
+        points:
+          - "<strong>Payroll run in minutes</strong> with leave and overtime applied"
+          - "Contracts, visas and documents with <strong>expiry reminders</strong>"
+          - "Attendance from the app or <strong>fingerprint device</strong>"
+        vendors:
+          - { name: "Zoho People", logo: "zoho" }
+          - { name: "Odoo HR", logo: "odoo" }
+          - { name: "Sage", img: "/assets/img/logos/sage.webp" }
+        cta: "Get an HR quote"
+        mock: "payslip"
+        mock_label: "payslip · what you'll see"
+      - key: "web"
+        tag: "Web &amp; apps"
+        icon: "monitor"
+        name: "Websites &amp; mobile apps"
+        plain: "The storefront your customers actually see — a <strong>fast website or online store</strong>, and an <strong>iOS &amp; Android app</strong> when you need one."
+        points:
+          - "Arabic and English, mobile-first, built to load fast"
+          - "Online store wired to your stock, invoices and payments"
+          - "Apps published on the App Store and Google Play, and maintained"
+        vendors:
+          - { name: "Shopify", logo: "shopify" }
+          - { name: "Salla", logo: "salla" }
+          - { name: "WooCommerce", logo: "woocommerce" }
+        cta: "Get a website or app quote"
+        mock: "screens"
+        mock_label: "screens · what you'll get"
+  mocks:
+    screens_note: "Arabic &amp; English, mobile-first, connected to your systems"
+    invoice_title: "Invoice INV-2041"
+    invoice_status: "PAID"
+    invoice_rows:
+      - { item: "Consulting — setup", amount: "AED 12,000" }
+      - { item: "Licences × 8 users", amount: "AED 4,600" }
+      - { item: "VAT 5%", amount: "AED 1,800" }
+    invoice_total_label: "Total"
+    invoice_total: "AED 18,400"
+    invoice_note: "Posted to accounts &amp; stock automatically"
+    pipeline_columns:
+      - { stage: "New", deals: [{ name: "Al Nahda Trading", value: "AED 24k" }, { name: "Gulf Spares", value: "AED 9k" }] }
+      - { stage: "Quoted", deals: [{ name: "Marina Cafe", value: "AED 15k" }] }
+      - { stage: "Won", deals: [{ name: "Bin Salem LLC", value: "AED 31k" }] }
+    pipeline_note: "Follow-up reminders fire on their own"
+    payslip_title: "Payslip · August"
+    payslip_status: "14 STAFF"
+    payslip_rows:
+      - { item: "Basic salary", amount: "AED 7,500" }
+      - { item: "Housing allowance", amount: "AED 1,800" }
+      - { item: "Overtime · 6 hrs", amount: "AED 320" }
+      - { item: "Unpaid leave · 1 day", amount: "− AED 470" }
+    payslip_total_label: "Net pay"
+    payslip_total: "AED 9,150"
+    payslip_note: "Leave and attendance already deducted"
+
+ar:
+  hero:
+    eyebrow: "دبي · الشارقة · الرياض — خبرة ٨ سنوات"
+    h1: "نظام واحد يشغّل شركتك بالكامل"
+    sub_before: "المتاجر، الحسابات، العملاء، الرواتب، والأتمتة — كلها نظام واحد. نساعد الشركات الصغيرة في الإمارات والسعودية على"
+    sub_link_stores: "البيع في نون وأمازون"
+    sub_middle: "، وتشغيل"
+    sub_link_erp: "الحسابات"
+    sub_link_crm: "إدارة العملاء"
+    sub_and: "و"
+    sub_link_hr: "الرواتب"
+    sub_after: "، ثم ربطها كلها ببعض."
+    cta_primary: "تواصل عبر WhatsApp"
+    cta_secondary: "إيش يناسب شركتي؟"
+    toolrow_label: "نعمل على الأدوات اللي شركتك تستخدمها أصلًا"
+    toolrow_link: "شوف الكل →"
+  app:
+    company: "شركة إيس للتجارة"
+    search: "ابحث في الطلبات، العملاء، الفواتير…"
+    hello: "هلا عمر"
+    hello_sub: "هذا ملخص ما يحدث في أنظمتك اليوم."
+    rail: ["الرئيسية", "المبيعات", "المخزون", "الحسابات", "الموظفين", "الربط"]
+    kpis:
+      - { value: "١٣٤", label: "طلبات", icon: "package", delta: "+١٨ اليوم", tone: "good" }
+      - { value: "٢٥", label: "عملاء محتملين", icon: "users", delta: "+٦ اليوم", tone: "good" }
+      - { value: "٨٧", label: "فواتير", icon: "file-text", delta: "٤ غير مسددة", tone: "warn" }
+      - { value: "٢٢", label: "تذاكر", icon: "life-buoy", delta: "الرد بمعدل ساعتين", tone: "mute" }
+    activity_label: "النشاط"
+    activity_live: "الربط يعمل"
+    activity:
+      - { text: "طلب نون #48221 تم ترحيله للحسابات", time: "٣:٣٠م", icon: "store", tone: "blue" }
+      - { text: "عرض سعر أُرسل لشركة النهضة عبر CRM", time: "٣:٢٢م", icon: "users", tone: "violet" }
+      - { text: "تحديث مخزون أمازون من Odoo", time: "٣:١٨م", icon: "package", tone: "green" }
+      - { text: "اعتماد الرواتب لـ ١٤ موظف", time: "٣:٠٤م", icon: "credit-card", tone: "teal" }
+      - { text: "استفسار واتساب تم تحويله لمسؤول المبيعات", time: "٢:٥١م", icon: "workflow", tone: "amber" }
+    revenue_label: "الإيراد · أغسطس"
+    revenue_range: "شهري"
+    revenue_total: "١٣٧,٤٤٥ درهم"
+    revenue_delta: "+١٢.٤٪"
+    weeks: ["أ١", "أ٢", "أ٣", "أ٤"]
+    channels:
+      - { name: "نون", amount: "٦١,٢٠٠ درهم", width: "72%", tone: "strong" }
+      - { name: "أمازون", amount: "٤٨,٩٠٠ درهم", width: "58%", tone: "mid" }
+      - { name: "بيع مباشر", amount: "٢٧,٣٤٥ درهم", width: "33%", tone: "soft" }
+  flow:
+    lede: "أنت تبيع، ونحن نجعل الأنظمة تلحق بك. تابع الخط: الطلب يدخل، الأرقام تنزل في الحسابات، العميل يبقى محفوظًا في نظامك، وكل شيء يتكلم مع الباقي."
+    link: "اسألنا إيش تحتاج →"
+    steps:
+      - { icon: "store", tag: "المتاجر", title: "تبدأ البيع", body: "نفتح ونشغّل متاجرك في نون وأمازون — القوائم، أتمتة الكتالوج، المخزون والإدارة اليومية.", result: "الطلبات تبدأ تجيك →" }
+      - { icon: "calculator", tag: "الحسابات", title: "الحسابات تلحق", body: "كل طلب وفاتورة ودفعة تنزل في نظام حسابات واحد بدل خمس ملفات إكسل.", result: "أرقام تثق فيها →" }
+      - { icon: "users", tag: "إدارة العملاء", title: "العملاء يبقون لك", body: "العملاء والمكالمات وعروض السعر في مكان واحد، مع تذكير بالمتابعة وتقرير مبيعات حقيقي.", result: "لا شيء ينسى →" }
+      - { icon: "workflow", tag: "الأتمتة", title: "كل شيء يترابط", body: "المتجر والحسابات وإدارة العملاء وواتساب يتبادلون البيانات — بدون إدخال يدوي.", result: "يشتغل بدونك →" }
+      - { icon: "monitor", tag: "مواقع وتطبيقات", title: "واجهتك الخاصة", body: "موقع أو متجر إلكتروني سريع بلغتين، وتطبيق iOS و Android عند الحاجة.", result: "العملاء يوصلون لك →" }
+  products:
+    lede: "اختر الجزء اللي يتعبك في شغلك. نشرح لك إيش يسوي البرنامج فعليًا، وعلى أي شركات مزوّدة نركّبه."
+    note: "كل برنامج له أكثر من شركة مزوّدة. السعر يعتمد على عدد المستخدمين وحجم العمل — نعطيك عرضًا بعد مكالمة قصيرة."
+    vendors_label: "الشركات اللي نركّب عليها"
+    items:
+      - key: "erp"
+        tag: "ERP"
+        icon: "layers"
+        name: "الحسابات وإدارة الشركة"
+        plain: "برنامج واحد يجمع <strong>الحسابات والفواتير والمخزون والمشتريات</strong> — بدل ملفات إكسل ما تتفق أبدًا."
+        points:
+          - "تصدر فاتورة <strong>فيتحدّث الحساب والمخزون والضريبة مرة واحدة</strong>"
+          - "تعرف إيش عندك، وإيش عليك، و<strong>الربح الحقيقي شهريًا</strong>"
+          - "<strong>ننقل بياناتك الحالية</strong> وندرّب الفريق"
+        vendors:
+          - { name: "Odoo", logo: "odoo" }
+          - { name: "Zoho Books", logo: "zoho" }
+          - { name: "SAP B1", logo: "sap" }
+          - { name: "QuickBooks", logo: "quickbooks" }
+          - { name: "Xero", logo: "xero" }
+        cta: "اطلب عرض ERP"
+        mock: "invoice"
+        mock_label: "فاتورة · مثال"
+      - key: "crm"
+        tag: "CRM"
+        icon: "funnel"
+        name: "إدارة العملاء والمبيعات"
+        plain: "كل عميل ومكالمة وعرض سعر في مكان واحد، <strong>فلا يضيع استفسار</strong> وتعرف <strong>وين وصلت مبيعاتك</strong>."
+        points:
+          - "استفسارات واتساب والموقع تنزل <strong>كعملاء محتملين مع مسؤول</strong>"
+          - "<strong>عروض السعر والمتابعات والتذكيرات</strong> محفوظة لكل فرصة"
+          - "<strong>تقرير مبيعات واضح</strong> بدل التخمين"
+        vendors:
+          - { name: "Zoho CRM", logo: "zoho" }
+          - { name: "HubSpot", logo: "hubspot" }
+          - { name: "Odoo CRM", logo: "odoo" }
+        cta: "اطلب عرض CRM"
+        mock: "pipeline"
+        mock_label: "مسار المبيعات · مثال"
+      - key: "hr"
+        tag: "HR"
+        icon: "badge"
+        name: "الموظفين والرواتب"
+        plain: "<strong>ملفات الموظفين والرواتب والإجازات والحضور</strong> في نظام واحد يصدر لك <strong>الكشوفات كل شهر</strong>."
+        points:
+          - "<strong>تشغيل الرواتب بدقائق</strong> مع خصم الإجازات وإضافة الساعات الإضافية"
+          - "العقود والإقامات والمستندات مع <strong>تذكير قبل الانتهاء</strong>"
+          - "الحضور من التطبيق أو <strong>جهاز البصمة</strong>"
+        vendors:
+          - { name: "Zoho People", logo: "zoho" }
+          - { name: "Odoo HR", logo: "odoo" }
+          - { name: "Sage", img: "/assets/img/logos/sage.webp" }
+        cta: "اطلب عرض HR"
+        mock: "payslip"
+        mock_label: "كشف راتب · مثال"
+      - key: "web"
+        tag: "مواقع وتطبيقات"
+        icon: "monitor"
+        name: "المواقع والتطبيقات"
+        plain: "الواجهة اللي يشوفها عميلك فعليًا — <strong>موقع أو متجر إلكتروني سريع</strong>، و<strong>تطبيق iOS و Android</strong> عند الحاجة."
+        points:
+          - "عربي وإنجليزي، مصمم للجوال أولًا وسريع التحميل"
+          - "متجر مربوط بالمخزون والفواتير وبوابات الدفع"
+          - "نشر التطبيقات على App Store و Google Play وصيانتها"
+        vendors:
+          - { name: "Shopify", logo: "shopify" }
+          - { name: "Salla", logo: "salla" }
+          - { name: "WooCommerce", logo: "woocommerce" }
+        cta: "اطلب عرض موقع أو تطبيق"
+        mock: "screens"
+        mock_label: "شاشات · مثال"
+  mocks:
+    screens_note: "عربي وإنجليزي، للجوال أولًا، ومربوط بأنظمتك"
+    invoice_title: "فاتورة INV-2041"
+    invoice_status: "مدفوعة"
+    invoice_rows:
+      - { item: "استشارة — التركيب", amount: "١٢,٠٠٠ درهم" }
+      - { item: "رخص × ٨ مستخدمين", amount: "٤,٦٠٠ درهم" }
+      - { item: "ضريبة ٥٪", amount: "١,٨٠٠ درهم" }
+    invoice_total_label: "الإجمالي"
+    invoice_total: "١٨,٤٠٠ درهم"
+    invoice_note: "تُرحّل للحسابات والمخزون تلقائيًا"
+    pipeline_columns:
+      - { stage: "جديد", deals: [{ name: "النهضة للتجارة", value: "٢٤ ألف" }, { name: "الخليج لقطع الغيار", value: "٩ آلاف" }] }
+      - { stage: "عرض سعر", deals: [{ name: "مقهى مارينا", value: "١٥ ألف" }] }
+      - { stage: "مكتسب", deals: [{ name: "بن سالم", value: "٣١ ألف" }] }
+    pipeline_note: "تذكيرات المتابعة تشتغل لوحدها"
+    payslip_title: "كشف راتب · أغسطس"
+    payslip_status: "١٤ موظف"
+    payslip_rows:
+      - { item: "الراتب الأساسي", amount: "٧,٥٠٠ درهم" }
+      - { item: "بدل سكن", amount: "١,٨٠٠ درهم" }
+      - { item: "ساعات إضافية · ٦", amount: "٣٢٠ درهم" }
+      - { item: "إجازة بدون راتب · يوم", amount: "− ٤٧٠ درهم" }
+    payslip_total_label: "الصافي"
+    payslip_total: "٩,١٥٠ درهم"
+    payslip_note: "الإجازات والحضور مخصومة مسبقًا"

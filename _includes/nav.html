@@ -1,4 +1,10 @@
+{%- comment -%}
+  Site nav. Inner pages keep the original navy bar untouched.
+  The home page renders its own floating pill nav inside the hero
+  (see _includes/home-body.html), so this bar is skipped there.
+{%- endcomment -%}
 {% assign t = site.data.i18n[page.lang] %}
+{% unless page.is_home %}
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="/{{ page.lang }}/" class="nav-brand">
@@ -17,3 +23,4 @@
     </div>
   </div>
 </nav>
+{% endunless %}

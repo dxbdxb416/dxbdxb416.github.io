@@ -1,149 +1,346 @@
+{%- comment -%}
+  Home page (v2 redesign). Reads:
+    site.data.home_v2[page.lang]  → new hero / flow / products / mock copy
+    site.data.home[page.lang]     → EXISTING SEO headings + products + process + contact
+    site.data.home.stack_tools    → EXISTING tool lists
+  Icons and vendor logos come from /assets/img/sprite.svg (<use>), so no
+  per-page inline SVG. RTL is handled by CSS logical properties.
+{%- endcomment -%}
 {% assign t = site.data.home[page.lang] %}
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <span class="badge">{{ t.hero.badge }}</span>
-      <h1>{{ t.hero.h1 }}</h1>
-      <p>{{ t.hero.p }}</p>
-      <div class="hero-actions">
-        <a href="{{ site.data.site.whatsapp_link }}" class="btn btn-primary">{{ t.hero.cta_primary }}</a>
-        <a href="#pricing" class="btn btn-secondary">{{ t.hero.cta_secondary }}</a>
+{% assign v = site.data.home_v2[page.lang] %}
+{% assign i18n = site.data.i18n[page.lang] %}
+{% assign sprite = "/assets/img/sprite.svg" %}
+
+<div class="home2">
+<div class="home2-shell">
+  <section class="home2-hero">
+
+    <nav class="home2-nav" aria-label="{{ i18n.nav_services }}">
+      <a href="/{{ page.lang }}/" class="home2-nav-brand">
+        <img src="/assets/img/logo-navy.png" alt="{{ i18n.logo_nav_alt }}" width="120" height="26">
+      </a>
+      <div class="home2-nav-links">
+        <a href="#services">{{ i18n.nav_services }}</a>
+        <a href="#pricing">{{ i18n.nav_pricing }}</a>
+        <a href="#stack">{{ t.stack_h2 | truncatewords: 3, "" }}</a>
+        <a href="#contact">{{ i18n.nav_contact }}</a>
+      </div>
+      <div class="home2-nav-actions">
+        {% if page.lang == 'ar' %}
+          <a href="{{ page.en_permalink }}" class="home2-nav-lang" hreflang="en" lang="en">{{ i18n.nav_lang_switch }}</a>
+        {% else %}
+          <a href="{{ page.ar_permalink }}" class="home2-nav-lang" hreflang="ar" lang="ar">{{ i18n.nav_lang_switch }}</a>
+        {% endif %}
+        <a href="{{ site.data.site.cal_link }}" target="_blank" rel="noopener" class="home2-nav-cta">{{ t.contact_h2 | truncatewords: 2, "" }}</a>
+      </div>
+    </nav>
+
+    <div class="home2-hero-inner">
+      <span class="home2-eyebrow"><span></span>{{ v.hero.eyebrow }}<span></span></span>
+      <h1>{{ v.hero.h1 }}</h1>
+      <p class="home2-hero-sub">
+        {{ v.hero.sub_before }}
+        <a href="/{{ page.lang }}/noon-amazon/">{{ v.hero.sub_link_stores }}</a>{{ v.hero.sub_middle }}
+        <a href="/{{ page.lang }}/accounting-erp/">{{ v.hero.sub_link_erp }}</a>,
+        <a href="/{{ page.lang }}/crm/">{{ v.hero.sub_link_crm }}</a>
+        {{ v.hero.sub_and }}
+        <a href="#pricing">{{ v.hero.sub_link_hr }}</a>{{ v.hero.sub_after }}
+      </p>
+      <div class="home2-actions">
+        <a href="{{ site.data.site.whatsapp_link }}" class="home2-btn home2-btn-primary">{{ v.hero.cta_primary }}</a>
+        <a href="#pricing" class="home2-btn home2-btn-ghost">{{ v.hero.cta_secondary }}</a>
+      </div>
+
+      <div class="home2-toolrow">
+        <div class="home2-toolrow-label">
+          <span>{{ v.hero.toolrow_label }}</span>
+          <a href="#stack">{{ v.hero.toolrow_link }}</a>
+        </div>
+        <div class="home2-toolrow-logos" aria-hidden="true">
+          {% for logo in site.data.home_v2.hero_logos %}
+            <svg role="presentation" focusable="false" data-logo="{{ logo }}"><use href="{{ sprite }}#l-{{ logo }}"></use></svg>
+          {% endfor %}
+          {% for img in site.data.home_v2.hero_logo_images %}
+            <img src="{{ img }}" alt="" loading="lazy">
+          {% endfor %}
+        </div>
+      </div>
+
+      {%- comment -%} Illustrative product mock — decorative, hidden from AT {%- endcomment -%}
+      <div class="home2-app" role="img" aria-label="{{ v.app.hello_sub }}">
+        <div class="home2-app-bar" aria-hidden="true">
+          <span class="home2-app-logo">{{ v.app.company | slice: 0 }}</span>
+          <span class="home2-app-name">{{ v.app.company }}</span>
+          <span class="home2-app-search"><svg><use href="{{ sprite }}#i-search"></use></svg><span>{{ v.app.search }}</span></span>
+          <span class="home2-app-tools">
+            <svg><use href="{{ sprite }}#i-bell"></use></svg>
+            <svg><use href="{{ sprite }}#i-refresh-cw"></use></svg>
+            <span class="home2-app-avatar">OM</span>
+          </span>
+        </div>
+        <div class="home2-app-body" aria-hidden="true">
+          <div class="home2-app-rail">
+            {% assign rail_icons = "monitor,trending-up,package,file-text,users,refresh-cw" | split: "," %}
+            {% for label in v.app.rail %}
+              <span{% if forloop.first %} class="is-active"{% endif %}><svg><use href="{{ sprite }}#i-{{ rail_icons[forloop.index0] }}"></use></svg>{{ label }}</span>
+            {% endfor %}
+          </div>
+          <div class="home2-app-main">
+            <div>
+              <div class="home2-app-hello">{{ v.app.hello }}</div>
+              <div class="home2-app-hello-sub">{{ v.app.hello_sub }}</div>
+            </div>
+            <div class="home2-kpis">
+              {% for kpi in v.app.kpis %}
+                <div class="home2-kpi">
+                  <span class="home2-kpi-label"><svg><use href="{{ sprite }}#i-{{ kpi.icon }}"></use></svg>{{ kpi.label }}</span>
+                  <span class="home2-kpi-value">{{ kpi.value }}</span>
+                  <span class="home2-kpi-delta{% if kpi.tone == 'warn' %} is-warn{% elsif kpi.tone == 'mute' %} is-mute{% endif %}">{{ kpi.delta }}</span>
+                </div>
+              {% endfor %}
+            </div>
+            <div>
+              <div class="home2-activity-head">
+                <span>{{ v.app.activity_label }}</span>
+                <span class="home2-pill-live">{{ v.app.activity_live }}</span>
+              </div>
+              {% for row in v.app.activity %}
+                <div class="home2-activity-row">
+                  <span class="home2-activity-icon is-{{ row.tone }}"><svg><use href="{{ sprite }}#i-{{ row.icon }}"></use></svg></span>
+                  <span class="txt">{{ row.text }}</span>
+                  <span class="time" dir="ltr">{{ row.time }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="home2-app-side">
+            <div class="home2-side-head">
+              <span>{{ v.app.revenue_label }}</span>
+              <span class="home2-side-chip">{{ v.app.revenue_range }} <svg><use href="{{ sprite }}#i-bar-chart-2"></use></svg></span>
+            </div>
+            <div class="home2-side-total"><b>{{ v.app.revenue_total }}</b><i>{{ v.app.revenue_delta }}</i></div>
+            {% assign bars = "38,52,44,61,55,72,64,81,70,88,79,96" | split: "," %}
+            <div class="home2-chart">
+              {% for bar in bars %}<span class="{% if forloop.index > 10 %}is-now{% endif %}" style="height:{{ bar }}%"></span>{% endfor %}
+            </div>
+            <div class="home2-chart-axis">{% for w in v.app.weeks %}<span>{{ w }}</span>{% endfor %}</div>
+            <div class="home2-channels">
+              {% for ch in v.app.channels %}
+                <div class="home2-channel">
+                  <div class="home2-channel-top"><b>{{ ch.name }}</b><span>{{ ch.amount }}</span></div>
+                  <div class="home2-channel-track"><span class="home2-channel-fill is-{{ ch.tone }}" style="width:{{ ch.width }}"></span></div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-art"><span>{% if page.lang == 'ar' %}صورة الهيدر / لقطة لوحة{% else %}Hero image / dashboard shot{% endif %}</span></div>
-  </div>
-</section>
+  </section>
+</div>
 
-<section id="services" class="section">
-  <div class="section-head">
-    <h2 class="section-title">{{ t.services_h2 }}</h2>
-    <div class="rule"></div>
-  </div>
-  <div class="service-links">
-    {% for id in site.data.home.services_row %}
-      {% assign svc = site.data.services[id] %}
-      {% assign st = svc[page.lang] %}
-      <a href="/{{ page.lang }}/{{ id }}/" class="service-link-card">
-        <span class="service-link-dot"><span></span></span>
-        <span><span class="service-link-title">{{ st.primary_keyword }}</span><span class="service-link-sub">{{ svc.eyebrow_number }} · {{ svc.category_label }}</span></span>
-      </a>
-    {% endfor %}
-  </div>
-</section>
+<div class="home2-panel">
 
-<section id="pricing" class="section">
-  <div class="section-head">
-    <h2 class="section-title">{{ t.pricing_h2 }}</h2>
-    <div class="rule"></div>
-  </div>
-  <div class="product-grid">
-    {% assign product_keys = "erp,crm" | split: "," %}
-    {% for key in product_keys %}
-      {% assign card = t.products[key] %}
-      {% assign linked_svc = site.data.services[card.link_service_id] %}
-      {% assign linked_t = linked_svc[page.lang] %}
-      <article class="product-card">
-        <span class="eyebrow">{{ card.eyebrow }}</span>
-        <h3>{{ card.h3 }}</h3>
-        <p>{{ card.p }}</p>
-        <div class="provider-list">
-          <span class="provider-list-label">{{ linked_t.provider_list_label }}</span>
-          {% for provider in linked_svc.providers %}<span class="provider"><span class="dot"></span>{{ provider }}</span>{% endfor %}
-        </div>
-        <a href="/{{ page.lang }}/{{ card.link_service_id }}/" class="quote-link">{{ linked_t.primary_keyword }}{{ site.data.i18n[page.lang].quote_link_suffix }}</a>
-      </article>
-    {% endfor %}
-    <article class="product-card">
-      <span class="eyebrow">{{ t.products.hr.eyebrow }}</span>
-      <h3>{{ t.products.hr.h3 }}</h3>
-      <p>{{ t.products.hr.p }}</p>
-      <div class="provider-list">
-        <span class="provider-list-label">{{ t.products.hr.provider_list_label }}</span>
-        {% for provider in t.products.hr.providers %}<span class="provider"><span class="dot"></span>{{ provider }}</span>{% endfor %}
-      </div>
-      <a href="{{ site.data.site.whatsapp_link }}" class="quote-link">{{ t.products.hr.quote_link_text }}{{ site.data.i18n[page.lang].quote_link_suffix }}</a>
-    </article>
-  </div>
-  {% include vendor-disclaimer.html %}
-  <p class="footnote">{{ t.footnote }}</p>
-</section>
-
-<section id="stack" class="section">
-  <div class="section-head" style="align-items:center;text-align:center">
-    <h2 class="section-title">{{ t.stack_h2 }}</h2>
-    <p style="margin:0;font-size:15px;line-height:1.8;color:var(--text-muted);max-width:640px">{{ t.stack_intro }}</p>
-  </div>
-  <div data-tabs>
-    <div class="tabs-buttons">
-      {% for tab in t.stack_tabs %}
-        <button type="button" class="tab-button{% if forloop.first %} is-active{% endif %}" data-tab-button="{{ tab.key }}">{{ tab.label }}</button>
+  <section id="services" class="home2-section">
+    <div class="home2-flow-head">
+      <h2 class="home2-h2">{{ t.services_h2 }}</h2>
+      <a href="#contact">{{ v.flow.link }}</a>
+    </div>
+    <p class="home2-lede">{{ v.flow.lede }}</p>
+    <div class="home2-chain">
+      {% assign service_ids = site.data.home.services_row %}
+      {% for step in v.flow.steps %}
+        {% assign svc_id = service_ids[forloop.index0] %}
+        <a class="home2-link{% cycle 'chain': ' is-up', ' is-down' %}" href="{% if svc_id %}/{{ page.lang }}/{{ svc_id }}/{% else %}#contact{% endif %}">
+          <span class="home2-link-copy">
+            <span class="home2-link-tag">{{ step.tag }}</span>
+            <span class="home2-link-title">{{ step.title }}</span>
+            <span class="home2-link-body">{{ step.body }}</span>
+            <span class="home2-link-result">{{ step.result }}</span>
+          </span>
+          <span class="home2-link-dash" aria-hidden="true"></span>
+          <span class="home2-hex" aria-hidden="true"><i></i><svg><use href="{{ sprite }}#i-{{ step.icon }}"></use></svg></span>
+        </a>
       {% endfor %}
     </div>
-    {% for tab in t.stack_tabs %}
-      <div data-tab-panel="{{ tab.key }}" class="tool-grid"{% unless forloop.first %} hidden{% endunless %}>
-        {% for tool in site.data.home.stack_tools[tab.key] %}
-          <div class="tool-card">
-            {% if tool.logo %}
-              <div class="tool-mark" aria-hidden="true">{% include tool-logos/{{ tool.logo }}.svg %}</div>
-            {% else %}
-              <div class="tool-mark tool-mark-mono" aria-hidden="true"><span>{{ tool.mono }}</span></div>
-            {% endif %}
-            <span class="tool-name">{{ tool.name }}</span>
+  </section>
+
+  <section id="pricing" class="home2-section">
+    <h2 class="home2-h2">{{ t.pricing_h2 }}</h2>
+    <p class="home2-lede">{{ v.products.lede }}</p>
+
+    <div class="home2-products" data-tabs>
+      <div class="home2-ptabs">
+        {% for item in v.products.items %}
+          <button type="button" class="home2-ptab{% if forloop.first %} is-active{% endif %}" data-tab-button="{{ item.key }}">
+            <span class="home2-ptab-icon"><svg aria-hidden="true"><use href="{{ sprite }}#i-{{ item.icon }}"></use></svg></span>
+            <span class="home2-ptab-text">
+              <span class="home2-ptab-tag">{{ item.tag }}</span>
+              <span class="home2-ptab-name">{{ item.name }}</span>
+            </span>
+          </button>
+        {% endfor %}
+        <p class="home2-ptabs-note">{{ v.products.note }}</p>
+      </div>
+
+      {% for item in v.products.items %}
+        <div class="home2-ppanel is-{{ item.key }}" data-tab-panel="{{ item.key }}"{% unless forloop.first %} hidden{% endunless %}>
+          <span class="home2-ppanel-bar" aria-hidden="true"></span>
+          <div class="home2-ppanel-grid">
+            <div class="home2-ppanel-copy">
+              <span class="home2-ptag">{{ item.tag }}</span>
+              <h3>{{ item.name }}</h3>
+              <p>{{ item.plain }}</p>
+              <ul class="home2-plist">
+                {% for point in item.points %}<li><i aria-hidden="true"></i><span>{{ point }}</span></li>{% endfor %}
+              </ul>
+              <div>
+                <span class="home2-vendors-label">{{ v.products.vendors_label }}</span>
+                <div class="home2-vendors">
+                  {% for vendor in item.vendors %}
+                    <span class="home2-vendor">{% if vendor.img %}<img src="{{ vendor.img }}" alt="" loading="lazy">{% else %}<svg aria-hidden="true" data-logo="{{ vendor.logo }}"><use href="{{ sprite }}#l-{{ vendor.logo }}"></use></svg>{% endif %}{{ vendor.name }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+              <a href="{{ site.data.site.whatsapp_link }}" class="home2-pcta">{{ item.cta }}</a>
+            </div>
+
+            <div class="home2-pmock" aria-hidden="true">
+              <div class="home2-pmock-head">
+                <span>{{ item.mock_label }}</span>
+                <span class="home2-pmock-dots"><i></i><i></i></span>
+              </div>
+
+              {% if item.mock == 'invoice' %}
+                <div class="home2-doc">
+                  <div class="home2-doc-head"><b>{{ v.mocks.invoice_title }}</b><span class="home2-tagpill is-paid">{{ v.mocks.invoice_status }}</span></div>
+                  {% for row in v.mocks.invoice_rows %}<div class="home2-doc-row"><span>{{ row.item }}</span><b>{{ row.amount }}</b></div>{% endfor %}
+                  <div class="home2-doc-total"><span>{{ v.mocks.invoice_total_label }}</span><span>{{ v.mocks.invoice_total }}</span></div>
+                  <div class="home2-doc-note"><i></i>{{ v.mocks.invoice_note }}</div>
+                </div>
+              {% elsif item.mock == 'screens' %}
+                <div class="home2-screens">
+                  <div class="home2-screen-web">
+                    <div class="home2-screen-bar"><i></i><i></i><span></span></div>
+                    <div class="home2-screen-body">
+                      <span class="hero"></span><span class="line w70"></span><span class="line w48"></span>
+                      <span class="tiles"><i></i><i></i><i></i></span>
+                      <span class="btn"></span>
+                    </div>
+                  </div>
+                  <div class="home2-screen-phone">
+                    <span class="notch"></span><span class="hero"></span>
+                    <span class="line w80"></span><span class="line w60"></span><span class="btn"></span>
+                  </div>
+                </div>
+                <div class="home2-doc-note"><i></i>{{ v.mocks.screens_note }}</div>
+              {% elsif item.mock == 'pipeline' %}
+                <div class="home2-pipeline">
+                  {% for col in v.mocks.pipeline_columns %}
+                    <div class="home2-pipeline-col">
+                      <span>{{ col.stage }}</span>
+                      {% for deal in col.deals %}<span class="home2-deal"><b>{{ deal.name }}</b><span>{{ deal.value }}</span></span>{% endfor %}
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="home2-doc-note"><i></i>{{ v.mocks.pipeline_note }}</div>
+              {% else %}
+                <div class="home2-doc">
+                  <div class="home2-doc-head"><b>{{ v.mocks.payslip_title }}</b><span class="home2-tagpill is-staff">{{ v.mocks.payslip_status }}</span></div>
+                  {% for row in v.mocks.payslip_rows %}<div class="home2-doc-row"><span>{{ row.item }}</span><b>{{ row.amount }}</b></div>{% endfor %}
+                  <div class="home2-doc-total"><span>{{ v.mocks.payslip_total_label }}</span><span>{{ v.mocks.payslip_total }}</span></div>
+                  <div class="home2-doc-note"><i></i>{{ v.mocks.payslip_note }}</div>
+                </div>
+              {% endif %}
+            </div>
           </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% include vendor-disclaimer.html %}
+    <p class="home2-disclaimer">{{ t.footnote }}</p>
+  </section>
+
+  <section id="stack" class="home2-section">
+    <div class="home2-center">
+      <h2 class="home2-h2">{{ t.stack_h2 }}</h2>
+      <p>{{ t.stack_intro }}</p>
+    </div>
+    <div data-tabs>
+      <div class="home2-tabs">
+        {% for tab in t.stack_tabs %}
+          <button type="button" class="home2-tab{% if forloop.first %} is-active{% endif %}" data-tab-button="{{ tab.key }}">{{ tab.label }}</button>
         {% endfor %}
       </div>
-    {% endfor %}
-  </div>
-  {% include vendor-disclaimer.html %}
-</section>
-
-<section id="process" class="section">
-  <div class="section-head" style="align-items:center;text-align:center">
-    <h2 class="section-title">{{ t.process_h2 }}</h2>
-    <div class="rule"></div>
-  </div>
-  <div class="process-grid">
-    {% for stage in t.process_stages %}
-      <article class="process-card">
-        <span class="process-step-number">{{ stage.number }}</span>
-        <span class="rule"></span>
-        <h3>{{ stage.title }}</h3>
-        <ul>
-          {% for item in stage.items %}<li><span class="step-dot"></span><span>{{ item }}</span></li>{% endfor %}
-        </ul>
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="section-head">
-    <h2 class="section-title">{{ t.contact_h2 }}</h2>
-    <div class="rule"></div>
-  </div>
-  <div class="contact-grid">
-    <div>
-      <a href="{{ site.data.site.whatsapp_link }}" class="contact-card">
-        <span class="contact-icon"><svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.257.59 4.463 1.712 6.408L3.2 28.8l6.56-1.712a12.74 12.74 0 0 0 6.244 1.6h.005c7.06 0 12.8-5.74 12.8-12.8s-5.74-12.688-12.805-12.688Zm0 23.36h-.004a10.6 10.6 0 0 1-5.4-1.48l-.388-.23-4.03 1.052 1.075-3.93-.252-.404a10.56 10.56 0 0 1-1.62-5.64c0-5.86 4.77-10.63 10.63-10.63 2.84 0 5.51 1.108 7.518 3.117a10.56 10.56 0 0 1 3.112 7.52c0 5.86-4.77 10.625-10.64 10.625Zm5.83-7.96c-.32-.16-1.89-.932-2.183-1.04-.293-.107-.507-.16-.72.16-.213.32-.826 1.04-1.013 1.253-.187.213-.373.24-.693.08-.32-.16-1.35-.497-2.57-1.586-.95-.847-1.592-1.894-1.779-2.214-.186-.32-.02-.493.14-.652.144-.143.32-.373.48-.56.16-.187.213-.32.32-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.735-.986-2.375-.26-.624-.524-.54-.72-.55l-.613-.01c-.213 0-.56.08-.853.4-.293.32-1.12 1.093-1.12 2.667s1.147 3.093 1.307 3.307c.16.213 2.257 3.445 5.47 4.83.765.33 1.362.527 1.827.674.767.244 1.465.21 2.017.127.615-.092 1.89-.773 2.157-1.52.267-.746.267-1.386.187-1.52-.08-.133-.293-.213-.613-.373Z"></path></svg></span>
-        <span><span class="contact-label">{{ t.contact.whatsapp_label }}</span><span class="contact-value" dir="ltr">{{ site.data.site.whatsapp_number_display }}</span></span>
-      </a>
-      <a href="mailto:{{ site.data.site.email }}" class="contact-card">
-        <span class="contact-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect><path d="m3 6 9 6 9-6"></path></svg></span>
-        <span><span class="contact-label">{{ t.contact.email_label }}</span><span class="contact-value" dir="ltr" style="overflow-wrap:anywhere">{{ site.data.site.email }}</span></span>
-      </a>
-      <p class="contact-hours">{{ t.contact.hours }}</p>
+      {% for tab in t.stack_tabs %}
+        <div data-tab-panel="{{ tab.key }}" class="home2-toolgrid"{% unless forloop.first %} hidden{% endunless %}>
+          {% assign tool_list = site.data.home_v2.stack_tools[tab.key] | default: site.data.home.stack_tools[tab.key] %}
+          {% for tool in tool_list %}
+            <div class="home2-toolcard">
+              <span class="home2-toolmark" aria-hidden="true">
+                {% if tool.img %}<img src="{{ tool.img }}" alt="" loading="lazy">
+                {% elsif tool.logo %}<svg data-logo="{{ tool.logo }}"><use href="{{ sprite }}#l-{{ tool.logo }}"></use></svg>
+                {% else %}<b>{{ tool.mono }}</b>{% endif %}
+              </span>
+              <span class="home2-toolname">{{ tool.name }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
     </div>
-    <form class="contact-form" onsubmit="event.preventDefault(); window.open('{{ site.data.site.whatsapp_link }}', '_blank', 'noopener');">
-      <input type="text" placeholder="{{ t.contact.form_name }}" aria-label="{{ t.contact.form_name }}">
-      <input type="text" placeholder="{{ t.contact.form_company }}" aria-label="{{ t.contact.form_company }}">
-      <input type="text" placeholder="{{ t.contact.form_whatsapp }}" aria-label="{{ t.contact.form_whatsapp }}">
-      <select aria-label="{{ t.contact.form_select_placeholder }}">
-        <option value="">{{ t.contact.form_select_placeholder }}</option>
-        {% for opt in t.contact.form_select_options %}<option>{{ opt }}</option>{% endfor %}
-      </select>
-      <textarea rows="3" placeholder="{{ t.contact.form_note }}"></textarea>
-      <button type="submit">{{ t.contact.form_submit }}</button>
-      <small>{{ t.contact.form_hint }}</small>
-    </form>
-  </div>
-</section>
+    {% include vendor-disclaimer.html %}
+  </section>
+
+  <section id="process" class="home2-section">
+    <h2 class="home2-h2" style="margin-bottom:30px">{{ t.process_h2 }}</h2>
+    <div class="home2-steps">
+      {% for stage in t.process_stages %}
+        <article class="home2-stage">
+          <span class="home2-stage-num" aria-hidden="true">{{ stage.number }}</span>
+          <h3>{{ stage.title }}</h3>
+          <ul>
+            {% for item in stage.items %}<li><i aria-hidden="true"></i><span>{{ item }}</span></li>{% endfor %}
+          </ul>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="contact" class="home2-section">
+    <div class="home2-contact">
+      <div class="home2-contact-copy">
+        <h2>{{ i18n.cta_heading }}</h2>
+        <p>{{ t.contact.hours }}</p>
+        <a href="{{ site.data.site.whatsapp_link }}" class="home2-contact-card">
+          <span class="home2-contact-icon"><svg aria-hidden="true"><use href="{{ sprite }}#l-whatsapp"></use></svg></span>
+          <span>
+            <span class="home2-contact-label">{{ t.contact.whatsapp_label }}</span>
+            <span class="home2-contact-value" dir="ltr">{{ site.data.site.whatsapp_number_display }}</span>
+          </span>
+        </a>
+        <a href="mailto:{{ site.data.site.email }}" class="home2-contact-card">
+          <span class="home2-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect><path d="m3 6 9 6 9-6"></path></svg></span>
+          <span>
+            <span class="home2-contact-label">{{ t.contact.email_label }}</span>
+            <span class="home2-contact-value" dir="ltr">{{ site.data.site.email }}</span>
+          </span>
+        </a>
+      </div>
+      <form class="home2-form" onsubmit="event.preventDefault(); window.open('{{ site.data.site.whatsapp_link }}', '_blank', 'noopener');">
+        <input type="text" placeholder="{{ t.contact.form_name }}" aria-label="{{ t.contact.form_name }}">
+        <input type="text" placeholder="{{ t.contact.form_company }}" aria-label="{{ t.contact.form_company }}">
+        <input type="text" placeholder="{{ t.contact.form_whatsapp }}" aria-label="{{ t.contact.form_whatsapp }}">
+        <select aria-label="{{ t.contact.form_select_placeholder }}">
+          <option value="">{{ t.contact.form_select_placeholder }}</option>
+          {% for opt in t.contact.form_select_options %}<option>{{ opt }}</option>{% endfor %}
+        </select>
+        <textarea rows="3" placeholder="{{ t.contact.form_note }}"></textarea>
+        <button type="submit">{{ t.contact.form_submit }}</button>
+        <small>{{ t.contact.form_hint }}</small>
+      </form>
+    </div>
+  </section>
+
+</div>
+</div>
