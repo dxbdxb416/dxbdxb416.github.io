@@ -169,22 +169,11 @@
     <h2 class="home2-h2">{{ t.pricing_h2 }}</h2>
     <p class="home2-lede">{{ v.products.lede }}</p>
 
-    <div class="home2-products" data-tabs>
-      <div class="home2-ptabs">
-        {% for item in v.products.items %}
-          <button type="button" class="home2-ptab{% if forloop.first %} is-active{% endif %}" data-tab-button="{{ item.key }}">
-            <span class="home2-ptab-icon"><svg aria-hidden="true"><use href="{{ sprite }}#i-{{ item.icon }}"></use></svg></span>
-            <span class="home2-ptab-text">
-              <span class="home2-ptab-tag">{{ item.tag }}</span>
-              <span class="home2-ptab-name">{{ item.name }}</span>
-            </span>
-          </button>
-        {% endfor %}
-        <p class="home2-ptabs-note">{{ v.products.note }}</p>
-      </div>
+    <div class="home2-products">
+      <p class="home2-products-note">{{ v.products.note }}</p>
 
       {% for item in v.products.items %}
-        <div class="home2-ppanel is-{{ item.key }}" data-tab-panel="{{ item.key }}"{% unless forloop.first %} hidden{% endunless %}>
+        <div class="home2-ppanel is-{{ item.key }}">
           <span class="home2-ppanel-bar" aria-hidden="true"></span>
           <div class="home2-ppanel-grid">
             <div class="home2-ppanel-copy">
