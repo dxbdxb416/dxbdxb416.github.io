@@ -453,6 +453,21 @@ img { max-width: 100%; }
   .home2-hero-inner { padding-top:44px; }
   .home2-shell, .home2-panel { margin:8px; padding-inline:8px; }
   .home2-section { padding-inline:20px; }
+  .home2-ppanel-grid { padding:24px 18px 22px; gap:20px; }
+  .home2-pipeline { grid-template-columns:1fr 1fr; gap:8px; }
+}
+
+/* small phones: mockup cards (pipeline / invoice / payslip / kpis)
+   were staying at a fixed column count and getting crushed */
+@media (max-width: 480px) {
+  .home2-pipeline { grid-template-columns:1fr; }
+  .home2-kpis { grid-template-columns:repeat(2,1fr); }
+  .home2-kpi { padding:10px; }
+  .home2-kpi-value { font-size:20px; }
+  .home2-app-main { padding:16px; }
+  .home2-app-side { padding:14px; }
+  .home2-pmock { padding:12px; }
+  .home2-doc, .home2-app { border-radius:10px; }
 }
 
 /* tone helpers used by home v2 (data-driven classes) */
