@@ -223,8 +223,7 @@ img { max-width: 100%; }
    ============================================================ */
 
 .home2 { --h2-navy:#0F1B3D; --h2-blue:#2952E3; --h2-blue-dark:#1B3ECB; --h2-blue-soft:#E5EAFB; --h2-violet:#8A3FD1; --h2-violet-soft:#F1E7FB; --h2-teal:#0E8080; --h2-teal-soft:#DFF3F3; --h2-line:#E7ECF7; }
-.home2-shell { background:#0B1226; padding:16px 16px 0; }
-.home2-hero { position:relative; overflow:hidden; border-radius:30px; background:linear-gradient(160deg,#EEF1FF 0%,#DCE6FF 34%,#C9DAFF 62%,#E8F0FF 100%); padding:18px 18px 0; }
+.home2-hero { position:relative; overflow:hidden; background:linear-gradient(160deg,#EEF1FF 0%,#DCE6FF 34%,#C9DAFF 62%,#E8F0FF 100%); padding:18px 18px 0; }
 
 /* floating nav pill (home only) */
 .home2-nav { position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; gap:20px; background:#FFFFFF; border-radius:999px; padding-block:10px; padding-inline:22px 14px; box-shadow:0 2px 14px rgba(15,27,61,0.07); }
@@ -441,7 +440,7 @@ img { max-width: 100%; }
   .home2-nav { flex-wrap:wrap; border-radius:22px; padding:12px 14px; }
   .home2-nav-links { order:3; width:100%; justify-content:center; gap:16px; font-size:14px; }
   .home2-hero-inner { padding-top:44px; }
-  .home2-shell, .home2-panel { margin:8px; padding-inline:8px; }
+  .home2-panel { margin:8px; padding-inline:8px; }
   .home2-section { padding-inline:20px; }
   .home2-ppanel-grid { padding:24px 18px 22px; gap:20px; }
   .home2-pipeline { grid-template-columns:1fr 1fr; gap:8px; }
