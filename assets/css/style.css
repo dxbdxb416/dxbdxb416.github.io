@@ -204,6 +204,10 @@ img { max-width: 100%; }
 .footer-inner { max-width: 1140px; margin: 0 auto; padding: 26px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .footer-logo { height: 20px; width: auto; display: block; }
 .footer-copy { font-size: 13px; color: rgba(255,255,255,0.55); }
+.footer-social { display: flex; align-items: center; gap: 6px; }
+.footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; color: rgba(255,255,255,0.75); transition: color 200ms ease, background-color 200ms ease; }
+.footer-social a:hover { color: #FFFFFF; background: rgba(255,255,255,0.08); }
+.footer-social svg { width: 18px; height: 18px; fill: currentColor; }
 
 .whatsapp-float { position: fixed; bottom: 24px; inset-inline-start: 24px; z-index: 50; display: inline-flex; align-items: center; gap: 10px; background: var(--blue); color: #FFFFFF; text-decoration: none; padding: 0 22px; height: 48px; border-radius: 999px; font-size: 15px; font-weight: 700; box-shadow: 0 6px 20px rgba(41,82,227,0.35); transition: transform 240ms ease, box-shadow 240ms ease; }
 .whatsapp-float:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(41,82,227,0.45); color: #FFFFFF; }
@@ -223,7 +227,9 @@ img { max-width: 100%; }
    ============================================================ */
 
 .home2 { --h2-navy:#0F1B3D; --h2-blue:#2952E3; --h2-blue-dark:#1B3ECB; --h2-blue-soft:#E5EAFB; --h2-violet:#8A3FD1; --h2-violet-soft:#F1E7FB; --h2-teal:#0E8080; --h2-teal-soft:#DFF3F3; --h2-line:#E7ECF7; }
-.home2-hero { position:relative; overflow:hidden; background:linear-gradient(160deg,#EEF1FF 0%,#DCE6FF 34%,#C9DAFF 62%,#E8F0FF 100%); padding:18px 18px 0; }
+.home2-nav-pin { position:sticky; top:10px; z-index:45; padding:18px 18px 10px; background:linear-gradient(180deg,#EEF1FF 0%,rgba(238,241,255,0) 100%); }
+.home2 [id] { scroll-margin-top:96px; }
+.home2-hero { position:relative; overflow:hidden; background:linear-gradient(160deg,#EEF1FF 0%,#DCE6FF 34%,#C9DAFF 62%,#E8F0FF 100%); padding:0 18px; }
 
 /* floating nav pill (home only) */
 .home2-nav { position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; gap:20px; background:#FFFFFF; border-radius:999px; padding-block:10px; padding-inline:22px 14px; box-shadow:0 2px 14px rgba(15,27,61,0.07); }
@@ -428,6 +434,10 @@ img { max-width: 100%; }
 .home2-form button { font-family:'Tajawal',sans-serif; background:var(--h2-blue); color:#FFFFFF; border:none; padding:16px 20px; font-size:15px; font-weight:800; border-radius:999px; cursor:pointer; min-height:50px; }
 .home2-form button:hover { background:var(--h2-blue-dark); }
 .home2-form small { font-size:12.5px; color:var(--text-faint); }
+.home2-form .hp-field { position:absolute; inset-inline-start:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
+.form-status { display:none; margin:0; font-size:14px; font-weight:700; }
+.form-status.is-ok { display:block; color:var(--h2-teal); }
+.form-status.is-error { display:block; color:#C0392B; }
 .home2-disclaimer { font-size:12px; line-height:1.7; color:var(--text-faint); max-width:760px; margin:18px 0 0; }
 
 @media (max-width: 900px) {
@@ -581,3 +591,4 @@ svg[data-logo="googlesheets"] { color:#0F9D58; fill:#0F9D58; }
 .home2-screen-phone .notch { height:5px; width:28px; border-radius:3px; background:#E3E7EE; align-self:center; }
 .home2-screen-phone .hero { height:44px; }
 .home2-screen-phone .btn { margin-top:auto; height:22px; border-radius:999px; background:#E0761B; }
+

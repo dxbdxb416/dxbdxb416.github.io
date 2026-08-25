@@ -2,6 +2,11 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <span class="footer-copy">{{ t.footer_copy }}</span>
+    <nav class="footer-social" aria-label="{{ t.footer_follow }}">
+      <a href="{{ site.data.site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><svg role="presentation" focusable="false"><use href="/assets/img/sprite.svg#l-instagram"></use></svg></a>
+      <a href="{{ site.data.site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><svg role="presentation" focusable="false"><use href="/assets/img/sprite.svg#l-facebook"></use></svg></a>
+      <a href="{{ site.data.site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg role="presentation" focusable="false"><use href="/assets/img/sprite.svg#l-linkedin"></use></svg></a>
+    </nav>
     <img src="/assets/img/logo-white.png" alt="{{ t.logo_footer_alt }}" class="footer-logo" width="94" height="20">
   </div>
 </footer>

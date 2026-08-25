@@ -12,9 +12,7 @@
 {% assign sprite = "/assets/img/sprite.svg" %}
 
 <div class="home2">
-<div class="home2-shell">
-  <section class="home2-hero">
-
+  <div class="home2-nav-pin">
     <nav class="home2-nav" aria-label="{{ i18n.nav_services }}">
       <a href="/{{ page.lang }}/" class="home2-nav-brand">
         <img src="/assets/img/logo-navy.png" alt="{{ i18n.logo_nav_alt }}" width="120" height="26">
@@ -34,7 +32,10 @@
         <a href="{{ site.data.site.cal_link }}" target="_blank" rel="noopener" class="home2-nav-cta">{{ t.contact_h2 | truncatewords: 2, "" }}</a>
       </div>
     </nav>
+  </div>
 
+<div class="home2-shell">
+  <section class="home2-hero">
     <div class="home2-hero-inner">
       <span class="home2-eyebrow"><span></span>{{ v.hero.eyebrow }}<span></span></span>
       <h1>{{ v.hero.h1 }}</h1>
@@ -316,16 +317,25 @@
           </span>
         </a>
       </div>
-      <form class="home2-form" onsubmit="event.preventDefault(); window.open('{{ site.data.site.whatsapp_link }}', '_blank', 'noopener');">
-        <input type="text" placeholder="{{ t.contact.form_name }}" aria-label="{{ t.contact.form_name }}">
-        <input type="text" placeholder="{{ t.contact.form_company }}" aria-label="{{ t.contact.form_company }}">
-        <input type="text" placeholder="{{ t.contact.form_whatsapp }}" aria-label="{{ t.contact.form_whatsapp }}">
-        <select aria-label="{{ t.contact.form_select_placeholder }}">
+      <form class="home2-form" method="POST" action="https://api.web3forms.com/submit" data-web3forms
+            data-sending="{{ t.contact.form_sending }}"
+            data-success="{{ t.contact.form_success }}"
+            data-error="{{ t.contact.form_error }}">
+        <input type="hidden" name="access_key" value="18899061-f8ac-46ac-9102-3b4f7b8f8e12">
+        <input type="hidden" name="subject" value="New website enquiry — D3">
+        <input type="hidden" name="from_name" value="D3 Website">
+        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" aria-hidden="true">
+        <input type="text" name="name" placeholder="{{ t.contact.form_name }}" aria-label="{{ t.contact.form_name }}" required>
+        <input type="email" name="email" placeholder="{{ t.contact.form_email }}" aria-label="{{ t.contact.form_email }}" required>
+        <input type="text" name="company" placeholder="{{ t.contact.form_company }}" aria-label="{{ t.contact.form_company }}">
+        <input type="tel" name="phone" placeholder="{{ t.contact.form_whatsapp }}" aria-label="{{ t.contact.form_whatsapp }}">
+        <select name="service" aria-label="{{ t.contact.form_select_placeholder }}">
           <option value="">{{ t.contact.form_select_placeholder }}</option>
           {% for opt in t.contact.form_select_options %}<option>{{ opt }}</option>{% endfor %}
         </select>
-        <textarea rows="3" placeholder="{{ t.contact.form_note }}"></textarea>
+        <textarea name="message" rows="3" placeholder="{{ t.contact.form_note }}" aria-label="{{ t.contact.form_note }}" required></textarea>
         <button type="submit">{{ t.contact.form_submit }}</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
         <small>{{ t.contact.form_hint }}</small>
       </form>
     </div>
