@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://d3moo.is-a.dev/sitemap.xml
+Sitemap: https://d3dot.space/sitemap.xml
