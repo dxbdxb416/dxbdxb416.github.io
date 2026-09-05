@@ -69,7 +69,7 @@ en:
   app:
     company: "Ace Trading LLC"
     search: "Search orders, customers, invoices…"
-    hello: "Hey there, Omar"
+    hello: "Hello my friend"
     hello_sub: "Here's what's happening across your systems today."
     rail: ["Home", "Sales", "Stock", "Books", "Staff", "Sync"]
     kpis:
@@ -232,7 +232,7 @@ ar:
   app:
     company: "شركة إيس للتجارة"
     search: "ابحث في الطلبات، العملاء، الفواتير…"
-    hello: "هلا عمر"
+    hello: "مرحبا صديقي"
     hello_sub: "هذا ملخص ما يحدث في أنظمتك اليوم."
     rail: ["الرئيسية", "المبيعات", "المخزون", "الحسابات", "الموظفين", "الربط"]
     kpis:
