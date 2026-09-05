@@ -52,6 +52,12 @@
         <a href="#pricing" class="home2-btn home2-btn-ghost">{{ v.hero.cta_secondary }}</a>
       </div>
 
+      <ul class="home2-trust">
+        {% for item in v.trust %}
+          <li><strong>{{ item.value }}</strong><span>{{ item.label }}</span></li>
+        {% endfor %}
+      </ul>
+
       <div class="home2-toolrow">
         <div class="home2-toolrow-label">
           <span>{{ v.hero.toolrow_label }}</span>
@@ -163,6 +169,16 @@
           <span class="home2-hex" aria-hidden="true"><i></i><svg><use href="{{ sprite }}#i-{{ step.icon }}"></use></svg></span>
         </a>
       {% endfor %}
+    </div>
+  </section>
+
+  <section class="home2-section home2-why" aria-labelledby="why-d3-heading">
+    <div>
+      <h2 id="why-d3-heading" class="home2-h2">{{ v.why.heading }}</h2>
+      <p class="home2-why-title">{{ v.why.title }}</p>
+    </div>
+    <div class="home2-why-copy">
+      {% for paragraph in v.why.paragraphs %}<p class="home2-lede">{{ paragraph }}</p>{% endfor %}
     </div>
   </section>
 

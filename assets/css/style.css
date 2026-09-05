@@ -362,7 +362,7 @@ img { max-width: 100%; }
 .home2-products-note { margin:0 2px; font-size:13px; line-height:1.7; color:var(--text-faint); }
 .home2-ppanel { position:relative; overflow:hidden; background:#FFFFFF; border:1px solid var(--h2-line); border-radius:24px; box-shadow:0 10px 30px rgba(15,27,61,0.07); }
 .home2-ppanel-bar { position:absolute; top:0; inset-inline:0; height:5px; }
-.home2-ppanel-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; padding:34px 30px 32px; }
+.home2-ppanel-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:28px; padding:34px 30px 32px; }
 .home2-ppanel-copy { display:flex; flex-direction:column; gap:16px; min-width:0; }
 .home2-ptag { display:inline-flex; align-self:flex-start; align-items:center; height:28px; padding-inline:13px; border-radius:999px; font-size:11px; font-weight:800; letter-spacing:0.14em; }
 .home2-ppanel-copy h3 { margin:0; font-size:26px; font-weight:800; line-height:1.2; letter-spacing:-0.02em; }
@@ -592,3 +592,17 @@ svg[data-logo="googlesheets"] { color:#0F9D58; fill:#0F9D58; }
 .home2-screen-phone .hero { height:44px; }
 .home2-screen-phone .btn { margin-top:auto; height:22px; border-radius:999px; background:#E0761B; }
 
+
+/* Compact homepage credibility and connected-systems positioning. */
+.home2-trust { width:100%; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; list-style:none; margin:6px 0 0; padding:22px 0; border-block:1px solid var(--h2-line); }
+.home2-trust li { display:flex; flex-direction:column; gap:7px; }
+.home2-trust strong { font-size:14px; line-height:1.5; color:var(--h2-navy); }
+.home2-trust span { font-size:13px; line-height:1.5; color:var(--text-muted); }
+.home2-why { display:grid; grid-template-columns:1fr 1.4fr; gap:40px; }
+.home2-why-title { margin:16px 0 0; font-size:22px; line-height:1.5; font-weight:700; color:var(--h2-navy); }
+.home2-why-copy .home2-lede { margin:0 0 16px; }
+.home2-why-copy .home2-lede:last-child { margin-bottom:0; }
+@media (max-width:680px) {
+  .home2-trust { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 12px; }
+  .home2-why { grid-template-columns:1fr; gap:22px; }
+}

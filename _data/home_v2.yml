@@ -39,6 +39,18 @@ stack_tools:
     - { name: "REST APIs", img: "/assets/img/logos/rest-api.jpg" }
 
 en:
+  trust:
+    - { value: "8+ Years", label: "Hands-on experience" }
+    - { value: "UAE & Saudi Arabia", label: "Regional focus" }
+    - { value: "Arabic & English", label: "Bilingual support" }
+    - { value: "Implementation + Training", label: "Ongoing support" }
+  why:
+    heading: "Why D3?"
+    title: "One partner. The whole system."
+    paragraphs:
+      - "The challenge is often disconnected systems. D3 connects ERP, CRM, accounting, HR, websites, mobile apps and automation into one practical business flow."
+      - "From discovery and implementation to training and ongoing support, you work with one team across your systems and operations, instead of coordinating disconnected vendors."
+      - "Built for businesses operating in the UAE and Saudi Arabia."
   hero:
     eyebrow: "Dubai · Sharjah · Riyadh — 8 years hands-on"
     h1: "One system to run your whole business"
@@ -190,6 +202,18 @@ en:
     payslip_note: "Leave and attendance already deducted"
 
 ar:
+  trust:
+    - { value: "أكثر من 8 سنوات", label: "خبرة عملية" }
+    - { value: "الإمارات والسعودية", label: "تركيز إقليمي" }
+    - { value: "العربية والإنجليزية", label: "دعم باللغتين" }
+    - { value: "تنفيذ + تدريب", label: "دعم مستمر" }
+  why:
+    heading: "لماذا D3؟"
+    title: "شريك واحد. منظومة متكاملة."
+    paragraphs:
+      - "التحدي غالبًا هو أنظمة لا تتواصل مع بعضها. تربط D3 أنظمة ERP وCRM والمحاسبة والموارد البشرية والمواقع وتطبيقات الجوال والأتمتة ضمن سير عمل واحد وعملي."
+      - "من فهم الاحتياج والتنفيذ إلى التدريب والدعم المستمر، تتعامل مع فريق واحد يربط أنظمتك وعملياتك، بدل التنسيق بين مزودين منفصلين."
+      - "للشركات العاملة في الإمارات والسعودية."
   hero:
     eyebrow: "دبي · الشارقة · الرياض — خبرة ٨ سنوات"
     h1: "نظام واحد يشغّل شركتك بالكامل"
