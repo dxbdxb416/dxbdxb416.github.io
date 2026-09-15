@@ -3,3 +3,6 @@ _site/
 .jekyll-cache/
 .sass-cache/
 vendor/
+worker/node_modules/
+worker/.wrangler/
+worker/.dev.vars
