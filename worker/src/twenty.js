@@ -139,7 +139,8 @@ function findField(object, name, type) {
 
 function relationIdField(object, targetObject, preferredName) {
   const field = object?.fields.find((candidate) => {
-    if (!isWritable(candidate) || !['RELATION', 'MORPH_RELATION'].includes(candidate.type)) return false;
+    if (candidate?.isActive === false || !['RELATION', 'MORPH_RELATION'].includes(candidate?.type)) return false;
+    if (!candidate.settings?.joinColumnName) return false;
     if (candidate.relationTargetObjectMetadataId) {
       return candidate.relationTargetObjectMetadataId === targetObject?.id;
     }

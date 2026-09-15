@@ -103,16 +103,18 @@ const OBJECTS = [
         name: 'note',
         type: 'RELATION',
         isActive: true,
-        writability: 'OPEN',
-        relationTargetObjectMetadataId: 'object-note',
+        isUIReadOnly: true,
+        writability: null,
+        relationTargetObjectMetadataId: null,
         settings: { relationType: 'MANY_TO_ONE', joinColumnName: 'noteId' }
       },
       {
         name: 'targetOpportunity',
         type: 'MORPH_RELATION',
         isActive: true,
-        writability: 'OPEN',
-        relationTargetObjectMetadataId: 'object-opportunity',
+        isUIReadOnly: true,
+        writability: null,
+        relationTargetObjectMetadataId: null,
         settings: { relationType: 'MANY_TO_ONE', joinColumnName: 'targetOpportunityId' }
       }
     ]
