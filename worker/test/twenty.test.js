@@ -183,7 +183,7 @@ test('reuses existing records, fills missing person data, and creates a related 
   assert.equal(peopleLookup.url.searchParams.get('filter'), 'emails.primaryEmail[eq]:"test@example.com"');
 
   const companyLookup = router.requests.find((request) => request.url.pathname === '/rest/companies');
-  assert.equal(companyLookup.url.searchParams.get('filter'), 'name[eq]:"D3 Test Company"');
+  assert.equal(companyLookup.url.searchParams.get('filter'), 'name[ilike]:"D3 Test Company"');
 
   const personUpdate = router.requests.find((request) => request.url.pathname === '/rest/people/person-1');
   assert.deepEqual(personUpdate.body, {

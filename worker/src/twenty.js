@@ -213,9 +213,9 @@ function extractRecord(payload, object, operation) {
   throw new TwentyError('twenty_invalid_response');
 }
 
-async function findOne(object, fieldPath, value, env, fetchImpl) {
+async function findOne(object, fieldPath, value, env, fetchImpl, comparator = 'eq') {
   const url = new URL(`${baseUrl(env)}/rest/${object.namePlural}`);
-  url.searchParams.set('filter', `${fieldPath}[eq]:${JSON.stringify(value)}`);
+  url.searchParams.set('filter', `${fieldPath}[${comparator}]:${JSON.stringify(value)}`);
   url.searchParams.set('limit', '1');
   const payload = await apiRequest(url.toString(), env, fetchImpl);
   return extractArray(payload, [object.namePlural])[0] || null;
@@ -393,7 +393,7 @@ export async function syncToTwenty(lead, env, fetchImpl = fetch) {
 
   let company = null;
   if (lead.company) {
-    company = await findOne(schema.company, 'name', lead.company, env, fetchImpl);
+    company = await findOne(schema.company, 'name', lead.company, env, fetchImpl, 'ilike');
     if (!company) {
       company = await createRecord(schema.company, { name: lead.company }, env, fetchImpl);
     }
