@@ -1,0 +1,12 @@
+{
+  "name": "d3-website-lead-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-isolation=none",
+    "check": "node --check src/index.js && node --check src/web3forms.js && node --check src/twenty.js",
+    "deploy": "npx wrangler deploy",
+    "dev": "npx wrangler dev"
+  }
+}
