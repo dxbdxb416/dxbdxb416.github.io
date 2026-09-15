@@ -1,3 +1,6 @@
+import { sendToWeb3Forms } from './web3forms.js';
+import { syncToTwenty } from './twenty.js';
+
 const MAX_BODY_BYTES = 32 * 1024;
 const DEFAULT_ORIGINS = ['https://d3dot.space', 'https://www.d3dot.space'];
 const IDEMPOTENCY_TTL_SECONDS = 300;
@@ -149,7 +152,8 @@ export async function deliverLead(lead, env, deps) {
     failures: {
       web3forms: web3formsResult.status === 'rejected' ? safeFailure(web3formsResult.reason) : null,
       twenty: twentyResult.status === 'rejected' ? safeFailure(twentyResult.reason) : null
-    }
+    },
+    warnings: twentyResult.status === 'fulfilled' ? (twentyResult.value?.warnings || []) : []
   };
 }
 
@@ -173,8 +177,8 @@ function cacheRequest(origin, key) {
 
 function configuredDeps(deps) {
   return {
-    sendToWeb3Forms: async () => { throw new Error('Web3Forms client is not configured'); },
-    syncToTwenty: async () => { throw new Error('Twenty client is not configured'); },
+    sendToWeb3Forms,
+    syncToTwenty,
     fetch: globalThis.fetch,
     cache: globalThis.caches?.default,
     logger: console,
@@ -246,6 +250,15 @@ export async function handleRequest(request, env = {}, _ctx = {}, injectedDeps =
       destination: 'twenty',
       requestId,
       ...result.failures.twenty
+    });
+  }
+  for (const warning of result.warnings) {
+    deps.logger.warn?.({
+      event: 'lead_delivery_warning',
+      destination: 'twenty',
+      requestId,
+      code: warning.code,
+      ...(Number.isInteger(warning.status) ? { status: warning.status } : {})
     });
   }
 

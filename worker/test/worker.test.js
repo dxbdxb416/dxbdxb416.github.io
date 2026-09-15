@@ -181,6 +181,32 @@ test('returns success when Twenty succeeds and Web3Forms fails', async () => {
   });
 });
 
+test('logs a safe warning when the opportunity succeeds but its note fails', async () => {
+  const warnings = [];
+  const deps = makeDeps({
+    syncToTwenty: async () => ({
+      opportunityId: 'opportunity-1',
+      warnings: [{ code: 'twenty_note_failed', status: 500 }]
+    }),
+    logger: {
+      error() {},
+      info() {},
+      warn(entry) { warnings.push(entry); }
+    }
+  });
+
+  const response = await handleRequest(makeRequest(), ENV, {}, deps);
+
+  assert.equal(response.status, 200);
+  assert.deepEqual(warnings, [{
+    event: 'lead_delivery_warning',
+    destination: 'twenty',
+    requestId: 'request-123',
+    code: 'twenty_note_failed',
+    status: 500
+  }]);
+});
+
 test('returns a sanitized gateway error when both destinations fail', async () => {
   const deps = makeDeps({
     sendToWeb3Forms: async () => { throw new Error('secret web3forms detail'); },
